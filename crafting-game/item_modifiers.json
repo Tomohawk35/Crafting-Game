@@ -1,0 +1,39 @@
+{
+	"life_added" : {
+		"item_types" : ["body_armor", "shield"],
+		"tags" : ["life", "added"]
+	},
+	"physical_added" : {
+		"description" : "Adds # physical damage to attacks",
+		"tiers" : {
+			"1" : {
+				"lower_limit" : 1,
+				"upper_value" : 3
+			}
+		},
+		"item_types" : ["weapon"],
+		"tags" : ["physical", "added", "attack"]
+	},
+	"attack_speed_increased" : {
+		"description" : "Increases attack speed by #%",
+		"tiers" : {
+			"1" : {
+				"lower_limit" : 5,
+				"upper_value" : 10
+			}
+		},
+		"item_types" : ["weapon"],
+		"tags" : ["speed", "attack", "increased"]
+	},
+	"blank" : {
+		"description" : "Basic description",
+		"tiers" : {
+			"1" : {
+				"lower_limit" : 1,
+				"upper_value" : 2
+			}
+		},
+		"item_types" : [],
+		"tags" : []
+	},
+}

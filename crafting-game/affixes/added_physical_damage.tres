@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AffixData" format=3 uid="uid://djp3q402e44jb"]
+
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://affix_data.gd" id="1_nb73s"]
+
+[resource]
+script = ExtResource("1_nb73s")
+description = "Adds %d physical damage"
+stat_name = "added_physical"
+tags = Array[String](["physical"])
+metadata/_custom_type_script = "uid://ftxod0jqfkn4"

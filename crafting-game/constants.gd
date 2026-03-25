@@ -1,0 +1,14 @@
+extends Node
+class_name Constants
+
+enum ItemQuality { BROKEN, BATTERED, WORN, NORMAL, STURDY, EXCEPTIONAL, IMMACULATE }
+enum ItemType { WEAPON, BODY_ARMOR, SHIELD, HELMET, RING, AMULET, CURRENCY }
+enum Rarity { COMMON, UNCOMMON, RARE, LEGENDARY }
+
+# TODO: ADD A UNIQUE CATEGORY THAT CAN'T BE MODIFIED?
+const RARITY_COLORS : Dictionary = {
+	Rarity.COMMON : Color.WHITE,
+	Rarity.UNCOMMON : Color.CORNFLOWER_BLUE,
+	Rarity.RARE : Color.GOLD,
+	Rarity.LEGENDARY : Color.FUCHSIA
+} 

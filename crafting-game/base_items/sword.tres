@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d0shki45u83sc"]
+
+[ext_resource type="Script" uid="uid://bhgy31elxmysk" path="res://stats_table.gd" id="1_bm4l0"]
+[ext_resource type="Script" uid="uid://cjbko7ykaanev" path="res://item_data.gd" id="1_bnj5n"]
+
+[sub_resource type="Resource" id="Resource_bhib8"]
+script = ExtResource("1_bm4l0")
+physical_damage = 2
+metadata/_custom_type_script = "uid://bhgy31elxmysk"
+
+[resource]
+script = ExtResource("1_bnj5n")
+item_name = "Sword"
+base_stats = SubResource("Resource_bhib8")
+metadata/_custom_type_script = "uid://cjbko7ykaanev"

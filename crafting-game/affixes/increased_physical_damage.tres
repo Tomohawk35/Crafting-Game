@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AffixData" format=3 uid="uid://cgvchyuajh501"]
+
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://affix_data.gd" id="1_bqu8t"]
+
+[resource]
+script = ExtResource("1_bqu8t")
+stat_name = "increased_physical_damage"
+min_value = 10.0
+max_value = 20.0
+metadata/_custom_type_script = "uid://ftxod0jqfkn4"
