@@ -1,0 +1,11 @@
+Hire heroes to go on quest
+Manage a town
+Lo-res pixel art
+Craft gear for your heroes to improve the questing ability
+Hard quests provide better item bases / crafting materials
+
+Hero Stats
+	Power - determines success of quest
+	Questing Speed - how fast a quest can be completed / failed
+	Rarity / Quantity Multiplier - affects quest rewards
+	Exp Gain Multiplier

@@ -2,7 +2,13 @@ extends Node
 
 const ITEM_MODIFIERS_FILE_PATH : String = "res://item_modifiers.json"
 
-var ITEM_MODIFIERS : Dictionary = {}
+var AFFIXES : Array = []
+var BASE_ITEMS : Array = []
+
+
+func _ready() -> void:
+	_load_resources_from_folder("res://resources/affixes/", AFFIXES)
+	_load_resources_from_folder("res://resources/base_items/", BASE_ITEMS)
 
 func _import_data(path: String) -> Dictionary:
 	var file_string : String = FileAccess.get_file_as_string(path)
@@ -17,16 +23,19 @@ func _load_resources_from_folder(path: String, target_array: Array) -> void:
 	for file in DirAccess.get_files_at(path):
 		target_array.append(Utils.load_asset(path + file))
 
-func load_db() -> void:
-	var item_modifiers_string : String = FileAccess.get_file_as_string(ITEM_MODIFIERS_FILE_PATH)
-	ITEM_MODIFIERS = JSON.parse_string(item_modifiers_string)
+#func load_db() -> void:
+	#var item_modifiers_string : String = FileAccess.get_file_as_string(ITEM_MODIFIERS_FILE_PATH)
+	#ITEM_MODIFIERS = JSON.parse_string(item_modifiers_string)
 
-func get_random_item_modifier() -> String:
-	return ITEM_MODIFIERS.keys().pick_random()
+func get_random_affix() -> AffixData:
+	return AFFIXES.pick_random()
 
-func get_item_modifiers_by_item_type(item_type: Constants.ItemType) -> Dictionary:
-	var d : Dictionary = {}
-	for mod in ITEM_MODIFIERS.keys():
-		if ITEM_MODIFIERS[mod]["item_types"].has(item_type):
-			d[mod] = ITEM_MODIFIERS[mod]
-	return d
+func get_affixes_by_item_type(item_type: Constants.ItemType) -> Array:
+	return AFFIXES.filter(func(a: AffixData): return a.item_types.has(item_type))
+
+#func get_item_modifiers_by_item_type(item_type: Constants.ItemType) -> Dictionary:
+	#var d : Dictionary = {}
+	#for mod in ITEM_MODIFIERS.keys():
+		#if ITEM_MODIFIERS[mod]["item_types"].has(item_type):
+			#d[mod] = ITEM_MODIFIERS[mod]
+	#return d

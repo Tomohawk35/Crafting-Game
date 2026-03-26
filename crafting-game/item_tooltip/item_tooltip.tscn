@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://klxaigj7i6do" path="res://item_tooltip/item_tooltip.gd" id="1_2gfxr"]
 
+[sub_resource type="Gradient" id="Gradient_v22fw"]
+colors = PackedColorArray(0, 0, 0, 1, 0.34566566, 0.81938934, 0.76498026, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_26gh8"]
+gradient = SubResource("Gradient_v22fw")
+
 [node name="ItemTooltip" type="Control" unique_id=904431948]
 layout_mode = 3
 anchors_preset = 0
@@ -41,10 +47,25 @@ horizontal_alignment = 1
 
 [node name="RarityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=44374775]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Rarity"
 horizontal_alignment = 1
 
-[node name="StatsBox" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1417286831]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=940403177]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_26gh8")
+
+[node name="StatsBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1417286831]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1503372883]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_26gh8")
+
+[node name="AffixBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1415098344]
 unique_name_in_owner = true
 layout_mode = 2
