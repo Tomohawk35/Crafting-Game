@@ -6,8 +6,8 @@ const AFFIX_RATE : float = 0.4
 @export var rarity_table : RarityTable = RarityTable.new()
 @export var quality_table : ItemQualityTable =  ItemQualityTable.new()
 
-func generate_item() -> ItemInstance:
-	var item : ItemInstance = ItemInstance.new()
+func generate_equipment() -> Equipment:
+	var item : Equipment = Equipment.new()
 	item.base_item = SWORD
 	item.quality = quality_table.roll_quality()
 	item.affix_limit = item.quality

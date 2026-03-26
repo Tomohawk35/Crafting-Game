@@ -1,12 +1,12 @@
 extends Control
-class_name ItemTooltip
+class_name EquipmentTooltip
 
 @onready var name_label: Label = %NameLabel
 @onready var rarity_label: Label = %RarityLabel
 @onready var stats_box: VBoxContainer = %StatsBox
 @onready var affix_box: VBoxContainer = %AffixBox
 
-func set_item(item: ItemInstance) -> void:
+func set_item(item: Equipment) -> void:
 	name_label.text = item.get_display_name()
 	name_label.modulate = item.get_color()
 	rarity_label.text = Constants.Rarity.keys()[item.rarity].capitalize()
@@ -27,6 +27,8 @@ func set_item(item: ItemInstance) -> void:
 
 func _clear_stats() -> void:
 	for c in stats_box.get_children():
+		c.queue_free()
+	for c in affix_box.get_children():
 		c.queue_free()
 
 func _format_stat(stat_name: String, value: float) -> String:

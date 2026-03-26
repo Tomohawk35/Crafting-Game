@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cg2d6rttt4xkt"]
 
-[ext_resource type="Script" uid="uid://klxaigj7i6do" path="res://item_tooltip/item_tooltip.gd" id="1_2gfxr"]
+[ext_resource type="Script" uid="uid://klxaigj7i6do" path="res://equipment_tooltip/equipment_tooltip.gd" id="1_2gfxr"]
 
 [sub_resource type="Gradient" id="Gradient_v22fw"]
 colors = PackedColorArray(0, 0, 0, 1, 0.34566566, 0.81938934, 0.76498026, 1)
@@ -8,7 +8,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.34566566, 0.81938934, 0.76498026, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_26gh8"]
 gradient = SubResource("Gradient_v22fw")
 
-[node name="ItemTooltip" type="Control" unique_id=904431948]
+[node name="EquipmentTooltip" type="Control" unique_id=904431948]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
