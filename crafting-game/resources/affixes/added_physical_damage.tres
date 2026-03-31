@@ -7,5 +7,5 @@ script = ExtResource("1_nb73s")
 description = "Adds %d physical damage"
 stat_name = "physical_damage"
 tags = Array[String](["physical", "attack"])
-item_types = Array[int]([0])
+equipment_types = Array[int]([0])
 metadata/_custom_type_script = "uid://ftxod0jqfkn4"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EquipmentInstance" format=3 uid="uid://ch2pgjx3ioe5s"]
+
+[ext_resource type="Script" uid="uid://bu6m4eeyu7v5b" path="res://affix_instance.gd" id="1_bf4vo"]
+[ext_resource type="Resource" uid="uid://bo2pptngij5fp" path="res://resources/base_items/simple_bow.tres" id="1_xs6wi"]
+[ext_resource type="Script" uid="uid://b0qs72k56wyy7" path="res://items/equipment_instance.gd" id="2_xs6wi"]
+
+[resource]
+script = ExtResource("2_xs6wi")
+base_equipment = ExtResource("1_xs6wi")
+metadata/_custom_type_script = "uid://b0qs72k56wyy7"

@@ -1,5 +1,5 @@
 extends Resource
-class_name Equipment
+class_name EquipmentOLD
 
 signal stats_updated
 

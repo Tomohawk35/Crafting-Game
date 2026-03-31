@@ -1,7 +1,7 @@
 extends Control
 
 var generator : ItemGenerator
-var item : Equipment
+var item : EquipmentInstance
 
 @onready var equipment_tooltip: EquipmentTooltip = $EquipmentTooltip
 @onready var generate_button: Button = $GenerateButton

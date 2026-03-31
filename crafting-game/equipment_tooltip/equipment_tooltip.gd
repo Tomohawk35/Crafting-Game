@@ -6,20 +6,20 @@ class_name EquipmentTooltip
 @onready var stats_box: VBoxContainer = %StatsBox
 @onready var affix_box: VBoxContainer = %AffixBox
 
-func set_item(item: Equipment) -> void:
-	name_label.text = item.get_display_name()
+func set_item(item: EquipmentInstance) -> void:
+	name_label.text = item.base_equipment.item_name
 	name_label.modulate = item.get_color()
 	rarity_label.text = Constants.Rarity.keys()[item.rarity].capitalize()
 	
 	_clear_stats()
 	
-	#for stat_name in item.rolled_stats.keys():
+	for affix in item.implicit_affixes:
 		#var value = item.rolled_stats[stat_name]
-		#var l : Label = Label.new()
-		#l.text = _format_stat(stat_name, value)
-		#stats_box.add_child(l)
+		var l : Label = Label.new()
+		l.text = _format_stat(affix.affix_data.stat_name, affix.value)
+		stats_box.add_child(l)
 	
-	for affix in item.affixes:
+	for affix in item.explicit_affixes:
 		var l : Label = Label.new()
 		#l.text = affix.affix_data.description % round(affix.value)
 		l.text = _format_stat(affix.affix_data.stat_name, affix.value)

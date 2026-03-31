@@ -30,8 +30,8 @@ func _load_resources_from_folder(path: String, target_array: Array) -> void:
 func get_random_affix() -> AffixData:
 	return AFFIXES.pick_random()
 
-func get_affixes_by_item_type(item_type: Constants.ItemType) -> Array:
-	return AFFIXES.filter(func(a: AffixData): return a.item_types.has(item_type))
+func get_affixes_by_item_type(item_type: Constants.EquipmentType) -> Array:
+	return AFFIXES.filter(func(a: AffixData): return a.equipment_types.has(item_type))
 
 #func get_item_modifiers_by_item_type(item_type: Constants.ItemType) -> Dictionary:
 	#var d : Dictionary = {}
