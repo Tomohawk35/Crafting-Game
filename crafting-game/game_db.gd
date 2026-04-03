@@ -2,7 +2,7 @@ extends Node
 
 const ITEM_MODIFIERS_FILE_PATH : String = "res://item_modifiers.json"
 
-var AFFIXES : Array = []
+var AFFIXES : Array[AffixData] = []
 var BASE_ITEMS : Array = []
 
 
@@ -30,7 +30,7 @@ func _load_resources_from_folder(path: String, target_array: Array) -> void:
 func get_random_affix() -> AffixData:
 	return AFFIXES.pick_random()
 
-func get_affixes_by_item_type(item_type: Constants.EquipmentType) -> Array:
+func get_affixes_by_item_type(item_type: Constants.EquipmentType) -> Array[AffixData]:
 	return AFFIXES.filter(func(a: AffixData): return a.equipment_types.has(item_type))
 
 #func get_item_modifiers_by_item_type(item_type: Constants.ItemType) -> Dictionary:

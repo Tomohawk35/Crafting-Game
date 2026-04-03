@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AffixData" format=3 uid="uid://be7j80mn0xtue"]
+
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://affix_data.gd" id="1_d6kcq"]
+
+[resource]
+script = ExtResource("1_d6kcq")
+description = "+#% Increased Charisma"
+stat_name = "charisma_pct"
+tags = Array[String](["charisma"])
+equipment_types = Dictionary[int, bool]({
+0: false,
+1: true,
+2: true,
+3: true,
+4: true,
+5: true
+})
+weight = 50
+max_value = 4.0
+metadata/_custom_type_script = "uid://ftxod0jqfkn4"

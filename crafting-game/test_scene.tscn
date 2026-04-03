@@ -37,3 +37,11 @@ offset_top = 223.0
 offset_right = 286.0
 offset_bottom = 254.0
 text = "Add Affix"
+
+[node name="RemoveButton" type="Button" parent="." unique_id=728985497]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 289.0
+offset_right = 286.0
+offset_bottom = 320.0
+text = "Remove Affix"

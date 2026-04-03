@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AffixData" format=3 uid="uid://fb6gthdq2jnk"]
+
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://affix_data.gd" id="1_kfsau"]
+
+[resource]
+script = ExtResource("1_kfsau")
+description = "+# to Dexterity"
+stat_name = "dexterity"
+tags = Array[String](["dexterity"])
+equipment_types = Dictionary[int, bool]({
+0: false,
+1: true,
+2: true,
+3: true,
+4: true,
+5: true
+})
+metadata/_custom_type_script = "uid://ftxod0jqfkn4"

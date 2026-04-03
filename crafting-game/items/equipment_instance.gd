@@ -10,6 +10,10 @@ signal stats_updated
 @export var affix_limit : int
 @export var rarity : Constants.Rarity
 
+func _update_stats() -> void:
+	rarity = get_rarity()
+	stats_updated.emit()
+
 func get_rarity() -> Constants.Rarity:
 	match explicit_affixes.size():
 		0:
@@ -34,3 +38,11 @@ func add_affix() -> void:
 	a_inst.affix_data = possible_affixes.pick_random()
 	a_inst.roll_value()
 	explicit_affixes.append(a_inst)
+	_update_stats()
+
+func remove_affix() -> void:
+	if explicit_affixes.size() <= 0:
+		return
+	var a : AffixInstance = explicit_affixes.pick_random()
+	explicit_affixes.erase(a)
+	_update_stats()

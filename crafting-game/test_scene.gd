@@ -6,10 +6,12 @@ var item : EquipmentInstance
 @onready var equipment_tooltip: EquipmentTooltip = $EquipmentTooltip
 @onready var generate_button: Button = $GenerateButton
 @onready var add_button: Button = $AddButton
+@onready var remove_button: Button = $RemoveButton
 
 func _ready() -> void:
 	generate_button.pressed.connect(_on_generate_button_pressed)
 	add_button.pressed.connect(_on_add_button_pressed)
+	remove_button.pressed.connect(_on_remove_button_pressed)
 
 func _on_generate_button_pressed() -> void:
 	if item:
@@ -25,3 +27,9 @@ func _update_tooltip() -> void:
 
 func _on_add_button_pressed() -> void:
 	item.add_affix()
+
+func _on_remove_button_pressed() -> void:
+	item.remove_affix()
+
+# Should these methods be here or should they be in the 
+# item generator?

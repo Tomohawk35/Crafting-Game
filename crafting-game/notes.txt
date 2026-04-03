@@ -5,7 +5,18 @@ Craft gear for your heroes to improve the questing ability
 Hard quests provide better item bases / crafting materials
 
 Hero Stats
+	Strength
+	Dexterity
+	Intelligence
+	Charisma -> LUCK
+	
+	Level -> Higher base stats
 	Power - determines success of quest
 	Questing Speed - how fast a quest can be completed / failed
 	Rarity / Quantity Multiplier - affects quest rewards
 	Exp Gain Multiplier
+
+Power = sum(Stats)
+
+Quest
+	SuccessChance = PartyPower / (PartyPower + Difficulty ^ p) where p = 1.1 to 1.5
