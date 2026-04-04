@@ -13,7 +13,7 @@ const STAT_RARITY_SCALE : float = 0.25
 @export var hero_name : String
 @export var hero_title : String # Title could give some bonus to stats
 @export var hero_job : HeroJob # dictates Growth rate for stats and bonuses for certain quests
-@export var rarity : Constants.Rarity # Should affect base stats
+@export var rarity : Constants.Rarity # Affect base stats and stat growth
 @export var level : int = 1 # Should affect base stats
 
 @export_category("Base Stats")
@@ -30,7 +30,6 @@ const STAT_RARITY_SCALE : float = 0.25
 
 @export_category("Equipment")
 @export var weapon : EquipmentInstance
-@export var helmet : EquipmentInstance
 
 # TODO: Add the following
 #Rarity / Quantity Multiplier - affects quest rewards

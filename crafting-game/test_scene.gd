@@ -23,8 +23,8 @@ func _on_generate_button_pressed() -> void:
 	if item:
 		item.stats_updated.disconnect(_update_tooltip)
 	item = ItemGenerator.generate_equipment()
-	_update_tooltip()
 	item.stats_updated.connect(_update_tooltip)
+	item._update_stats()
 
 func _update_tooltip() -> void:
 	if item == null:
