@@ -33,7 +33,7 @@ func get_random_affix() -> AffixData:
 	return AFFIXES.pick_random()
 
 func get_affixes_by_item_type(item_type: Constants.EquipmentType) -> Array[AffixData]:
-	return AFFIXES.filter(func(a: AffixData): return a.equipment_types.has(item_type))
+	return AFFIXES.filter(func(a: AffixData): return a.equipment_types[item_type])
 
 #func get_item_modifiers_by_item_type(item_type: Constants.ItemType) -> Dictionary:
 	#var d : Dictionary = {}

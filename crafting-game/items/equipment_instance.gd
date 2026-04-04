@@ -43,6 +43,7 @@ func get_color() -> Color:
 func add_affix() -> void:
 	if explicit_affixes.size() >= affix_limit:
 		return
+	
 	var possible_affixes : Array[AffixData] = GameDB.get_affixes_by_item_type(base_equipment.equipment_type)
 	if possible_affixes.is_empty():
 		return

@@ -16,7 +16,7 @@ class_name AffixData
 	Constants.EquipmentType.RING : false,
 	Constants.EquipmentType.AMULET : false
 }
-@export var weight : int = 500
 
+@export var weight : int = 500
 @export var min_value : float = 1
 @export var max_value : float = 10

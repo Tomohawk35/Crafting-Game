@@ -36,9 +36,9 @@ func _format_stat(stat_name: String, value: float) -> String:
 	
 	if stat_name.ends_with("_pct"):
 		if value > 0:
-			return "%d%% Increased %s" % [round(value), display.replace(" Pct", "")]
+			return "%.2f%% Increased %s" % [value, display.replace(" Pct", "")]
 		else:
-			return "%d%% Decreased %s" % [round(value), display.replace(" Pct", "")]
+			return "%d%% Decreased %s" % [value, display.replace(" Pct", "")]
 	
 	if value > 0:
 		return "+%d %s" % [round(value), display]
