@@ -3,12 +3,14 @@ extends Node
 const ITEM_MODIFIERS_FILE_PATH : String = "res://item_modifiers.json"
 
 var AFFIXES : Array[AffixData] = []
-var BASE_ITEMS : Array = []
+var BASE_ITEMS : Array[Equipment] = []
+var HERO_JOBS : Array[HeroJob] = []
 
 
 func _ready() -> void:
 	_load_resources_from_folder("res://resources/affixes/", AFFIXES)
 	_load_resources_from_folder("res://resources/base_items/", BASE_ITEMS)
+	_load_resources_from_folder("res://resources/hero_jobs/", HERO_JOBS)
 
 func _import_data(path: String) -> Dictionary:
 	var file_string : String = FileAccess.get_file_as_string(path)

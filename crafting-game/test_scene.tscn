@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bc8ku12vb8tju" path="res://test_scene.gd" id="1_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://cg2d6rttt4xkt" path="res://equipment_tooltip/equipment_tooltip.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://t12ki4j186um" path="res://hero_panel.tscn" id="3_sasra"]
 
 [node name="TestScene" type="Control" unique_id=1643633741]
 layout_mode = 3
@@ -45,3 +46,32 @@ offset_top = 289.0
 offset_right = 286.0
 offset_bottom = 320.0
 text = "Remove Affix"
+
+[node name="HeroPanel" parent="." unique_id=423763035 instance=ExtResource("3_sasra")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_right = -123.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="CreateHeroButton" type="Button" parent="." unique_id=1487802729]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 434.0
+offset_right = 1085.0
+offset_bottom = 465.0
+text = "Create Hero
+"
+
+[node name="LevelUpButton" type="Button" parent="." unique_id=1621793449]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 480.0
+offset_right = 1074.0
+offset_bottom = 511.0
+text = "Level Up"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HeroJob" format=3 uid="uid://b7ohuimu41fam"]
+
+[ext_resource type="Script" uid="uid://ci7ivl0dblkn2" path="res://hero_job.gd" id="1_cte8y"]
+
+[resource]
+script = ExtResource("1_cte8y")
+job_name = "Bard"
+strength_growth_rate = 0.8
+charisma_growth_rate = 1.2
+metadata/_custom_type_script = "uid://ci7ivl0dblkn2"

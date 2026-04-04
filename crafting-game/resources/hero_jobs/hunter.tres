@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HeroJob" format=3 uid="uid://bv5mxdds10sm4"]
+
+[ext_resource type="Script" uid="uid://ci7ivl0dblkn2" path="res://hero_job.gd" id="1_g113b"]
+
+[resource]
+script = ExtResource("1_g113b")
+job_name = "Hunter"
+strength_growth_rate = 0.9
+dexterity_growth_rate = 1.2
+metadata/_custom_type_script = "uid://ci7ivl0dblkn2"
