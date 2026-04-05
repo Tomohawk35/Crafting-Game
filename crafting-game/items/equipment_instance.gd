@@ -9,21 +9,18 @@ signal stats_updated
 @export var explicit_affixes : Array[AffixInstance] = []
 @export var affix_limit : int
 @export var rarity : Constants.Rarity
-@export var total_stats : Dictionary
+@export var total_stats : StatsTable
 
 func _update_stats() -> void:
 	rarity = get_rarity()
-	total_stats = {}
+	
+	total_stats = StatsTable.new()
+	
 	for a in implicit_affixes:
-		if total_stats.has(a.affix_data.stat_name):
-			total_stats[a.affix_data.stat_name] += a.value
-		else:
-			total_stats[a.affix_data.stat_name] = a.value
+		total_stats.stats[a.affix_data.stat_name] += a.value
 	for a in explicit_affixes:
-		if total_stats.has(a.affix_data.stat_name):
-			total_stats[a.affix_data.stat_name] += a.value
-		else:
-			total_stats[a.affix_data.stat_name] = a.value
+		total_stats.stats[a.affix_data.stat_name] += a.value
+	
 	stats_updated.emit()
 
 func get_rarity() -> Constants.Rarity:

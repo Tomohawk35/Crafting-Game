@@ -14,7 +14,7 @@ func update_panel(hero: HeroData) -> void:
 	name_label.modulate = Constants.RARITY_COLORS[hero.rarity]
 	class_label.text = hero.hero_job.job_name
 	level_label.text = str(hero.level)
-	strength_label.text = str(int(round(hero.strength)))
-	dexterity_label.text = str(int(round(hero.dexterity)))
-	intelligence_label.text = str(int(round(hero.intelligence)))
-	charisma_label.text = str(int(round(hero.charisma)))
+	strength_label.text = str(int(round(hero.total_strength)))
+	dexterity_label.text = str(int(round(hero.total_dexterity)))
+	intelligence_label.text = str(int(round(hero.total_intelligence)))
+	charisma_label.text = str(int(round(hero.total_charisma)))

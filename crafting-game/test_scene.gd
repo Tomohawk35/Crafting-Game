@@ -20,11 +20,14 @@ func _ready() -> void:
 	level_up_button.pressed.connect(_on_level_up_button_pressed)
 
 func _on_generate_button_pressed() -> void:
+	if !hero:
+		return
 	if item:
 		item.stats_updated.disconnect(_update_tooltip)
 	item = ItemGenerator.generate_equipment()
 	item.stats_updated.connect(_update_tooltip)
 	item._update_stats()
+	hero.equip_item(item)
 
 func _update_tooltip() -> void:
 	if item == null:
@@ -48,6 +51,7 @@ func _on_create_hero_button_pressed() -> void:
 	hero.rarity = Constants.Rarity.values()[randi_range(0, Constants.Rarity.size() - 1)]
 	hero.set_base_stats()
 	hero.get_initial_stats()
+	hero.get_total_stats()
 	hero_panel.update_panel(hero)
 	hero.stats_updated.connect(_on_hero_stats_updated)
 
