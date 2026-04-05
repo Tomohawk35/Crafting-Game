@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bjpmwg4k5vjlu"]
+
+[ext_resource type="Texture2D" uid="uid://cg386544nxe2f" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/bow_02cc.png" id="1_bqvyk"]
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="2_gwi0u"]
+[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="3_0p5yj"]
+
+[resource]
+script = ExtResource("3_0p5yj")
+item_name = "Mithril Bow"
+icon = ExtResource("1_bqvyk")
+metadata/_custom_type_script = "uid://b3oo6gfvxhvrk"

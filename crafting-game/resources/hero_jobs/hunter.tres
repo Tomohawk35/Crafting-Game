@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="HeroJob" format=3 uid="uid://bv5mxdds10sm4"]
 
-[ext_resource type="Script" uid="uid://ci7ivl0dblkn2" path="res://hero_job.gd" id="1_g113b"]
+[ext_resource type="Script" uid="uid://ci7ivl0dblkn2" path="res://resources/scripts/hero_job.gd" id="1_g113b"]
 
 [resource]
 script = ExtResource("1_g113b")

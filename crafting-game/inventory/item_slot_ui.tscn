@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cq60rwikmkkud"]
+
+[ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://inventory/item_slot_ui.gd" id="1_dndjr"]
+
+[node name="ItemSlotUi" type="Control" unique_id=592167832]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dndjr")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=707698535]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1233955707]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MarginContainer" unique_id=61052615]
+position = Vector2(12, 12)
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=1857650676]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 2

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bqnxnegubopp8"]
+
+[ext_resource type="Texture2D" uid="uid://b6wj5idga5n2g" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/shield_02d.png" id="1_gbqx8"]
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="2_hsl5s"]
+[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="3_4i8dr"]
+
+[resource]
+script = ExtResource("3_4i8dr")
+equipment_type = 2
+item_name = "Templar Shield"
+icon = ExtResource("1_gbqx8")
+metadata/_custom_type_script = "uid://b3oo6gfvxhvrk"

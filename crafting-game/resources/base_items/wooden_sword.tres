@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://nxc8dp6wrj0m"]
 
-[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://affix_data.gd" id="1_36r3b"]
-[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="2_1lmvk"]
+[ext_resource type="Texture2D" uid="uid://dbngrmtkgl58s" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/sword_01a.png" id="1_1lmvk"]
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="2_21c1r"]
+[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="3_wthu2"]
 
 [resource]
-script = ExtResource("2_1lmvk")
+script = ExtResource("3_wthu2")
 item_name = "Wooden Sword"
+icon = ExtResource("1_1lmvk")
 metadata/_custom_type_script = "uid://b3oo6gfvxhvrk"

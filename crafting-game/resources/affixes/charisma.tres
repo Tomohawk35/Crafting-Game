@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AffixData" format=3 uid="uid://cj7j34iqm1701"]
 
-[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://affix_data.gd" id="1_ihl6l"]
+[ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="1_ihl6l"]
 
 [resource]
 script = ExtResource("1_ihl6l")
