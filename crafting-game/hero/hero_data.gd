@@ -29,8 +29,8 @@ const STAT_RARITY_SCALE : float = 0.25
 @export var charisma : float
 
 @export_category("Equipment")
-@export var weapon : EquipmentInstance
-@export var helmet : EquipmentInstance
+@export var weapon : Equipment
+@export var helmet : Equipment
 
 @export_category("Final Stats")
 @export var total_equipment_stats : StatsTable
@@ -48,7 +48,7 @@ const STAT_RARITY_SCALE : float = 0.25
 func _get_stat_growth(growth_rate: float, level_change: int = 1) -> float:
 	return growth_rate * level_change + rarity * STAT_RARITY_SCALE * level_change
 
-func _get_stats_from_equipment(equipment: EquipmentInstance) -> void:
+func _get_stats_from_equipment(equipment: Equipment) -> void:
 	if equipment == null:
 		return
 	for stat in equipment.total_stats.stats.keys():
@@ -85,8 +85,8 @@ func level_up() -> void:
 	charisma += _get_stat_growth(hero_job.charisma_growth_rate)
 	get_total_stats()
 
-func equip_item(item: EquipmentInstance) -> void:
-	match item.base_equipment.equipment_type:
+func equip_item(item: Equipment) -> void:
+	match item.equipment_type:
 		Constants.EquipmentType.WEAPON:
 			if weapon:
 				unequip_item(weapon)
@@ -100,6 +100,6 @@ func equip_item(item: EquipmentInstance) -> void:
 			get_total_stats()
 			helmet.stats_updated.connect(get_total_stats)
 
-func unequip_item(item: EquipmentInstance) -> void:
+func unequip_item(item: Equipment) -> void:
 	item.stats_updated.disconnect(get_total_stats)
 	# TODO: Move item to inventory

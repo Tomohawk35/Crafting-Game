@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bsq4tjfdfmb4d"]
+[gd_resource type="Resource" script_class="EquipmentBase" format=3 uid="uid://bsq4tjfdfmb4d"]
 
 [ext_resource type="Texture2D" uid="uid://b15mes08bkyql" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/staff_02c.png" id="1_ut2gu"]
 [ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="2_6oa5b"]
-[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="3_01u6s"]
+[ext_resource type="Script" uid="uid://hsv3uv0r1tey" path="res://items/equipment_base.gd" id="3_ut2gu"]
 
 [resource]
-script = ExtResource("3_01u6s")
+script = ExtResource("3_ut2gu")
 item_name = "Wizard Staff"
 icon = ExtResource("1_ut2gu")
 metadata/_custom_type_script = "uid://b3oo6gfvxhvrk"

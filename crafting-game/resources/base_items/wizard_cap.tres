@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://b2jg87gsqqstv"]
+[gd_resource type="Resource" script_class="EquipmentBase" format=3 uid="uid://b2jg87gsqqstv"]
 
 [ext_resource type="Texture2D" uid="uid://dgj0olyxyas06" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/hat_01c.png" id="1_36tqp"]
 [ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="2_6fi7n"]
-[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="3_3n88s"]
+[ext_resource type="Script" uid="uid://hsv3uv0r1tey" path="res://items/equipment_base.gd" id="3_36tqp"]
 
 [resource]
-script = ExtResource("3_3n88s")
-equipment_type = 3
+script = ExtResource("3_36tqp")
 item_name = "Wizard Cap"
 icon = ExtResource("1_36tqp")
+equipment_type = 3
 metadata/_custom_type_script = "uid://b3oo6gfvxhvrk"

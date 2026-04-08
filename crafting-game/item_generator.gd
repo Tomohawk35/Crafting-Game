@@ -11,20 +11,23 @@ func _get_affix_instance(affix_data: AffixData) -> AffixInstance:
 	a_inst.roll_value()
 	return a_inst
 
-func generate_equipment() -> EquipmentInstance:
-	var item : EquipmentInstance = EquipmentInstance.new()
-	item.base_equipment = GameDB.BASE_ITEMS.pick_random()
+func generate_equipment() -> Equipment:
+	var item : Equipment = Equipment.new()
+	var item_base : EquipmentBase = GameDB.BASE_ITEMS.pick_random()
+	item.item_name = item_base.item_name
+	item.icon = item_base.icon
+	item.equipment_type = item_base.equipment_type
 	#item.quality = quality_table.roll_quality()
 	item.affix_limit = 6
 	
-	for i in range(item.base_equipment.implicits.size()):
-		var a_inst : AffixInstance = _get_affix_instance(item.base_equipment.implicits[i])
+	for i in range(item_base.implicits.size()):
+		var a_inst : AffixInstance = _get_affix_instance(item_base.implicits[i])
 		item.implicit_affixes.append(a_inst)
 	
 	for i in range(item.affix_limit):
 		var n : float = randf()
 		if n >= AFFIX_RATE:
-			var a : AffixData = GameDB.get_affixes_by_item_type(item.base_equipment.equipment_type).pick_random()
+			var a : AffixData = GameDB.get_affixes_by_item_type(item.equipment_type).pick_random()
 			var a_inst : AffixInstance = _get_affix_instance(a)
 			item.explicit_affixes.append(a_inst)
 	

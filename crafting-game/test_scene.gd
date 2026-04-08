@@ -1,7 +1,7 @@
 extends Control
 
 var generator : ItemGenerator
-var item : EquipmentInstance
+var item : Equipment
 var hero : HeroData
 
 @onready var equipment_tooltip: EquipmentTooltip = $EquipmentTooltip

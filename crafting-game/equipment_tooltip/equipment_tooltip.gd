@@ -6,8 +6,8 @@ class_name EquipmentTooltip
 @onready var stats_box: VBoxContainer = %StatsBox
 @onready var affix_box: VBoxContainer = %AffixBox
 
-func set_item(item: EquipmentInstance) -> void:
-	name_label.text = item.base_equipment.item_name
+func set_item(item: Equipment) -> void:
+	name_label.text = item.item_name
 	name_label.modulate = item.get_color()
 	rarity_label.text = Constants.Rarity.keys()[item.rarity].capitalize()
 	

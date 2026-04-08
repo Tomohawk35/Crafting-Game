@@ -3,7 +3,7 @@ extends Node
 const ITEM_MODIFIERS_FILE_PATH : String = "res://item_modifiers.json"
 
 var AFFIXES : Array[AffixData] = []
-var BASE_ITEMS : Array[Equipment] = []
+var BASE_ITEMS : Array[EquipmentBase] = []
 var HERO_JOBS : Array[HeroJob] = []
 
 

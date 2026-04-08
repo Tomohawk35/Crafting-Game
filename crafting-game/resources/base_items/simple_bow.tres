@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bo2pptngij5fp"]
+[gd_resource type="Resource" script_class="EquipmentBase" format=3 uid="uid://bo2pptngij5fp"]
 
 [ext_resource type="Texture2D" uid="uid://b44gdx381ubsy" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/bow_01a.png" id="1_0q435"]
 [ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://resources/scripts/affix_data.gd" id="2_4blcg"]
-[ext_resource type="Script" uid="uid://b3oo6gfvxhvrk" path="res://items/equipment.gd" id="3_j3v1x"]
+[ext_resource type="Script" uid="uid://hsv3uv0r1tey" path="res://items/equipment_base.gd" id="3_0q435"]
 
 [resource]
-script = ExtResource("3_j3v1x")
+script = ExtResource("3_0q435")
 item_name = "Simple Bow"
 icon = ExtResource("1_0q435")
 metadata/_custom_type_script = "uid://b3oo6gfvxhvrk"
