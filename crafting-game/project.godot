@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 GameDB="*uid://c0y36mr3l6nqv"
 ItemGenerator="*uid://dqttsnvhk65lu"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -26,3 +31,5 @@ ItemGenerator="*uid://dqttsnvhk65lu"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cq60rwikmkkud"]
 
 [ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://inventory/item_slot_ui.gd" id="1_dndjr"]
+[ext_resource type="Texture2D" uid="uid://ddl4rxa7pbj08" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/arrow_01a.png" id="2_2xl3h"]
 
 [node name="ItemSlotUi" type="Control" unique_id=592167832]
 layout_mode = 3
@@ -22,6 +23,7 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MarginContainer" unique_id=61052615]
 position = Vector2(12, 12)
+texture = ExtResource("2_2xl3h")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=1857650676]
 custom_minimum_size = Vector2(16, 16)
