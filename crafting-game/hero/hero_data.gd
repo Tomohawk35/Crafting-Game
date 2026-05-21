@@ -28,9 +28,14 @@ const STAT_RARITY_SCALE : float = 0.25
 @export var intelligence : float
 @export var charisma : float
 
-@export_category("Equipment")
+@export_category("Equipment") # WEAPON, BODY_ARMOR, SHIELD, HELMET, RING, AMULET, GLOVES
 @export var weapon : Equipment
+@export var body_armor : Equipment
+@export var shield : Equipment
 @export var helmet : Equipment
+@export var ring : Equipment
+@export var amulet : Equipment
+@export var gloves : Equipment
 
 @export_category("Final Stats")
 @export var total_equipment_stats : StatsTable
@@ -58,6 +63,11 @@ func get_total_stats() -> void:
 	total_equipment_stats = StatsTable.new()
 	_get_stats_from_equipment(weapon)
 	_get_stats_from_equipment(helmet)
+	_get_stats_from_equipment(ring)
+	_get_stats_from_equipment(gloves)
+	_get_stats_from_equipment(amulet)
+	_get_stats_from_equipment(shield)
+	_get_stats_from_equipment(body_armor)
 	total_strength = (strength + total_equipment_stats.stats["strength"]) * (1 + total_equipment_stats.stats["strength_pct"] / 100)
 	total_dexterity = (dexterity + total_equipment_stats.stats["dexterity"]) * (1 + total_equipment_stats.stats["dexterity_pct"] / 100)
 	total_intelligence = (intelligence + total_equipment_stats.stats["intelligence"]) * (1 + total_equipment_stats.stats["intelligence_pct"] / 100)
@@ -85,20 +95,50 @@ func level_up() -> void:
 	charisma += _get_stat_growth(hero_job.charisma_growth_rate)
 	get_total_stats()
 
-func equip_item(item: Equipment) -> void:
-	match item.equipment_type:
+func equip_item(item: Equipment) -> void: # TODO: add remaining equipment slots # HACK: Clean up some way?
+	match item.equipment_type: # WEAPON, BODY_ARMOR, SHIELD, HELMET, RING, AMULET, GLOVES
 		Constants.EquipmentType.WEAPON:
 			if weapon:
 				unequip_item(weapon)
 			weapon = item
 			get_total_stats()
 			weapon.stats_updated.connect(get_total_stats)
+		Constants.EquipmentType.BODY_ARMOR:
+			if body_armor:
+				unequip_item(body_armor)
+			body_armor = item
+			get_total_stats()
+			body_armor.stats_updated.connect(get_total_stats)
+		Constants.EquipmentType.SHIELD:
+			if shield:
+				unequip_item(shield)
+			shield = item
+			get_total_stats()
+			shield.stats_updated.connect(get_total_stats)
 		Constants.EquipmentType.HELMET:
 			if helmet:
 				unequip_item(helmet)
 			helmet = item
 			get_total_stats()
 			helmet.stats_updated.connect(get_total_stats)
+		Constants.EquipmentType.RING:
+			if ring:
+				unequip_item(ring)
+			ring = item
+			get_total_stats()
+			ring.stats_updated.connect(get_total_stats)
+		Constants.EquipmentType.AMULET:
+			if amulet:
+				unequip_item(amulet)
+			amulet = item
+			get_total_stats()
+			amulet.stats_updated.connect(get_total_stats)
+		Constants.EquipmentType.GLOVES:
+			if gloves:
+				unequip_item(gloves)
+			gloves = item
+			get_total_stats()
+			gloves.stats_updated.connect(get_total_stats)
 
 func unequip_item(item: Equipment) -> void:
 	item.stats_updated.disconnect(get_total_stats)

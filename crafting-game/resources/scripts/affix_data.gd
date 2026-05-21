@@ -9,12 +9,13 @@ class_name AffixData
 @export var stat_name : String
 @export var tags : Array[String] = [] # HACK: Is this necessary?
 @export var equipment_types : Dictionary[Constants.EquipmentType, bool] = {
-	Constants.EquipmentType.WEAPON : false,
-	Constants.EquipmentType.BODY_ARMOR : false,
-	Constants.EquipmentType.SHIELD : false,
-	Constants.EquipmentType.HELMET : false,
-	Constants.EquipmentType.RING : false,
-	Constants.EquipmentType.AMULET : false
+	Constants.EquipmentType.WEAPON : true,
+	Constants.EquipmentType.BODY_ARMOR : true,
+	Constants.EquipmentType.SHIELD : true,
+	Constants.EquipmentType.HELMET : true,
+	Constants.EquipmentType.RING : true,
+	Constants.EquipmentType.AMULET : true,
+	Constants.EquipmentType.GLOVES : true
 }
 
 @export var weight : int = 500

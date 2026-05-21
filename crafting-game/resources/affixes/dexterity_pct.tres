@@ -13,7 +13,8 @@ equipment_types = Dictionary[int, bool]({
 2: true,
 3: true,
 4: true,
-5: true
+5: true,
+6: true
 })
 weight = 50
 max_value = 4.0
