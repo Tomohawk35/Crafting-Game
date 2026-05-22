@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://culyclg3trqsu"]
+
+[ext_resource type="Script" uid="uid://bwv068j1jh4ac" path="res://equipment_panel/equipment_panel.gd" id="1_kjb1q"]
+[ext_resource type="Texture2D" uid="uid://dls58swuwkqsb" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/armor_01d.png" id="2_p76d0"]
+
+[sub_resource type="Gradient" id="Gradient_v22fw"]
+colors = PackedColorArray(0, 0, 0, 1, 0.34566566, 0.81938934, 0.76498026, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sit0t"]
+gradient = SubResource("Gradient_v22fw")
+width = 32
+
+[node name="EquipmentPanel" type="Control" unique_id=1840560489]
+custom_minimum_size = Vector2(256, 72)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 84.0
+offset_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_kjb1q")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1694418428]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 72.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=702371094]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=244987034]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=142002518]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 8)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Item Name"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RarityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=378130038]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Rarity"
+horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1274262239]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_p76d0")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1539283459]
+custom_minimum_size = Vector2(32, 4)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_sit0t")
+expand_mode = 2
+
+[node name="StatsBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1457508750]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=845072950]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_sit0t")
+
+[node name="AffixBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1549614666]
+unique_name_in_owner = true
+layout_mode = 2

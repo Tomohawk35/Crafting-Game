@@ -1,16 +1,18 @@
-extends Control
+extends Node
 
 var generator : ItemGenerator
 var item : Equipment
 var hero : HeroData
 
-@onready var equipment_tooltip: EquipmentTooltip = $EquipmentTooltip
-@onready var generate_button: Button = $GenerateButton
-@onready var add_button: Button = $AddButton
-@onready var remove_button: Button = $RemoveButton
-@onready var create_hero_button: Button = $CreateHeroButton
-@onready var hero_panel: HeroPanel = $HeroPanel
-@onready var level_up_button: Button = $LevelUpButton
+
+@onready var generate_button: Button = $CanvasLayer/GenerateButton
+@onready var add_button: Button = $CanvasLayer/AddButton
+@onready var remove_button: Button = $CanvasLayer/RemoveButton
+@onready var create_hero_button: Button = $CanvasLayer/CreateHeroButton
+@onready var level_up_button: Button = $CanvasLayer/LevelUpButton
+@onready var equipment_panel: Control = $CanvasLayer/HBoxContainer/EquipmentPanel
+@onready var hero_panel: HeroPanel = $CanvasLayer/HBoxContainer/HeroPanel
+@onready var equipment_tooltip: EquipmentTooltip = $CanvasLayer/EquipmentTooltip
 
 func _ready() -> void:
 	generate_button.pressed.connect(_on_generate_button_pressed)

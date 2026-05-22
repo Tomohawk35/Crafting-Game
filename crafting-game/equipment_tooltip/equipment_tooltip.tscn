@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cg2d6rttt4xkt"]
 
 [ext_resource type="Script" uid="uid://klxaigj7i6do" path="res://equipment_tooltip/equipment_tooltip.gd" id="1_2gfxr"]
+[ext_resource type="Texture2D" uid="uid://dls58swuwkqsb" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/armor_01d.png" id="2_801d7"]
 
 [sub_resource type="Gradient" id="Gradient_v22fw"]
 colors = PackedColorArray(0, 0, 0, 1, 0.34566566, 0.81938934, 0.76498026, 1)
@@ -51,6 +52,13 @@ visible = false
 layout_mode = 2
 text = "Rarity"
 horizontal_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1876206419]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_801d7")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=940403177]
 custom_minimum_size = Vector2(0, 8)

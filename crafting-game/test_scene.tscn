@@ -2,19 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bc8ku12vb8tju" path="res://test_scene.gd" id="1_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://cg2d6rttt4xkt" path="res://equipment_tooltip/equipment_tooltip.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://culyclg3trqsu" path="res://equipment_panel/equipment_panel.tscn" id="3_coq8p"]
 [ext_resource type="PackedScene" uid="uid://t12ki4j186um" path="res://hero_panel/hero_panel.tscn" id="3_sasra"]
 
-[node name="TestScene" type="Control" unique_id=1643633741]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TestScene" type="Node" unique_id=348670785]
 script = ExtResource("1_ia1lp")
 
-[node name="EquipmentTooltip" parent="." unique_id=904431948 instance=ExtResource("1_uhqqe")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232651332]
+
+[node name="EquipmentTooltip" parent="CanvasLayer" unique_id=904431948 instance=ExtResource("1_uhqqe")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -23,57 +19,59 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GenerateButton" type="Button" parent="." unique_id=1856539874]
-layout_mode = 0
+[node name="GenerateButton" type="Button" parent="CanvasLayer" unique_id=1856539874]
 offset_left = 202.0
 offset_top = 172.0
 offset_right = 282.0
 offset_bottom = 203.0
 text = "Generate"
 
-[node name="AddButton" type="Button" parent="." unique_id=1406873276]
-layout_mode = 0
+[node name="AddButton" type="Button" parent="CanvasLayer" unique_id=1406873276]
 offset_left = 207.0
 offset_top = 223.0
 offset_right = 286.0
 offset_bottom = 254.0
 text = "Add Affix"
 
-[node name="RemoveButton" type="Button" parent="." unique_id=728985497]
-layout_mode = 0
+[node name="RemoveButton" type="Button" parent="CanvasLayer" unique_id=728985497]
 offset_left = 207.0
 offset_top = 289.0
-offset_right = 286.0
+offset_right = 317.0
 offset_bottom = 320.0
 text = "Remove Affix"
 
-[node name="HeroPanel" parent="." unique_id=423763035 instance=ExtResource("3_sasra")]
-layout_mode = 1
+[node name="CreateHeroButton" type="Button" parent="CanvasLayer" unique_id=1487802729]
+offset_left = 983.0
+offset_top = 461.0
+offset_right = 1085.0
+offset_bottom = 492.0
+text = "Create Hero
+"
+
+[node name="LevelUpButton" type="Button" parent="CanvasLayer" unique_id=1621793449]
+offset_left = 999.0
+offset_top = 507.0
+offset_right = 1074.0
+offset_bottom = 538.0
+text = "Level Up"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=2082366393]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = -57.0
-offset_right = -123.0
-offset_bottom = -57.0
+offset_left = -238.0
+offset_top = -110.0
+offset_right = -18.0
+offset_bottom = 110.0
 grow_horizontal = 0
 grow_vertical = 2
+size_flags_horizontal = 3
 
-[node name="CreateHeroButton" type="Button" parent="." unique_id=1487802729]
-layout_mode = 0
-offset_left = 983.0
-offset_top = 434.0
-offset_right = 1085.0
-offset_bottom = 465.0
-text = "Create Hero
-"
+[node name="EquipmentPanel" parent="CanvasLayer/HBoxContainer" unique_id=1840560489 instance=ExtResource("3_coq8p")]
+layout_mode = 2
 
-[node name="LevelUpButton" type="Button" parent="." unique_id=1621793449]
-layout_mode = 0
-offset_left = 999.0
-offset_top = 480.0
-offset_right = 1074.0
-offset_bottom = 511.0
-text = "Level Up"
+[node name="HeroPanel" parent="CanvasLayer/HBoxContainer" unique_id=423763035 instance=ExtResource("3_sasra")]
+layout_mode = 2
+size_flags_horizontal = 8
