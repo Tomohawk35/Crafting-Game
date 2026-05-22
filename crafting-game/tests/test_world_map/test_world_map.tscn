@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ghgd8ekoi1st" path="res://tests/test_world_map/roguelikeSheet_transparent.png" id="1_tngxt"]
 [ext_resource type="Script" uid="uid://dqw2j110x2b4j" path="res://tests/test_world_map/camera_2d.gd" id="2_sl6gu"]
+[ext_resource type="PackedScene" uid="uid://bodkb4myveenn" path="res://locations/tavern/tavern.tscn" id="3_uhfl8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl6gu"]
 texture = ExtResource("1_tngxt")
@@ -1719,3 +1720,6 @@ tile_set = SubResource("TileSet_uhfl8")
 [node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=454720701]
 position = Vector2(575, 325)
 script = ExtResource("2_sl6gu")
+
+[node name="Tavern" parent="Node2D" unique_id=379177377 instance=ExtResource("3_uhfl8")]
+position = Vector2(331, 255)

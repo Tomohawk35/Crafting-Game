@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bodkb4myveenn"]
+
+[ext_resource type="Script" uid="uid://orkwpt6wgod6" path="res://locations/tavern/tavern.gd" id="1_grpkn"]
+[ext_resource type="Texture2D" uid="uid://b420gfm5ikgl4" path="res://icon.svg" id="2_0gjd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j57f"]
+size = Vector2(139, 143)
+
+[node name="Tavern" type="Node2D" unique_id=379177377]
+script = ExtResource("1_grpkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=670447983]
+position = Vector2(0, -55)
+texture = ExtResource("2_0gjd6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=796288287]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1652057642]
+position = Vector2(0.5, -57.5)
+shape = SubResource("RectangleShape2D_1j57f")

@@ -1,17 +1,17 @@
 extends Camera2D
 
 ## Zoom speed: multiplies [member Camera2D.zoom] each mouse wheel scroll (set to 1 to disable zooming).
-@export_range(0.1, 10) var zoom_factor := 0.2
+@export_range(0.1, 10) var zoom_factor : float = 0.2
 ## Minimum [member Camera2D.zoom].
-@export_range(0.01, 100) var zoom_min := 0.1
+@export_range(0.01, 100) var zoom_min : float = 0.5
 ## Maximum [member Camera2D.zoom].
-@export_range(0.01, 100) var zoom_max := 10.0
+@export_range(0.01, 100) var zoom_max : float = 2.0
 ## If [code]true[/code], [member MapCamera2D.zoom_min] is effectively increased (up to [member MapCamera2D.zoom_max]) to stay within limits.
-@export var zoom_limited := true
+@export var zoom_limited : bool = true
 ## If [code]true[/code], mouse zooming is done relative to the cursor (instead of to the center of the screen).
-@export var zoom_relative := true
+@export var zoom_relative : bool = true
 ## If [code]true[/code], zooming can also be done with the plus and minus keys.
-@export var zoom_keyboard := true
+@export var zoom_keyboard : bool= true
 
 @export var pan_speed : float = 1.0
 
@@ -40,10 +40,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		last_position = Vector2.ZERO
 	
 	if event.is_action_pressed("zoom_in"):
-		zoom += Vector2(zoom_factor, zoom_factor)
+		if zoom.x < zoom_max:
+			zoom += Vector2(zoom_factor, zoom_factor)
 	
 	if event.is_action_pressed("zoom_out"):
-		zoom -= Vector2(zoom_factor, zoom_factor)
+		if zoom.x > zoom_min:
+			zoom -= Vector2(zoom_factor, zoom_factor)
 	
 	if event.is_action_pressed("select"):
 		if not is_dragging:
@@ -56,6 +58,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var difference : Vector2 = Vector2.ZERO
 			difference.x = drag_position.x - last_position.x
 			difference.y = drag_position.y - last_position.y
-			global_position -= (difference * pan_speed)
+			#global_position -= (difference * pan_speed)
+			global_position -= difference # TODO: Need to add smoothing due to pixel art
 		last_position = drag_position
 		
