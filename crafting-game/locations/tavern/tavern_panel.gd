@@ -58,7 +58,6 @@ func _update_panel() -> void:
 		for key: String in data.level_up_resource_cost.keys():
 			l = PANEL_LABEL.instantiate()
 			l.text_label.text = key.capitalize() + ": "
-			#l.value_label.text = str(data.level_up_resource_cost[key])
 			l.value_label.text = "%.0f" % (data.level_up_resource_cost[key])
 			upgrade_cost_container.add_child(l)
 		cost_to_upgrade_header.show()
@@ -69,20 +68,11 @@ func _generate_recruitable_heroes() -> void: # TODO: Incorporate tavern level
 	for child in hero_recruit_card_container.get_children():
 		child.queue_free()
 	for i in range(MAX_RECRUITABLE_HEROES):
-		var h : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
-		#h.hero_data = HeroData.new()
-		#h.hero_data.hero_name = HeroData.HERO_NAMES.pick_random()
-		#h.hero_data.hero_title = HeroData.HERO_TITLES.pick_random()
-		#h.hero_data.hero_job = GameDB.HERO_JOBS.pick_random()
-		#h.hero_data.level = randi_range(1, 8)
-		#h.hero_data.rarity = Constants.Rarity.values()[randi_range(0, Constants.Rarity.size() - 1)]
-		#h.hero_data.set_base_stats()
-		#h.hero_data.get_initial_stats()
-		#h.hero_data.get_total_stats()
-		#h.recruit_cost = _calculate_recruit_cost(h.hero_data)
-		h.hero_data = HeroGenerator.generate_hero()
-		h.recruit_cost = HeroGenerator.calculate_recruit_cost(h.hero_data)
-		hero_recruit_card_container.add_child(h)
+		var c : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
+		var h : HeroData = HeroGenerator.generate_hero()
+		c.hero_data = h
+		c.recruit_cost = HeroGenerator.calculate_recruit_cost(h)
+		hero_recruit_card_container.add_child(c)
 
 #func _calculate_recruit_cost(h: HeroData) -> int:
 	#return (h.rarity + 1) * h.level * 10

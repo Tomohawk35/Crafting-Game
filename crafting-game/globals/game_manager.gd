@@ -13,7 +13,6 @@ var resources : Dictionary[String, int] = {
 var tavern : BuildingData 
 
 # ADVENTURERS
-var recruitable_heroes : Array[HeroData] = [] # TODO: Make wrapper to include recruit cost in case of randomization in cost
 var hero_roster : Array[HeroData] = []
 
 # QUESTS

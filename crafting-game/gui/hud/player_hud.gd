@@ -11,8 +11,15 @@ func _ready() -> void:
 	GameManager.resource_changed.connect(_on_resource_changed)
 
 func _on_resource_changed(r: String) -> void:
-	if r == "gold":
-		_set_gold_value()
+	match r:
+		"gold":
+			_set_gold_value()
+		"wood":
+			_set_wood_value()
+		"stone":
+			_set_stone_value()
+		_:
+			pass
 
 func _set_gold_value() -> void:
 	gold_value_label.text = str(GameManager.resources["gold"])

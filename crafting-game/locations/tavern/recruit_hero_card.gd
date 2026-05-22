@@ -36,7 +36,7 @@ func _on_recruit_button_pressed() -> void:
 		#GameManager.remove_gold(recruit_cost)
 	if GameManager.has_resources("gold", recruit_cost):
 		GameManager.remove_resources("gold", recruit_cost)
-		# TODO: Add character to roster
+		GameManager.hero_roster.append(hero_data)
 		grey_filter_panel.visible = true
 		recruit_button.disabled = true
 	# TODO: Add red color and shake effect if not enough gold
