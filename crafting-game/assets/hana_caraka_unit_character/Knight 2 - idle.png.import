@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cskef2i8mxi0u"
-path="res://.godot/imported/Wizard 1 - idle.png-18881e4cc2787f8b4799d8ff63e07fa7.ctex"
+uid="uid://cm5viypehbj1s"
+path="res://.godot/imported/Knight 2 - idle.png-ca456d3bea08c748009764ed861f01c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hero_panel/Wizard 1 - idle.png"
-dest_files=["res://.godot/imported/Wizard 1 - idle.png-18881e4cc2787f8b4799d8ff63e07fa7.ctex"]
+source_file="res://assets/hana_caraka_unit_character/Knight 2 - idle.png"
+dest_files=["res://.godot/imported/Knight 2 - idle.png-ca456d3bea08c748009764ed861f01c3.ctex"]
 
 [params]
 

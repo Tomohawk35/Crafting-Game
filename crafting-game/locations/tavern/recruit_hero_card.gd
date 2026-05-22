@@ -15,6 +15,7 @@ var recruit_cost : int = 745
 @onready var recruit_button: Button = %RecruitButton
 @onready var grey_filter_panel: Panel = %GreyFilterPanel
 
+
 func _ready() -> void:
 	if hero_data:
 		_update_card()
@@ -31,9 +32,13 @@ func _update_card() -> void:
 	recruit_cost_label.text = str(recruit_cost) # TODO: Need to calculate recruit cost somewhere
 
 func _on_recruit_button_pressed() -> void:
-	# TODO: Check if player has enough gold
-	# TODO: Add character to roster
-	grey_filter_panel.visible = true
-	recruit_button.disabled = true
+	#if GameManager.has_gold(recruit_cost): 
+		#GameManager.remove_gold(recruit_cost)
+	if GameManager.has_resources("gold", recruit_cost):
+		GameManager.remove_resources("gold", recruit_cost)
+		# TODO: Add character to roster
+		grey_filter_panel.visible = true
+		recruit_button.disabled = true
+	# TODO: Add red color and shake effect if not enough gold
 
 # TODO: Add a way to replace/reroll recruitable heroes

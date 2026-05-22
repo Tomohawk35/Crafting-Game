@@ -26,7 +26,7 @@ func _ready() -> void:
 	upgrade_button.pressed.connect(_on_upgrade_button_pressed)
 	hide()
 
-func _on_tavern_clicked(d: BuildingData) -> void:
+func _on_tavern_clicked(d: BuildingData) -> void: # TODO: remove building data being passed in signal
 	#if data:
 		#data.leveled_up.disconnect(_update_panel)
 	#data = d
@@ -35,8 +35,12 @@ func _on_tavern_clicked(d: BuildingData) -> void:
 	show()
 
 func _on_upgrade_button_pressed() -> void:
-	data.level_up()
-	_generate_recruitable_heroes() # TODO: Need to setup persistant data for hero cards
+	#if GameManager.has_gold(data.level_up_gold_cost): # TODO: Need to check for other resources as well
+	if GameManager.has_resources("gold", data.level_up_gold_cost): # TODO: Need to check for other resources as well
+		#GameManager.remove_gold(data.level_up_gold_cost)
+		GameManager.remove_resources("gold", data.level_up_gold_cost)
+		data.level_up()
+		_generate_recruitable_heroes() # TODO: Need to setup persistant data for hero cards
 
 func _update_panel() -> void:
 	level_value_label.text = str(data.level)
