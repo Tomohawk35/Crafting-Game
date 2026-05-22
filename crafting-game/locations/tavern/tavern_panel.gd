@@ -1,0 +1,85 @@
+extends Control
+class_name TavernPanel
+
+const PANEL_LABEL : PackedScene = preload("uid://ej4wowvxpjnd")
+const RECRUIT_HERO_CARD : PackedScene = preload("uid://ga03mwgqir1n")
+
+const MAX_RECRUITABLE_HEROES : int = 3
+
+var data: BuildingData
+
+@onready var level_value_label: Label = %LevelValueLabel
+@onready var cost_to_upgrade_header: Label = %CostToUpgradeHeader
+@onready var upgrade_cost_container: VBoxContainer = %UpgradeCostContainer
+@onready var upgrade_button: Button = %UpgradeButton
+@onready var hero_recruit_card_container: HBoxContainer = %HeroRecruitCardContainer
+
+func _ready() -> void:
+	for child in upgrade_cost_container.get_children():
+		child.queue_free()
+	for child in hero_recruit_card_container.get_children():
+		child.queue_free()
+	upgrade_button.disabled = true
+	data = GameManager.tavern
+	data.leveled_up.connect(_update_panel)
+	EventBus.tavern_clicked.connect(_on_tavern_clicked)
+	upgrade_button.pressed.connect(_on_upgrade_button_pressed)
+	hide()
+
+func _on_tavern_clicked(d: BuildingData) -> void:
+	#if data:
+		#data.leveled_up.disconnect(_update_panel)
+	#data = d
+	_update_panel()
+	#data.leveled_up.connect(_update_panel)
+	show()
+
+func _on_upgrade_button_pressed() -> void:
+	data.level_up()
+	_generate_recruitable_heroes() # TODO: Need to setup persistant data for hero cards
+
+func _update_panel() -> void:
+	level_value_label.text = str(data.level)
+	if data.is_max_level:
+		cost_to_upgrade_header.hide()
+		upgrade_cost_container.hide()
+		upgrade_button.disabled = true
+	else:
+		for child in upgrade_cost_container.get_children():
+			child.queue_free()
+		var l : PanelLabel = PANEL_LABEL.instantiate() as PanelLabel
+		l.text_label.text = "Gold: "
+		l.value_label.text = str(data.level_up_gold_cost)
+		upgrade_cost_container.add_child(l)
+		for key: String in data.level_up_resource_cost.keys():
+			l = PANEL_LABEL.instantiate()
+			l.text_label.text = key.capitalize() + ": "
+			#l.value_label.text = str(data.level_up_resource_cost[key])
+			l.value_label.text = "%.0f" % (data.level_up_resource_cost[key])
+			upgrade_cost_container.add_child(l)
+		cost_to_upgrade_header.show()
+		upgrade_cost_container.show()
+		upgrade_button.disabled = false
+
+func _generate_recruitable_heroes() -> void: # TODO: Incorporate tavern level
+	for child in hero_recruit_card_container.get_children():
+		child.queue_free()
+	for i in range(MAX_RECRUITABLE_HEROES):
+		var h : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
+		#h.hero_data = HeroData.new()
+		#h.hero_data.hero_name = HeroData.HERO_NAMES.pick_random()
+		#h.hero_data.hero_title = HeroData.HERO_TITLES.pick_random()
+		#h.hero_data.hero_job = GameDB.HERO_JOBS.pick_random()
+		#h.hero_data.level = randi_range(1, 8)
+		#h.hero_data.rarity = Constants.Rarity.values()[randi_range(0, Constants.Rarity.size() - 1)]
+		#h.hero_data.set_base_stats()
+		#h.hero_data.get_initial_stats()
+		#h.hero_data.get_total_stats()
+		#h.recruit_cost = _calculate_recruit_cost(h.hero_data)
+		h.hero_data = HeroGenerator.generate_hero()
+		h.recruit_cost = HeroGenerator.calculate_recruit_cost(h.hero_data)
+		hero_recruit_card_container.add_child(h)
+
+#func _calculate_recruit_cost(h: HeroData) -> int:
+	#return (h.rarity + 1) * h.level * 10
+	# TODO: Maybe add a cost reduction into the tavern level or some town value

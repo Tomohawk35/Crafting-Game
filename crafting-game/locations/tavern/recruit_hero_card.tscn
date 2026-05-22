@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://ga03mwgqir1n"]
+
+[ext_resource type="Script" uid="uid://qxoroa2cn4ra" path="res://locations/tavern/recruit_hero_card.gd" id="1_hi4fq"]
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="2_j0bve"]
+[ext_resource type="Texture2D" uid="uid://cskef2i8mxi0u" path="res://hero_panel/Wizard 1 - idle.png" id="3_e2ffu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka3rw"]
+atlas = ExtResource("3_e2ffu")
+region = Rect2(24, 104, 32, 32)
+
+[node name="RecruitHeroCard" type="PanelContainer" unique_id=1108157855]
+custom_minimum_size = Vector2(128, 224)
+theme = ExtResource("2_j0bve")
+theme_type_variation = &"BorderedPanelContainer"
+script = ExtResource("1_hi4fq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1766203554]
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=593887059]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=894266869]
+layout_mode = 2
+
+[node name="AdventurerNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2115513191]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(94, 37)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderMedium"
+text = "Ivan, the Cursed Knight"
+autowrap_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=33550760]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderMedium"
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=2067415080]
+layout_mode = 2
+
+[node name="AdventurerSprite" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=169398488]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ka3rw")
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1182982902]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1558348130]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1640645705]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_j0bve")
+text = "STR: "
+
+[node name="StrValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=235278872]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+text = "10"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1968452589]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_j0bve")
+text = "DEX: "
+
+[node name="DexValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1195434468]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+text = "10"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=770996612]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=894281144]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_j0bve")
+text = "INT: "
+
+[node name="IntValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1512782941]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+text = "10"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1927954866]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_j0bve")
+text = "CHA: "
+
+[node name="ChaValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=644833699]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+text = "10"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=77959988]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1087971986]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=663630142]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderMedium"
+text = "Recruit Cost: "
+
+[node name="RecruitCostLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=666516555]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderMedium"
+text = "999"
+
+[node name="RecruitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1871744566]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Recruit"
+
+[node name="GreyFilterPanel" type="Panel" parent="." unique_id=604735053]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2

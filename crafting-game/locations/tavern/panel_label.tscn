@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ej4wowvxpjnd"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_15o88"]
+[ext_resource type="Script" uid="uid://c4cxkqnk86dpf" path="res://locations/tavern/panel_label.gd" id="1_hg4ul"]
+
+[node name="PanelLabel" type="HBoxContainer" unique_id=1690285001 node_paths=PackedStringArray("text_label", "value_label")]
+script = ExtResource("1_hg4ul")
+text_label = NodePath("TextLabel")
+value_label = NodePath("ValueLabel")
+
+[node name="TextLabel" type="Label" parent="." unique_id=2077512926]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_15o88")
+theme_type_variation = &"HeaderMedium"
+text = "Level: "
+
+[node name="ValueLabel" type="Label" parent="." unique_id=2110645262]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_15o88")
+theme_type_variation = &"HeaderMedium"
+text = "99"

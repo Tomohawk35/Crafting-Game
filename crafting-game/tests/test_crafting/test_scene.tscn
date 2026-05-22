@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c04ctwuwgerld"]
 
-[ext_resource type="Script" uid="uid://bc8ku12vb8tju" path="res://test_scene.gd" id="1_ia1lp"]
+[ext_resource type="Script" uid="uid://bc8ku12vb8tju" path="res://tests/test_crafting/test_scene.gd" id="1_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://cg2d6rttt4xkt" path="res://equipment_tooltip/equipment_tooltip.tscn" id="1_uhqqe"]
 [ext_resource type="PackedScene" uid="uid://culyclg3trqsu" path="res://equipment_panel/equipment_panel.tscn" id="3_coq8p"]
 [ext_resource type="PackedScene" uid="uid://t12ki4j186um" path="res://hero_panel/hero_panel.tscn" id="3_sasra"]

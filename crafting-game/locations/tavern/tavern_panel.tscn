@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://b162kfxsrf4o"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_ogvsv"]
+[ext_resource type="Script" uid="uid://baum83qgalvbu" path="res://locations/tavern/tavern_panel.gd" id="1_rgukg"]
+[ext_resource type="PackedScene" uid="uid://ej4wowvxpjnd" path="res://locations/tavern/panel_label.tscn" id="3_kscut"]
+[ext_resource type="PackedScene" uid="uid://ga03mwgqir1n" path="res://locations/tavern/recruit_hero_card.tscn" id="4_kscut"]
+
+[node name="TavernPanel" type="Control" unique_id=337797092]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_rgukg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=675666360]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1021091129]
+layout_mode = 2
+theme = ExtResource("1_ogvsv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=924131163]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1023913114]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=208401401]
+layout_mode = 2
+theme = ExtResource("1_ogvsv")
+theme_type_variation = &"HeaderLarge"
+text = "Tavern"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1442082156]
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 2
+text = "A comforting establishment where you can meet traveling adventurers and obtain refreshments."
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1738202290]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=78566596]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ogvsv")
+theme_type_variation = &"HeaderMedium"
+text = "Level: "
+
+[node name="LevelValueLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=615699930]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ogvsv")
+theme_type_variation = &"HeaderMedium"
+text = "99"
+
+[node name="CostToUpgradeHeader" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1745057277]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ogvsv")
+theme_type_variation = &"HeaderMedium"
+text = "Cost to Upgrade"
+
+[node name="UpgradeCostContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1488416752]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/UpgradeCostContainer" unique_id=1690285001 instance=ExtResource("3_kscut")]
+layout_mode = 2
+
+[node name="HBoxContainer3" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/UpgradeCostContainer" unique_id=1941370215 instance=ExtResource("3_kscut")]
+layout_mode = 2
+
+[node name="HBoxContainer4" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/UpgradeCostContainer" unique_id=1428175046 instance=ExtResource("3_kscut")]
+layout_mode = 2
+
+[node name="HBoxContainer5" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/UpgradeCostContainer" unique_id=2020528178 instance=ExtResource("3_kscut")]
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=439439504]
+layout_mode = 2
+
+[node name="UpgradeButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/ButtonContainer" unique_id=1075321038]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrade"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1886267715]
+layout_mode = 2
+
+[node name="HeroRecruitCardContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=289520199]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/HeroRecruitCardContainer" unique_id=1108157855 instance=ExtResource("4_kscut")]
+layout_mode = 2
+
+[node name="PanelContainer2" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/HeroRecruitCardContainer" unique_id=984330424 instance=ExtResource("4_kscut")]
+layout_mode = 2
+
+[node name="PanelContainer3" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/HeroRecruitCardContainer" unique_id=610590380 instance=ExtResource("4_kscut")]
+layout_mode = 2

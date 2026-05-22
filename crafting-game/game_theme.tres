@@ -1,0 +1,24 @@
+[gd_resource type="Theme" format=3 uid="uid://ccu4npsvqwi6r"]
+
+[ext_resource type="Texture2D" uid="uid://cwtokhpqn3vf8" path="res://assets/retro_inventory/Inventory_9Slices.png" id="1_1fvms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1w3f"]
+atlas = ExtResource("1_1fvms")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pd6sc"]
+texture = SubResource("AtlasTexture_p1w3f")
+texture_margin_left = 5.0
+texture_margin_top = 6.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+BorderedPanelContainer/base_type = &"PanelContainer"
+BorderedPanelContainer/styles/panel = SubResource("StyleBoxTexture_pd6sc")
+HeaderLarge/font_sizes/font_size = 16
+HeaderMedium/font_sizes/font_size = 12
+Label/font_sizes/font_size = 8
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
