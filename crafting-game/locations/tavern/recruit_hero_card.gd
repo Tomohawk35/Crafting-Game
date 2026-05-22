@@ -22,7 +22,8 @@ func _ready() -> void:
 	recruit_button.pressed.connect(_on_recruit_button_pressed)
 
 func _update_card() -> void:
-	adventurer_name_label.text = hero_data.hero_name + ", " + hero_data.hero_title # TODO: format based on rarity
+	adventurer_name_label.text = hero_data.hero_name + ", " + hero_data.hero_title 
+	# TODO: format based on rarity
 	level_label.text = str(hero_data.level)
 	# TODO: Update texture, add hero icon to data
 	str_value_label.text = str(int(round(hero_data.total_stats.stats["strength"])))
@@ -32,8 +33,6 @@ func _update_card() -> void:
 	recruit_cost_label.text = str(recruit_cost) # TODO: Need to calculate recruit cost somewhere
 
 func _on_recruit_button_pressed() -> void:
-	#if GameManager.has_gold(recruit_cost): 
-		#GameManager.remove_gold(recruit_cost)
 	if GameManager.has_resources("gold", recruit_cost):
 		GameManager.remove_resources("gold", recruit_cost)
 		GameManager.hero_roster.append(hero_data)

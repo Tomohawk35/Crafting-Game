@@ -24,6 +24,8 @@ const STAT_RARITY_SCALE : float = 0.25
 @export var total_equipment_stats : StatsTable
 @export var total_stats : StatsTable
 
+@export var on_quest : bool = false
+
 # TODO: Add the following
 #Rarity / Quantity Multiplier - affects quest rewards
 #Exp Gain Multiplier
@@ -59,6 +61,7 @@ func set_base_stats() -> void:
 	base_stats.stats["dexterity"] = randi_range(BASE_STAT_RANGE[0], BASE_STAT_RANGE[1]) + rarity
 	base_stats.stats["intelligence"] = randi_range(BASE_STAT_RANGE[0], BASE_STAT_RANGE[1]) + rarity
 	base_stats.stats["charisma"] = randi_range(BASE_STAT_RANGE[0], BASE_STAT_RANGE[1]) + rarity
+	# TODO: adjust to make base stats generally stronger for higher rarity instead of just adding rarity?
 
 func get_initial_stats() -> void:
 	current_level_stats = StatsTable.new()
