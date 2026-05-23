@@ -35,6 +35,7 @@ func _load_resources_from_folder(path: String, target_array: Array) -> void:
 func get_random_affix() -> AffixData:
 	return AFFIXES.pick_random()
 
+# TODO: Add caching for searches
 func get_affixes_by_item_type(item_type: Constants.EquipmentType) -> Array[AffixData]:
 	return AFFIXES.filter(func(a: AffixData): return a.equipment_types[item_type])
 
