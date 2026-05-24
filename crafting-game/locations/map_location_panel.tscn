@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cyv1phnyhnrkm"]
 
+[ext_resource type="Script" uid="uid://8jjaxpb76ldu" path="res://locations/map_location_panel.gd" id="1_f5euj"]
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_yp6up"]
-[ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://inventory/item_slot_ui.gd" id="2_qswfi"]
+[ext_resource type="PackedScene" uid="uid://d3vkayuk7ieia" path="res://locations/quest_info_panel.tscn" id="3_blo4j"]
 
 [node name="MapLocationPanel" type="Control" unique_id=1223163384]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f5euj")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1304928328]
 layout_mode = 1
@@ -107,71 +109,23 @@ text = "No Quests Available"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QuestContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1906312051]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=660730905]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="QuestContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer" unique_id=1906312051]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 
-[node name="QuestInfoPanel" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer" unique_id=1787858035]
-custom_minimum_size = Vector2(256, 48)
+[node name="QuestInfoPanel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer/QuestContainer" unique_id=1613015105 instance=ExtResource("3_blo4j")]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel" unique_id=1362727341]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -16.5
-offset_bottom = 16.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer" unique_id=1859642588]
+[node name="QuestInfoPanel2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer/QuestContainer" unique_id=1805536580 instance=ExtResource("3_blo4j")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="QuestNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/VBoxContainer" unique_id=1616841790]
+[node name="QuestInfoPanel3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer/QuestContainer" unique_id=1186521826 instance=ExtResource("3_blo4j")]
 layout_mode = 2
-theme = ExtResource("1_yp6up")
-theme_type_variation = &"HeaderMedium"
-text = "Example Quest"
 
-[node name="QuestDescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/VBoxContainer" unique_id=990167290]
+[node name="QuestInfoPanel4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer/QuestContainer" unique_id=432057721 instance=ExtResource("3_blo4j")]
 layout_mode = 2
-text = "An example quest description."
-
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer" unique_id=2017645529]
-custom_minimum_size = Vector2(72, 48)
-layout_mode = 2
-columns = 3
-
-[node name="ItemSlotUI" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=525819084]
-layout_mode = 2
-script = ExtResource("2_qswfi")
-metadata/_custom_type_script = "uid://dq8wt4pabylvb"
-
-[node name="ItemSlotUI2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=1969485722]
-layout_mode = 2
-script = ExtResource("2_qswfi")
-metadata/_custom_type_script = "uid://dq8wt4pabylvb"
-
-[node name="ItemSlotUI3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=144241825]
-layout_mode = 2
-script = ExtResource("2_qswfi")
-metadata/_custom_type_script = "uid://dq8wt4pabylvb"
-
-[node name="ItemSlotUI4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=457709460]
-layout_mode = 2
-script = ExtResource("2_qswfi")
-metadata/_custom_type_script = "uid://dq8wt4pabylvb"
-
-[node name="ItemSlotUI5" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=1921709526]
-layout_mode = 2
-script = ExtResource("2_qswfi")
-metadata/_custom_type_script = "uid://dq8wt4pabylvb"
-
-[node name="ItemSlotUI6" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=104093030]
-layout_mode = 2
-script = ExtResource("2_qswfi")
-metadata/_custom_type_script = "uid://dq8wt4pabylvb"

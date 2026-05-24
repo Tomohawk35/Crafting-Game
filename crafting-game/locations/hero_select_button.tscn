@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cnxvb41xlyhxn"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_x4wdd"]
+[ext_resource type="Texture2D" uid="uid://cm5viypehbj1s" path="res://assets/hana_caraka_unit_character/Knight 2 - idle.png" id="2_e7ocb"]
+[ext_resource type="Script" uid="uid://cthatmv7cxas6" path="res://locations/hero_select_button.gd" id="2_o0qwy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0qwy"]
+atlas = ExtResource("2_e7ocb")
+region = Rect2(28, 108, 22, 26)
+
+[node name="HeroSelectButton" type="PanelContainer" unique_id=1661555877 node_paths=PackedStringArray("hero_name_label", "level_value_label", "str_value_label", "dex_value_label", "int_value_label", "cha_value_label", "hero_sprite")]
+custom_minimum_size = Vector2(192, 0)
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"BorderedPanelContainer"
+script = ExtResource("2_o0qwy")
+hero_name_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HeroNameLabel")
+level_value_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/LevelValueLabel")
+str_value_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2/StrValueLabel")
+dex_value_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2/DexValueLabel")
+int_value_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer3/IntValueLabel")
+cha_value_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer3/ChaValueLabel")
+hero_sprite = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/HeroSprite")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2073751608]
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=408377132]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1827103678]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=395103572]
+layout_mode = 2
+
+[node name="HeroNameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=211889153]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "Hugo, the Cursed Knight"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1199714714]
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "Lv:"
+
+[node name="LevelValueLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1030044504]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "08"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=364529776]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1189804329]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1915233344]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1661247466]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1023877330]
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "STR:"
+
+[node name="StrValueLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1711085469]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "08"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1850655966]
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "DEX:"
+
+[node name="DexValueLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=452342649]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "08"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=963751611]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=875788109]
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "INT:"
+
+[node name="IntValueLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=738350512]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "08"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=1277289108]
+layout_mode = 2
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "STR:"
+
+[node name="ChaValueLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=1937900982]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_x4wdd")
+theme_type_variation = &"HeaderMedium"
+text = "08"
+
+[node name="HeroSprite" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=489348480]
+unique_name_in_owner = true
+layout_mode = 2
+texture = SubResource("AtlasTexture_o0qwy")
+expand_mode = 3

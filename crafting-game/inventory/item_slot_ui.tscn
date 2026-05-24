@@ -4,20 +4,24 @@
 [ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://inventory/item_slot_ui.gd" id="1_dndjr"]
 [ext_resource type="Texture2D" uid="uid://ddl4rxa7pbj08" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/arrow_01a.png" id="2_2xl3h"]
 
-[node name="ItemSlotUi" type="PanelContainer" unique_id=1332666258]
+[node name="ItemSlotUi" type="PanelContainer" unique_id=1332666258 node_paths=PackedStringArray("item_sprite", "label")]
 custom_minimum_size = Vector2(24, 24)
 offset_right = 24.0
 offset_bottom = 24.0
 theme = ExtResource("1_3ntnb")
 theme_type_variation = &"BorderedPanelContainer"
 script = ExtResource("1_dndjr")
+item_sprite = NodePath("ItemSprite")
+label = NodePath("QuantityLabel")
 
 [node name="ItemSprite" type="TextureRect" parent="." unique_id=96894713]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("2_2xl3h")
 
-[node name="Label" type="Label" parent="." unique_id=1857650676]
+[node name="QuantityLabel" type="Label" parent="." unique_id=1857650676]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("1_3ntnb")

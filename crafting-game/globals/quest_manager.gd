@@ -12,11 +12,15 @@ var available_quests : Array[Quest] = []
 # NOTE: Quest workflow:
 # Select available location > Some quests appear > Select a quest > Assign Party > Start Quest
 
+func generate_quest() -> Quest:
+	var q : Quest = Quest.new()
+	# TODO: Setup quest data
+	return q
+
 func generate_new_quests() -> void:
 	available_quests.clear()
 	for i in range(QUEST_LIMIT):
-		var q : Quest = Quest.new()
-		# TODO: Setup quest data
+		var q : Quest = generate_quest()
 		available_quests.append(q)
 
 func start_quest(q: Quest) -> bool: # TODO: Add timer for travel time / duration / etc

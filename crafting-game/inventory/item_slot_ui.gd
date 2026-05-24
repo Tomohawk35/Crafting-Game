@@ -18,17 +18,16 @@ const SLOT_TEXTURES : Array[String] = [
 
 @export var is_equipment_slot : bool = false
 @export var equipment_type : Constants.EquipmentType = Constants.EquipmentType.WEAPON
+@export var item_sprite: TextureRect
+@export var label: Label
 
 var slot_data : SlotData
 var clickable : bool = false
 
-@onready var item_sprite: Sprite2D = $PanelContainer/MarginContainer/ItemSprite
-@onready var label: Label = $PanelContainer/MarginContainer/Label
-@onready var panel_container: PanelContainer = $PanelContainer
 
 func _ready() -> void:
-	panel_container.mouse_entered.connect(_on_mouse_entered)
-	panel_container.mouse_exited.connect(_on_mouse_exited)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
 func _on_mouse_entered() -> void:
 	clickable = true

@@ -89,3 +89,6 @@ func equip_item(e: Equipment) -> void: # TODO: add remaining equipment slots # H
 func unequip_item(e: Equipment) -> void:
 	e.stats_updated.disconnect(get_total_stats)
 	# TODO: Move item to inventory
+
+func get_formatted_name() -> String:
+	return hero_name + ", " + hero_title

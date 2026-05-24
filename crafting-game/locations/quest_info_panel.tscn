@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://d3vkayuk7ieia"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_x08an"]
+[ext_resource type="Script" uid="uid://buokn3xu263a8" path="res://locations/quest_info_panel.gd" id="2_qyicp"]
+[ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="2_rt1w3"]
+[ext_resource type="PackedScene" uid="uid://phfrfmduowvq" path="res://locations/quest_party_member_button.tscn" id="3_qyicp"]
+
+[node name="QuestInfoPanel" type="PanelContainer" unique_id=1442437755 node_paths=PackedStringArray("quest_name_label", "quest_description_label", "party_member_button_container", "resource_reward_container", "reward_container")]
+custom_minimum_size = Vector2(256, 0)
+offset_right = 240.0
+offset_bottom = 108.0
+theme = ExtResource("1_x08an")
+theme_type_variation = &"BorderedPanelContainer"
+script = ExtResource("2_qyicp")
+quest_name_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/QuestNameLabel")
+quest_description_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/QuestDescriptionLabel")
+party_member_button_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer")
+resource_reward_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/ResourceRewardContainer")
+reward_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1446117495]
+layout_mode = 2
+theme = ExtResource("1_x08an")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=202626874]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=218537424]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestNameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=292266138]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_x08an")
+theme_type_variation = &"HeaderMedium"
+text = "Example Quest"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1124152998]
+layout_mode = 2
+
+[node name="QuestDescriptionLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=209948634]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_x08an")
+theme_type_variation = &"HeaderSmall"
+text = "An example quest description."
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=928442372]
+layout_mode = 2
+
+[node name="PartyLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2033725906]
+layout_mode = 2
+theme = ExtResource("1_x08an")
+theme_type_variation = &"HeaderSmall"
+text = "Party:"
+
+[node name="PartyMemberButtonContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=701075762]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer" unique_id=68801305 instance=ExtResource("3_qyicp")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1917232254]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=197691961]
+layout_mode = 2
+theme = ExtResource("1_x08an")
+theme_type_variation = &"HeaderSmall"
+text = "Rewards:"
+
+[node name="ResourceRewardContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=874276348]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RewardContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=544605210]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+
+[node name="ItemSlotUi" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=1332666258 instance=ExtResource("2_rt1w3")]
+layout_mode = 2
+
+[node name="ItemSlotUi2" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=1836297151 instance=ExtResource("2_rt1w3")]
+layout_mode = 2
+
+[node name="ItemSlotUi3" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=1511403880 instance=ExtResource("2_rt1w3")]
+layout_mode = 2
+
+[node name="ItemSlotUi4" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=1796000033 instance=ExtResource("2_rt1w3")]
+layout_mode = 2
+
+[node name="ItemSlotUi5" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=681185813 instance=ExtResource("2_rt1w3")]
+layout_mode = 2
+
+[node name="ItemSlotUi6" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=178698035 instance=ExtResource("2_rt1w3")]
+layout_mode = 2

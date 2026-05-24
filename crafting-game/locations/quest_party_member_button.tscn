@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://phfrfmduowvq"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_1iekk"]
+[ext_resource type="Script" uid="uid://gva3647npmed" path="res://locations/quest_party_member_button.gd" id="2_6o2uq"]
+
+[node name="QuestPartyMemberButton" type="Button" unique_id=68801305]
+theme = ExtResource("1_1iekk")
+theme_type_variation = &"SimpleButton"
+text = "Party Member 1"
+script = ExtResource("2_6o2uq")

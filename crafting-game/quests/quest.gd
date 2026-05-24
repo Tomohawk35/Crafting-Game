@@ -4,13 +4,15 @@ class_name Quest
 enum QuestType { HUNT, INVESTIGATE, GATHER, BOSS, DUNGEON }
 enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 
+@export var quest_name : String = "A Simple Quest" # TODO: Add functions for getting name and description
+@export var quest_description : String = "A new quest for hunting rabbits."
 @export var difficulty : int = QuestDifficulty.EASY
 @export var location : String = "Nowhere"# Determines travel time
 @export var duration : float = 1.0 # Duration of quest once arrived?
 @export var resource_rewards : Dictionary[String, int] = {}
 @export var item_rewards : Array[SlotData] = []
 @export var party_members : Array[HeroData] = []
-
+@export var party_size : int = 3
 
 # TODO: Duration should be affected by cumulative speed mods on members
 # TODO: Figure out what should contribute to rewards

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cy17x5fgp1kr2"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_4xe3j"]
+[ext_resource type="PackedScene" uid="uid://cnxvb41xlyhxn" path="res://locations/hero_select_button.tscn" id="2_ankyo"]
+[ext_resource type="Script" uid="uid://elsy5tme2jho" path="res://locations/party_member_select_panel.gd" id="2_uieah"]
+
+[node name="PartyMemberSelectPanel" type="Control" unique_id=990201223 node_paths=PackedStringArray("hero_button_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_uieah")
+hero_button_container = NodePath("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1131379880]
+custom_minimum_size = Vector2(232, 384)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -192.0
+offset_right = 116.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4xe3j")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1896757431]
+layout_mode = 2
+theme = ExtResource("1_4xe3j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1271884541]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=5460011]
+layout_mode = 2
+theme = ExtResource("1_4xe3j")
+theme_type_variation = &"HeaderLarge"
+text = "Select Hero"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=97040137]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HeroButtonContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=225111201]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HeroSelectButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=1661555877 instance=ExtResource("2_ankyo")]
+layout_mode = 2
+
+[node name="HeroSelectButton2" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=1019941251 instance=ExtResource("2_ankyo")]
+layout_mode = 2
+
+[node name="HeroSelectButton3" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=881916170 instance=ExtResource("2_ankyo")]
+layout_mode = 2
+
+[node name="HeroSelectButton4" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=220117014 instance=ExtResource("2_ankyo")]
+layout_mode = 2

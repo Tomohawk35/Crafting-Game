@@ -19,8 +19,6 @@ var tavern : BuildingData
 # LOCATIONS 
 var locations : Dictionary[String, LocationData] = {}
 
-# ADVENTURERS
-var hero_roster : Array[HeroData] = []
 
 
 func _ready() -> void: # TODO: Remove and change to new game or load game functions
@@ -79,3 +77,4 @@ func add_item(i: Item, q: int = 1) -> bool:
 		return true
 		# TODO: Need to figure out how to handle when a quest has multiple item rewards
 		# either replicate inventory and try to add or force player to add one at a time
+#endregion
