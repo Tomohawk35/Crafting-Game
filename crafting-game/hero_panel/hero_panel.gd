@@ -11,14 +11,14 @@ var hero : HeroData
 @onready var intelligence_label: Label = %IntelligenceLabel
 @onready var charisma_label: Label = %CharismaLabel
 
-@onready var helmet_slot: ItemSlotUI = %HelmetSlot
-@onready var weapon_slot: ItemSlotUI = %WeaponSlot
-@onready var ring_slot: ItemSlotUI = %RingSlot
-@onready var character_sprite: TextureRect = %CharacterSprite
-@onready var amulet_slot: ItemSlotUI = %AmuletSlot
-@onready var shield_slot: ItemSlotUI = %ShieldSlot
-@onready var body_armor_slot: ItemSlotUI = %BodyArmorSlot
-@onready var gloves_slot: ItemSlotUI = %GlovesSlot
+#@onready var helmet_slot: ItemSlotUI = %HelmetSlot
+#@onready var weapon_slot: ItemSlotUI = %WeaponSlot
+#@onready var ring_slot: ItemSlotUI = %RingSlot
+#@onready var character_sprite: TextureRect = %CharacterSprite
+#@onready var amulet_slot: ItemSlotUI = %AmuletSlot
+#@onready var shield_slot: ItemSlotUI = %ShieldSlot
+#@onready var body_armor_slot: ItemSlotUI = %BodyArmorSlot
+#@onready var gloves_slot: ItemSlotUI = %GlovesSlot
 @onready var equipment_container_1: VBoxContainer = %EquipmentContainer1
 @onready var equipment_container_2: VBoxContainer = %EquipmentContainer2
 @onready var all_stat_container: VBoxContainer = %AllStatContainer

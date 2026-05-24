@@ -23,3 +23,9 @@ Quest
 
 
 NEED TO FIND WAY TO HAVE FLOAT AND INT AFFIXES
+
+
+===== JUICE ====
+Add animations for buildings and locations
+add movement to trees, smoke from mountains/ fires
+add birds flying overhead

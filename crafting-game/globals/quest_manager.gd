@@ -9,7 +9,8 @@ const QUEST_LIMIT : int = 4
 var active_quests : Array[Quest] = []
 var available_quests : Array[Quest] = []
 
-# TODO: Update HeroData.on_quest when actively questing
+# NOTE: Quest workflow:
+# Select available location > Some quests appear > Select a quest > Assign Party > Start Quest
 
 func generate_new_quests() -> void:
 	available_quests.clear()

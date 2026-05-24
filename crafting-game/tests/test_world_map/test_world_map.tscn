@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ghgd8ekoi1st" path="res://tests/test_world_map/roguelikeSheet_transparent.png" id="1_tngxt"]
 [ext_resource type="Script" uid="uid://dqw2j110x2b4j" path="res://tests/test_world_map/camera_2d.gd" id="2_sl6gu"]
 [ext_resource type="PackedScene" uid="uid://bodkb4myveenn" path="res://locations/tavern/tavern.tscn" id="3_uhfl8"]
+[ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_5iihe"]
 [ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="4_gisk1"]
 [ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="4_ib1r3"]
 
@@ -1726,8 +1727,14 @@ script = ExtResource("2_sl6gu")
 [node name="Tavern" parent="Node2D" unique_id=379177377 instance=ExtResource("3_uhfl8")]
 position = Vector2(331, 255)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=821054220]
+[node name="MapLocation" parent="Node2D" unique_id=1260784349 instance=ExtResource("4_5iihe")]
+position = Vector2(924, 129)
+location_name = "outer farmlands"
 
-[node name="PlayerHUD" parent="CanvasLayer" unique_id=1175922791 instance=ExtResource("4_gisk1")]
+[node name="UIComponents" type="CanvasLayer" parent="." unique_id=821054220]
 
-[node name="TavernPanel" parent="CanvasLayer" unique_id=337797092 instance=ExtResource("4_ib1r3")]
+[node name="PlayerHUD" parent="UIComponents" unique_id=1175922791 instance=ExtResource("4_gisk1")]
+
+[node name="UIPanels" type="Node" parent="UIComponents" unique_id=1815208409]
+
+[node name="TavernPanel" parent="UIComponents/UIPanels" unique_id=337797092 instance=ExtResource("4_ib1r3")]

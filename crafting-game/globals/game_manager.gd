@@ -9,23 +9,33 @@ var resources : Dictionary[String, int] = {
 	"gold" : 10000,
 	"wood" : 10000,
 	"stone" : 10000,
-}
+} # TODO: update to a resource instead for reusability 
 
 var inventory : Array[SlotData] = []
 
 # BUILDINGS
 var tavern : BuildingData 
 
+# LOCATIONS 
+var locations : Dictionary[String, LocationData] = {}
+
 # ADVENTURERS
 var hero_roster : Array[HeroData] = []
 
-# QUESTS
 
-
-func _ready() -> void:
+func _ready() -> void: # TODO: Remove and change to new game or load game functions
 	tavern = BuildingData.new()
 	tavern.building_name = "tavern"
 	tavern.get_data()
+	new_location_data()
+
+func new_location_data() -> void:
+	locations = {}
+	for loc in GameDB.LOCATIONS.keys():
+		var l : LocationData = LocationData.new()
+		l.location_name = loc
+		l.description = GameDB.LOCATIONS[loc]
+		locations[loc] = l
 
 func add_resources(r: String, v: int) -> void:
 	resources[r] += v

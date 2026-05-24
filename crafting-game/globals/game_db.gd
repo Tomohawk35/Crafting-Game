@@ -7,6 +7,7 @@ var BASE_ITEMS : Array[EquipmentBase] = []
 var HERO_JOBS : Array[HeroJob] = []
 
 var BUILDINGS : Dictionary = {}
+var LOCATIONS : Dictionary = {}
 
 
 func _ready() -> void:
@@ -14,6 +15,7 @@ func _ready() -> void:
 	_load_resources_from_folder("res://resources/base_items/", BASE_ITEMS)
 	_load_resources_from_folder("res://resources/hero_jobs/", HERO_JOBS)
 	BUILDINGS = _import_data("res://locations/building_data.json")
+	LOCATIONS = _import_data("res://locations/location_data.json")
 
 func _import_data(path: String) -> Dictionary:
 	var file_string : String = FileAccess.get_file_as_string(path)

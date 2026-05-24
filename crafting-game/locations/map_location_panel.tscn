@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://cyv1phnyhnrkm"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_yp6up"]
+[ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://inventory/item_slot_ui.gd" id="2_qswfi"]
+
+[node name="MapLocationPanel" type="Control" unique_id=1223163384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1304928328]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -31.5
+offset_right = 70.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=908076196]
+layout_mode = 2
+theme = ExtResource("1_yp6up")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2091084055]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=510727795]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"HeaderLarge"
+text = "Location Name"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=837922206]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1597070684]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=665773237]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=905096542]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 12)
+layout_mode = 2
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"HeaderSmall"
+text = "Location Description"
+autowrap_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=726856296]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=936088961]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=664220507]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"HeaderMedium"
+text = "Favor: "
+
+[node name="FavorValueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=618908260]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"HeaderMedium"
+text = "0"
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1731147382]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=329468975]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1571118774]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1962676445]
+layout_mode = 2
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"HeaderMedium"
+text = "Quests:"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1222661303]
+layout_mode = 2
+
+[node name="NoQuestsAvailableLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1598391863]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+text = "No Quests Available"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1906312051]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuestInfoPanel" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer" unique_id=1787858035]
+custom_minimum_size = Vector2(256, 48)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel" unique_id=1362727341]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -16.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer" unique_id=1859642588]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/VBoxContainer" unique_id=1616841790]
+layout_mode = 2
+theme = ExtResource("1_yp6up")
+theme_type_variation = &"HeaderMedium"
+text = "Example Quest"
+
+[node name="QuestDescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/VBoxContainer" unique_id=990167290]
+layout_mode = 2
+text = "An example quest description."
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer" unique_id=2017645529]
+custom_minimum_size = Vector2(72, 48)
+layout_mode = 2
+columns = 3
+
+[node name="ItemSlotUI" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=525819084]
+layout_mode = 2
+script = ExtResource("2_qswfi")
+metadata/_custom_type_script = "uid://dq8wt4pabylvb"
+
+[node name="ItemSlotUI2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=1969485722]
+layout_mode = 2
+script = ExtResource("2_qswfi")
+metadata/_custom_type_script = "uid://dq8wt4pabylvb"
+
+[node name="ItemSlotUI3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=144241825]
+layout_mode = 2
+script = ExtResource("2_qswfi")
+metadata/_custom_type_script = "uid://dq8wt4pabylvb"
+
+[node name="ItemSlotUI4" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=457709460]
+layout_mode = 2
+script = ExtResource("2_qswfi")
+metadata/_custom_type_script = "uid://dq8wt4pabylvb"
+
+[node name="ItemSlotUI5" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=1921709526]
+layout_mode = 2
+script = ExtResource("2_qswfi")
+metadata/_custom_type_script = "uid://dq8wt4pabylvb"
+
+[node name="ItemSlotUI6" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestContainer/QuestInfoPanel/HBoxContainer/GridContainer" unique_id=104093030]
+layout_mode = 2
+script = ExtResource("2_qswfi")
+metadata/_custom_type_script = "uid://dq8wt4pabylvb"
