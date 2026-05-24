@@ -20,6 +20,7 @@ GameDB="*uid://c0y36mr3l6nqv"
 ItemGenerator="*uid://dqttsnvhk65lu"
 EventBus="*uid://cd75f15d2a1xc"
 GameManager="*uid://cv02up0nv8ynf"
+QuestManager="*uid://dwbaabpybahgn"
 
 [display]
 
