@@ -7,5 +7,4 @@ class_name LocationData
 
 @export var favor : int = 0 # increases with quest completion
 
-@export var available_quests : Array[Quest] = []
-@export var current_quest : Quest
+@export var quests : Array[Quest] = []

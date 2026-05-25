@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_yp6up"]
 [ext_resource type="PackedScene" uid="uid://d3vkayuk7ieia" path="res://locations/quest_info_panel.tscn" id="3_blo4j"]
 
-[node name="MapLocationPanel" type="Control" unique_id=1223163384]
+[node name="MapLocationPanel" type="Control" unique_id=1223163384 node_paths=PackedStringArray("name_label", "description_label", "favor_value_label", "no_quests_available_label", "quest_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f5euj")
+name_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/NameLabel")
+description_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/DescriptionLabel")
+favor_value_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/FavorValueLabel")
+no_quests_available_label = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/NoQuestsAvailableLabel")
+quest_container = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer/QuestContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1304928328]
 layout_mode = 1
@@ -129,3 +134,10 @@ layout_mode = 2
 
 [node name="QuestInfoPanel4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ScrollContainer/QuestContainer" unique_id=432057721 instance=ExtResource("3_blo4j")]
 layout_mode = 2
+
+[node name="QuestInfoPanel" parent="." unique_id=1442437755 instance=ExtResource("3_blo4j")]
+layout_mode = 0
+offset_left = 54.0
+offset_top = -134.0
+offset_right = 310.0
+offset_bottom = -10.0

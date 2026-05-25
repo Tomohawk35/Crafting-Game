@@ -1,7 +1,7 @@
 extends PanelContainer
 class_name QuestInfoPanel
 
-const PARTY_MEMBER_SELECT_PANEL : PackedScene = preload("uid://cy17x5fgp1kr2")
+#const PARTY_MEMBER_SELECT_PANEL : PackedScene = preload("uid://cy17x5fgp1kr2")
 const ITEM_SLOT_UI : PackedScene = preload("uid://cq60rwikmkkud")
 
 var data : Quest
@@ -19,15 +19,16 @@ var target_hero_slot : int
 # TODO: Change ItemSlotUI to a DisplaySlot instead. Don't need drag/drop functionality
 
 func _ready() -> void:
-	var q: Quest = Quest.new()
-	q.add_resource_reward("gold", 134)
-	q.add_resource_reward("wood", 44)
-	q.add_resource_reward("stone", 23)
-	q.add_item_reward(ItemGenerator.generate_equipment())
-	q.add_item_reward(ItemGenerator.generate_equipment())
-	q.add_item_reward(ItemGenerator.generate_equipment())
-	q.add_item_reward(ItemGenerator.generate_equipment())
-	update_panel(q) # TODO: Remove after testing
+	#var q: Quest = Quest.new()
+	#q.add_resource_reward("gold", 134)
+	#q.add_resource_reward("wood", 44)
+	#q.add_resource_reward("stone", 23)
+	#q.add_item_reward(ItemGenerator.generate_equipment())
+	#q.add_item_reward(ItemGenerator.generate_equipment())
+	#q.add_item_reward(ItemGenerator.generate_equipment())
+	#q.add_item_reward(ItemGenerator.generate_equipment())
+	#update_panel(q) # TODO: Remove after testing
+	pass
 
 func _on_party_member_button_pressed(i: int) -> void:
 	target_hero_slot = i
