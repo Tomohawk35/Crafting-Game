@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_5iihe"]
 [ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="4_gisk1"]
 [ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="4_ib1r3"]
+[ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="7_6kp1f"]
+[ext_resource type="PackedScene" uid="uid://cy17x5fgp1kr2" path="res://locations/party_member_select_panel.tscn" id="8_gtrq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl6gu"]
 texture = ExtResource("1_tngxt")
@@ -1735,6 +1737,11 @@ location_name = "outer farmlands"
 
 [node name="PlayerHUD" parent="UIComponents" unique_id=1175922791 instance=ExtResource("4_gisk1")]
 
-[node name="UIPanels" type="Node" parent="UIComponents" unique_id=1815208409]
+[node name="TavernPanel" parent="UIComponents" unique_id=337797092 instance=ExtResource("4_ib1r3")]
+visible = false
 
-[node name="TavernPanel" parent="UIComponents/UIPanels" unique_id=337797092 instance=ExtResource("4_ib1r3")]
+[node name="MapLocationPanel" parent="UIComponents" unique_id=1223163384 instance=ExtResource("7_6kp1f")]
+visible = false
+
+[node name="PartyMemberSelectPanel" parent="UIComponents" unique_id=990201223 instance=ExtResource("8_gtrq5")]
+visible = false

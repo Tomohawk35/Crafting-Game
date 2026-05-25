@@ -23,6 +23,6 @@ func _on_mouse_exited_area_2d() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("select") and is_clickable:
-		print(location_name + " clicked")
+		#print(location_name + " clicked")
 		EventBus.location_clicked.emit(data)
 		get_tree().root.set_input_as_handled()
