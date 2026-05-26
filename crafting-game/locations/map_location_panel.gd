@@ -17,6 +17,7 @@ func _ready() -> void:
 	hide()
 
 func _on_location_clicked(l: LocationData) -> void:
+	_clear_quest_list()
 	update_panel(l)
 	show()
 

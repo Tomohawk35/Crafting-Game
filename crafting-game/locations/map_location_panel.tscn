@@ -95,7 +95,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1571118774]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(272, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1962676445]

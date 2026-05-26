@@ -29,8 +29,8 @@ func _close_window() -> void:
 
 func _clear_list() -> void:
 	for c in hero_button_container.get_children():
-		if c is HeroSelectButton:
-			c.pressed.disconnect(_on_hero_button_pressed)
+		#if c is HeroSelectButton:
+			#c.pressed.disconnect(_on_hero_button_pressed)
 		c.queue_free()
 
 func _on_hero_button_pressed(h: HeroData) -> void:

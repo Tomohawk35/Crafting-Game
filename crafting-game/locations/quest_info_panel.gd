@@ -2,6 +2,7 @@ extends PanelContainer
 class_name QuestInfoPanel
 
 #const PARTY_MEMBER_SELECT_PANEL : PackedScene = preload("uid://cy17x5fgp1kr2")
+const QUEST_PARTY_MEMBER_BUTTON : PackedScene = preload("uid://phfrfmduowvq")
 const ITEM_SLOT_UI : PackedScene = preload("uid://cq60rwikmkkud")
 
 var data : Quest
@@ -40,7 +41,7 @@ func _on_hero_selected(h: HeroData) -> void:
 		temp_party[target_hero_slot] = h
 		_update_button_names()
 	target_hero_slot = -1
-	EventBus.hero_selected.disconnect(_on_hero_selected)
+	EventBus.hero_selected.disconnect(_on_hero_selected) # TODO: Remove hero from available hero list?
 
 func _update_button_names() -> void:
 	var button_list : Array = party_member_button_container.get_children()
@@ -54,13 +55,15 @@ func update_panel(q: Quest) -> void:
 		c.queue_free()
 	for c in reward_container.get_children():
 		c.queue_free()
+	temp_party.clear()
 	quest_name_label.text = data.quest_name
 	quest_description_label.text = data.quest_description
 	for i in range(data.party_size):
-		var b : Button = Button.new()
+		var b : QuestPartyMemberButton = QUEST_PARTY_MEMBER_BUTTON.instantiate()
 		b.text = "Party Member " + str(i + 1)
 		b.index = i
 		b.pressed.connect(func():
+			print(b.text + " pressed.")
 			target_hero_slot = b.index
 			_on_party_member_button_pressed(b.index))
 		party_member_button_container.add_child(b)

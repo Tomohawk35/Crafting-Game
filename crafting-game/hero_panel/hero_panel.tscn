@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://t12ki4j186um"]
 
 [ext_resource type="Script" uid="uid://bpk7tu86lf0xi" path="res://hero_panel/hero_panel.gd" id="1_b4sry"]
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="2_677lb"]
 [ext_resource type="Texture2D" uid="uid://cskef2i8mxi0u" path="res://assets/hana_caraka_unit_character/Wizard 1 - idle.png" id="2_xc740"]
 [ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="3_j38ip"]
 
@@ -23,13 +24,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_677lb")
+theme_type_variation = &"BorderedPanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2066002627]
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme = ExtResource("2_677lb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1191193557]
 layout_mode = 2
@@ -40,7 +40,8 @@ size_flags_vertical = 0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 12)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_677lb")
+theme_type_variation = &"HeaderMedium"
 text = "FName LName"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -52,13 +53,15 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_677lb")
+theme_type_variation = &"HeaderSmall"
 text = "Job Title"
 
 [node name="LevelLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=230853850]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme = ExtResource("2_677lb")
+theme_type_variation = &"HeaderSmall"
 text = "01"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=105854105]
@@ -124,6 +127,9 @@ layout_mode = 2
 is_equipment_slot = true
 equipment_type = 1
 
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=737118557]
+layout_mode = 2
+
 [node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1987973785]
 layout_mode = 2
 
@@ -183,6 +189,9 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "99"
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=137238986]
+layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=971810954]
 custom_minimum_size = Vector2(104, 78)

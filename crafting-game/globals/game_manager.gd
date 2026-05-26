@@ -25,10 +25,10 @@ func _ready() -> void: # TODO: Remove and change to new game or load game functi
 	tavern = BuildingData.new()
 	tavern.building_name = "tavern"
 	tavern.get_data()
-	new_location_data()
-	add_initial_quests()
+	_new_location_data()
+	_add_initial_quests()
 
-func new_location_data() -> void:
+func _new_location_data() -> void:
 	locations = {}
 	for loc in GameDB.LOCATIONS.keys():
 		var l : LocationData = LocationData.new()
@@ -36,10 +36,13 @@ func new_location_data() -> void:
 		l.description = GameDB.LOCATIONS[loc]
 		locations[loc] = l
 
-func add_initial_quests() -> void:
+func _add_initial_quests() -> void:
 	var q: Quest = Quest.new()
 	q.add_resource_reward("gold", 50)
 	q.add_resource_reward("wood", 10)
+	q.add_item_reward(ItemGenerator.generate_equipment())
+	q.add_item_reward(ItemGenerator.generate_equipment())
+	q.add_item_reward(ItemGenerator.generate_equipment())
 	q.quest_name = "Hunt Foxes"
 	q.quest_description = "Hunt down the foxes attacking the farm's chickens."
 	#q.ty = Quest.QuestType.HUNT
