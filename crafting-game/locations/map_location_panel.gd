@@ -10,35 +10,27 @@ const QUEST_INFO_PANEL : PackedScene = preload("uid://d3vkayuk7ieia")
 @export var quest_container: VBoxContainer
 @export var quest_scroll_container: ScrollContainer
 
+var location_id : String
 var data : LocationData
 
 func _ready() -> void:
 	EventBus.location_clicked.connect(_on_location_clicked)
 	hide()
 
-func _on_location_clicked(l: LocationData) -> void:
-	_clear_quest_list()
-	update_panel(l)
-	show()
+func _on_location_clicked(l: String) -> void:
+	if GameManager.locations.has(l):
+		_clear_quest_list()
+		location_id = l
+		update_panel(GameManager.locations[location_id])
+		show()
 
 func _clear_quest_list() -> void:
 	for child in quest_container.get_children():
 		child.queue_free()
 
 func _load_quests() -> void:
-	if data == null:
-		return
-	for q: Quest in data.quests:
-		var p: QuestInfoPanel = QUEST_INFO_PANEL.instantiate()
-		p.update_panel(q)
-		quest_container.add_child(p)
-
-func update_panel(d: LocationData) -> void:
-	data = d
-	name_label.text = data.location_name.capitalize()
-	description_label.text = data.description
-	favor_value_label.text = str(data.favor)
-	if data.quests.size() == 0:
+	var quest_list : Array[Quest] = QuestManager.get_location_quests(location_id)
+	if quest_list.size() == 0:
 		no_quests_available_label.show()
 		quest_scroll_container.hide()
 		quest_container.hide()
@@ -46,4 +38,14 @@ func update_panel(d: LocationData) -> void:
 		no_quests_available_label.hide()
 		quest_scroll_container.show()
 		quest_container.show()
-		_load_quests()
+		for q: Quest in quest_list:
+			var p: QuestInfoPanel = QUEST_INFO_PANEL.instantiate()
+			p.update_panel(q)
+			quest_container.add_child(p)
+
+func update_panel(d: LocationData) -> void:
+	data = d
+	name_label.text = data.location_name.capitalize()
+	description_label.text = data.description
+	favor_value_label.text = str(data.favor)
+	_load_quests()

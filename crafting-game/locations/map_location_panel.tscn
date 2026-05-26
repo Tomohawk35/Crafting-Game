@@ -117,12 +117,13 @@ vertical_alignment = 1
 
 [node name="QuestScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=660730905]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(264, 256)
 layout_mode = 2
+horizontal_scroll_mode = 0
 
 [node name="QuestContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestScrollContainer" unique_id=1906312051]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 256)
+custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 
 [node name="QuestInfoPanel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/QuestScrollContainer/QuestContainer" unique_id=1613015105 instance=ExtResource("3_blo4j")]

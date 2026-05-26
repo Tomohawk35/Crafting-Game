@@ -1,11 +1,13 @@
 extends Resource
 class_name Quest
 
+enum QuestState { NOT_STARTED, TRAVELING, IN_PROGRESS, RETURNING, COMPLETE }
 enum QuestType { HUNT, INVESTIGATE, GATHER, BOSS, DUNGEON }
 enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 
 @export var quest_name : String = "A Simple Quest" # TODO: Add functions for getting name and description
 @export var quest_description : String = "A new quest for hunting rabbits."
+@export var state : QuestState = QuestState.NOT_STARTED
 @export var difficulty : int = QuestDifficulty.EASY
 @export var location : String = "Nowhere"# Determines travel time
 @export var duration : float = 1.0 # Duration of quest once arrived?

@@ -7,6 +7,8 @@ class_name PlayerHUD
 
 func _ready() -> void:
 	_set_gold_value()
+	_set_wood_value()
+	_set_stone_value()
 	#GameManager.gold_changed.connect(_set_gold_value)
 	GameManager.resource_changed.connect(_on_resource_changed)
 

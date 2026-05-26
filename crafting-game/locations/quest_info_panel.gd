@@ -12,6 +12,7 @@ var data : Quest
 @export var party_member_button_container: VBoxContainer
 @export var resource_reward_container: VBoxContainer
 @export var reward_container: GridContainer
+@export var start_quest_button: Button
 
 var temp_party : Array[HeroData] = []
 var target_hero_slot : int
@@ -20,6 +21,7 @@ var target_hero_slot : int
 # TODO: Change ItemSlotUI to a DisplaySlot instead. Don't need drag/drop functionality
 
 func _ready() -> void:
+	start_quest_button.pressed.connect(_on_start_quest_button_pressed)
 	#var q: Quest = Quest.new()
 	#q.add_resource_reward("gold", 134)
 	#q.add_resource_reward("wood", 44)
@@ -37,7 +39,7 @@ func _on_party_member_button_pressed(i: int) -> void:
 	EventBus.hero_selected.connect(_on_hero_selected)
 
 func _on_hero_selected(h: HeroData) -> void:
-	if h:
+	if h and !temp_party.has(h):
 		temp_party[target_hero_slot] = h
 		_update_button_names()
 	target_hero_slot = -1
@@ -48,6 +50,18 @@ func _update_button_names() -> void:
 	for i in button_list.size():
 		if temp_party[i] and temp_party[i] != null:
 			button_list[i].text = temp_party[i].get_formatted_name()
+
+func _on_start_quest_button_pressed() -> void:
+	if temp_party.count(null) >= temp_party.size():
+		print("Cannot start quest. No party members.")
+		return
+	
+	for slot in temp_party:
+		if slot:
+			slot.on_quest = true
+			data.add_party_member(slot)
+	data.state = Quest.QuestState.TRAVELING
+	print("Quest Started")
 
 func update_panel(q: Quest) -> void:
 	data = q
@@ -62,6 +76,7 @@ func update_panel(q: Quest) -> void:
 		var b : QuestPartyMemberButton = QUEST_PARTY_MEMBER_BUTTON.instantiate()
 		b.text = "Party Member " + str(i + 1)
 		b.index = i
+		b.mouse_entered.connect(func(): b.grab_focus())
 		b.pressed.connect(func():
 			print(b.text + " pressed.")
 			target_hero_slot = b.index

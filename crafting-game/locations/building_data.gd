@@ -7,7 +7,6 @@ signal leveled_up
 @export var is_max_level : bool = false
 
 @export var level : int = 0
-@export var level_up_gold_cost : int = 10
 @export var level_up_resource_cost : Dictionary = {}
 
 func _check_at_max_level() -> bool:
@@ -19,13 +18,11 @@ func set_building_name(n: String) -> void:
 func get_data() -> void:
 	is_max_level = _check_at_max_level()
 	if is_max_level:
-		level_up_gold_cost = 0
 		level_up_resource_cost = {}
 	else:
-		level_up_gold_cost = GameDB.BUILDINGS[building_name][level]["gold_cost"]
 		level_up_resource_cost = {}
-		for key in GameDB.BUILDINGS[building_name][level]["resource_cost"].keys():
-			level_up_resource_cost[key] = GameDB.BUILDINGS[building_name][level]["resource_cost"][key]
+		for key in GameDB.BUILDINGS[building_name][level]["upgrade_resource_costs"].keys():
+			level_up_resource_cost[key] = GameDB.BUILDINGS[building_name][level]["upgrade_resource_costs"][key]
 
 func level_up() -> void:
 	if is_max_level:

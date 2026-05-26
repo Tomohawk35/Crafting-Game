@@ -36,11 +36,16 @@ func _on_tavern_clicked(d: BuildingData) -> void: # TODO: remove building data b
 
 func _on_upgrade_button_pressed() -> void:
 	#if GameManager.has_gold(data.level_up_gold_cost): # TODO: Need to check for other resources as well
-	if GameManager.has_resources("gold", data.level_up_gold_cost): # TODO: Need to check for other resources as well
-		#GameManager.remove_gold(data.level_up_gold_cost)
-		GameManager.remove_resources("gold", data.level_up_gold_cost)
-		data.level_up()
-		_generate_recruitable_heroes() # TODO: Need to setup persistant data for hero cards
+	#if !GameManager.has_resources("gold", data.level_up_gold_cost): # TODO: Need to check for other resources as well
+		#return
+	for r in data.level_up_resource_cost.keys():
+		if !GameManager.has_resources(r, data.level_up_resource_cost[r]):
+			return 
+	#GameManager.remove_gold(data.level_up_gold_cost)
+	for r in data.level_up_resource_cost.keys():
+		GameManager.remove_resources(r, data.level_up_resource_cost[r])
+	data.level_up()
+	_generate_recruitable_heroes() # TODO: Need to setup persistant data for hero cards
 
 func _update_panel() -> void:
 	level_value_label.text = str(data.level)
@@ -51,10 +56,10 @@ func _update_panel() -> void:
 	else:
 		for child in upgrade_cost_container.get_children():
 			child.queue_free()
-		var l : PanelLabel = PANEL_LABEL.instantiate() as PanelLabel
-		l.text_label.text = "Gold: "
-		l.value_label.text = str(data.level_up_gold_cost)
-		upgrade_cost_container.add_child(l)
+		var l : PanelLabel
+		#l.text_label.text = "Gold: "
+		#l.value_label.text = str(data.level_up_gold_cost)
+		#upgrade_cost_container.add_child(l)
 		for key: String in data.level_up_resource_cost.keys():
 			l = PANEL_LABEL.instantiate()
 			l.text_label.text = key.capitalize() + ": "

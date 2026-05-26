@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="2_rt1w3"]
 [ext_resource type="PackedScene" uid="uid://phfrfmduowvq" path="res://locations/quest_party_member_button.tscn" id="3_qyicp"]
 
-[node name="QuestInfoPanel" type="PanelContainer" unique_id=1442437755 node_paths=PackedStringArray("quest_name_label", "quest_description_label", "party_member_button_container", "resource_reward_container", "reward_container")]
+[node name="QuestInfoPanel" type="PanelContainer" unique_id=1442437755 node_paths=PackedStringArray("quest_name_label", "quest_description_label", "party_member_button_container", "resource_reward_container", "reward_container", "start_quest_button")]
 custom_minimum_size = Vector2(256, 0)
 offset_right = 240.0
 offset_bottom = 108.0
@@ -17,6 +17,7 @@ quest_description_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/
 party_member_button_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer")
 resource_reward_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/ResourceRewardContainer")
 reward_container = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer")
+start_quest_button = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/StartQuestButton")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1446117495]
 layout_mode = 2
@@ -60,7 +61,13 @@ text = "Party:"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer" unique_id=68801305 instance=ExtResource("3_qyicp")]
+[node name="QuestPartyMemberButton" parent="MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer" unique_id=68801305 instance=ExtResource("3_qyicp")]
+layout_mode = 2
+
+[node name="QuestPartyMemberButton2" parent="MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer" unique_id=1364733249 instance=ExtResource("3_qyicp")]
+layout_mode = 2
+
+[node name="QuestPartyMemberButton3" parent="MarginContainer/HBoxContainer/VBoxContainer/PartyMemberButtonContainer" unique_id=1173951269 instance=ExtResource("3_qyicp")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1917232254]
@@ -98,3 +105,11 @@ layout_mode = 2
 
 [node name="ItemSlotUi6" parent="MarginContainer/HBoxContainer/VBoxContainer2/RewardContainer" unique_id=178698035 instance=ExtResource("2_rt1w3")]
 layout_mode = 2
+
+[node name="StartQuestButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=837991206]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_x08an")
+theme_type_variation = &"SimpleButton"
+text = "Start Quest"
+autowrap_mode = 2

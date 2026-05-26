@@ -1,7 +1,7 @@
 {
 	"tavern": [
-		{"gold_cost": 10, "resource_cost": {}},
-		{"gold_cost": 50, "resource_cost": {"wood": 5}},
-		{"gold_cost": 100, "resource_cost": {"wood": 10, "stone": 10}},
+		{"upgrade_resource_costs": {"gold": 10}},
+		{"upgrade_resource_costs": {"gold": 50, "wood": 5}},
+		{"upgrade_resource_costs": {"gold": 100, "wood": 10, "stone": 10}},
 	]
 }

@@ -6,5 +6,3 @@ class_name LocationData
 @export var description : String = "A new location."
 
 @export var favor : int = 0 # increases with quest completion
-
-@export var quests : Array[Quest] = []

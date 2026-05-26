@@ -20,6 +20,7 @@ func _input(event: InputEvent) -> void:
 func _on_open_select_hero_window_signal() -> void:
 	populate_heroes()
 	show()
+	grab_focus()
 
 func _close_window() -> void:
 	EventBus.hero_selected.emit(null)
