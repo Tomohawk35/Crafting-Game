@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b2fjby8apri63"]
+
+[ext_resource type="Script" uid="uid://y6syop21la0b" path="res://map_caravan/map_caravan.gd" id="1_o7aqq"]
+[ext_resource type="Texture2D" uid="uid://b420gfm5ikgl4" path="res://icon.svg" id="1_tekjk"]
+
+[node name="MapCaravan" type="PathFollow2D" unique_id=1860807116]
+progress = 384.3926
+rotates = false
+script = ExtResource("1_o7aqq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1217765941]
+texture = ExtResource("1_tekjk")

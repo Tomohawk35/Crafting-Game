@@ -5,6 +5,7 @@ enum QuestState { NOT_STARTED, TRAVELING, IN_PROGRESS, RETURNING, COMPLETE }
 enum QuestType { HUNT, INVESTIGATE, GATHER, BOSS, DUNGEON }
 enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 
+
 @export var quest_name : String = "A Simple Quest" # TODO: Add functions for getting name and description
 @export var quest_description : String = "A new quest for hunting rabbits."
 @export var state : QuestState = QuestState.NOT_STARTED
@@ -13,7 +14,7 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 @export var duration : float = 1.0 # Duration of quest once arrived?
 @export var resource_rewards : Dictionary[String, int] = {}
 @export var item_rewards : Array[SlotData] = []
-@export var party_members : Array[HeroData] = []
+@export var party_members : Array[HeroData] = [] # TODO: Change this to a resource "Party" with methods for gathering mod accumulations 
 @export var party_size : int = 3
 
 # TODO: Duration should be affected by cumulative speed mods on members

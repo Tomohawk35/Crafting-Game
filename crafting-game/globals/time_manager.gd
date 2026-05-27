@@ -45,7 +45,7 @@ func _time_tick() -> void:
 	tick.emit(hour, minute)
 
 func get_formatted_time() -> String:
-	return "%02d:%02d" % [hour % 12, floori(minute / 10) * 10]
+	return "%02d:%02d %s" % [hour % 12, floori(float(minute) / 10) * 10, "AM" if hour < 12 else "PM"]
 
 func to_dict() -> Dictionary:
 	var d : Dictionary = {}
