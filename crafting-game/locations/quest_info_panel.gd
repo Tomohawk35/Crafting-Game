@@ -22,6 +22,7 @@ var target_hero_slot : int
 
 func _ready() -> void:
 	start_quest_button.pressed.connect(_on_start_quest_button_pressed)
+	QuestManager.quest_started.connect(_on_quest_started)
 	#var q: Quest = Quest.new()
 	#q.add_resource_reward("gold", 134)
 	#q.add_resource_reward("wood", 44)

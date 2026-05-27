@@ -11,22 +11,37 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 @export var state : QuestState = QuestState.NOT_STARTED
 @export var difficulty : int = QuestDifficulty.EASY
 @export var location : String = "Nowhere"# Determines travel time
-@export var duration : float = 1.0 # Duration of quest once arrived?
+#@export var duration : float = 1.0 # Duration of quest once arrived?
 @export var resource_rewards : Dictionary[String, int] = {}
 @export var item_rewards : Array[SlotData] = []
 @export var party_members : Array[HeroData] = [] # TODO: Change this to a resource "Party" with methods for gathering mod accumulations 
+@export var party : Party = Party.new()
 @export var party_size : int = 3
+
+var travel_speed : float = 0.0
+var quest_speed : float = 0.0
 
 # TODO: Duration should be affected by cumulative speed mods on members
 # TODO: Figure out what should contribute to rewards
+
+func start() -> bool:
+	if state != QuestState.NOT_STARTED or party.members.size() <= 0:
+		return false
+	for member in party.members:
+		member.on_quest = true
+	state = QuestState.TRAVELING
+	travel_speed = (Constants.DEFAULT_TRAVEL_SPEED + party.party_stats["travel_speed_flat"]) * (1.0 + party.party_stats["travel_speed_pct"])
+	#quest_speed = (Constants.DEFAULT_QUEST_SPEED + party.party_stats["hunting_flat"]) * (1.0 + party.party_stats["hunting_pct"])
+	# TODO: Need dictionary for matching QuestType to related affixes
+	return true
+
+func progress() -> void:
+	pass  # TODO: UPDATE
 
 func set_location(l: String) -> void:
 	location = l
 	# TODO: Update function. Maybe add enum for locations or something
 
-func set_duration() -> void:
-	duration = 10.00
-	# TODO: Update duration with formula based on difficulty and other factors
 
 func add_resource_reward(r: String, v: int) -> void:
 	if resource_rewards.has(r):
@@ -55,7 +70,7 @@ func to_dict() -> Dictionary:
 	var d : Dictionary = {}
 	d["difficulty"] = difficulty
 	d["location"] = location
-	d["duration"] = duration
+	#d["duration"] = duration
 	# TODO: finish
 	return d
 
