@@ -77,6 +77,7 @@ func update_panel(q: Quest) -> void:
 		b.text = "Party Member " + str(i + 1)
 		b.index = i
 		b.mouse_entered.connect(func(): b.grab_focus())
+		b.mouse_exited.connect(func(): b.release_focus())
 		b.pressed.connect(func():
 			print(b.text + " pressed.")
 			target_hero_slot = b.index

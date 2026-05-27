@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_5iihe"]
 [ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="4_gisk1"]
 [ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="4_ib1r3"]
+[ext_resource type="Texture2D" uid="uid://b420gfm5ikgl4" path="res://icon.svg" id="5_gtrq5"]
 [ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="7_6kp1f"]
 [ext_resource type="PackedScene" uid="uid://cy17x5fgp1kr2" path="res://locations/party_member_select_panel.tscn" id="8_gtrq5"]
 
@@ -1714,6 +1715,12 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_uhfl8"]
 sources/0 = SubResource("TileSetAtlasSource_sl6gu")
 
+[sub_resource type="Curve2D" id="Curve2D_vegwf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 283, 345, -60.000008, 6.2500005, 60.000008, -6.2500005, 489, 404, -23.750002, 23.750002, 23.750002, -23.750002, 651, 341, 0, 0, 0, 0, 695, 215, -60.000008, 28.750002, 60.000008, -28.750002, 761, 108, 0, 0, 0, 0, 923, 128)
+}
+point_count = 6
+
 [node name="TestWorldMap" type="Node" unique_id=932133350]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=946345367]
@@ -1732,6 +1739,23 @@ position = Vector2(331, 255)
 [node name="MapLocation" parent="Node2D" unique_id=1260784349 instance=ExtResource("4_5iihe")]
 position = Vector2(924, 129)
 location_name = "outer farmlands"
+
+[node name="MapLocation2" parent="Node2D" unique_id=287887166 instance=ExtResource("4_5iihe")]
+position = Vector2(281, 344)
+location_name = "village"
+
+[node name="Path2D" type="Path2D" parent="Node2D" unique_id=2022203518]
+curve = SubResource("Curve2D_vegwf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D" unique_id=624435138]
+position = Vector2(688.1101, 245.5)
+progress = 495.03235
+rotates = false
+
+[node name="Node2D" type="Node2D" parent="Node2D/Path2D/PathFollow2D" unique_id=920998405]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Path2D/PathFollow2D" unique_id=286398006]
+texture = ExtResource("5_gtrq5")
 
 [node name="UIComponents" type="CanvasLayer" parent="." unique_id=821054220]
 
