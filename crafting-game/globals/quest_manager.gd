@@ -21,8 +21,8 @@ func _on_time_tick(_h: int, _m: int) -> void:
 
 func _progress_quests() -> void:
 	for q: Quest in quests:
-		if q.state in [Quest.QuestState.TRAVELING, Quest.QuestState.IN_PROGRESS, Quest.QuestState.RETURNING]:
-			
+		#if q.state in [Quest.QuestState.TRAVELING, Quest.QuestState.IN_PROGRESS, Quest.QuestState.RETURNING]:
+		q.progress()
 
 func _add_initial_quests() -> void:
 	var q: Quest = generate_quest("outer farmlands")

@@ -8,6 +8,8 @@ class_name MapCaravan
 
 var quest : Quest
 
+
+
 func _process(delta: float) -> void:
 	if !quest:
 		return

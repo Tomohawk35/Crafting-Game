@@ -18,8 +18,13 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 @export var party : Party = Party.new()
 @export var party_size : int = 3
 
+@export var travel_distance : float
+@export var route_position : float = 0.0
+
 var travel_speed : float = 0.0
 var quest_speed : float = 0.0
+
+
 
 # TODO: Duration should be affected by cumulative speed mods on members
 # TODO: Figure out what should contribute to rewards
@@ -35,12 +40,38 @@ func start() -> bool:
 	# TODO: Need dictionary for matching QuestType to related affixes
 	return true
 
+func arrived() -> void:
+	match state:
+		QuestState.TRAVELING:
+			route_position = travel_distance
+			state = QuestState.IN_PROGRESS
+		QuestState.RETURNING:
+			route_position = 0.0
+			state = QuestState.COMPLETE
+		_:
+			return
+
 func progress() -> void:
-	pass  # TODO: UPDATE
+	match state:
+		QuestState.TRAVELING:
+			route_position += travel_speed
+			if route_position >= travel_distance:
+				arrived()
+		QuestState.IN_PROGRESS:
+			pass # TODO: Track time for quest completion
+		QuestState.RETURNING:
+			route_position -= travel_speed
+			if route_position <= travel_distance:
+				arrived()
+		_:
+			return
 
 func set_location(l: String) -> void:
 	location = l
 	# TODO: Update function. Maybe add enum for locations or something
+
+func set_travel_distance(d: float) -> void:
+	travel_distance = d
 
 
 func add_resource_reward(r: String, v: int) -> void:
