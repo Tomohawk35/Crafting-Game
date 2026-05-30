@@ -17,12 +17,12 @@ func _ready() -> void:
 	TimeManager.tick.connect(_on_time_tick)
 
 func _on_time_tick(_h: int, _m: int) -> void:
-	_progress_quests()
+	_advance_quests()
 
-func _progress_quests() -> void:
+func _advance_quests() -> void:
 	for q: Quest in quests:
 		#if q.state in [Quest.QuestState.TRAVELING, Quest.QuestState.IN_PROGRESS, Quest.QuestState.RETURNING]:
-		q.progress()
+		q.advance()
 
 func _add_initial_quests() -> void:
 	var q: Quest = generate_quest("outer farmlands")
@@ -51,6 +51,7 @@ func generate_quest(location_name : String = "Generic") -> Quest:
 func start_quest(q: Quest) -> void: # TODO: Add timer for travel time / duration / etc
 	if q.start():
 		quest_started.emit(q)
+		# TODO: Check for valid party members before starting
 
 func complete_quest(q: Quest) -> void:
 	for member in q.party_members:
@@ -66,3 +67,13 @@ func complete_quest(q: Quest) -> void:
 
 func get_location_quests(loc: String) -> Array[Quest]:
 	return quests.filter(func(q: Quest): return q.location == loc)
+
+func get_active_quests() -> Array[Quest]:
+	return quests.filter(
+		func(q: Quest): 
+			return q.state in [
+				Quest.QuestState.TRAVELING,
+				Quest.QuestState.IN_PROGRESS,
+				Quest.QuestState.RETURNING
+				]
+			)

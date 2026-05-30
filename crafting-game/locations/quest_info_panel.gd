@@ -23,21 +23,16 @@ var target_hero_slot : int
 func _ready() -> void:
 	start_quest_button.pressed.connect(_on_start_quest_button_pressed)
 	QuestManager.quest_started.connect(_on_quest_started)
-	#var q: Quest = Quest.new()
-	#q.add_resource_reward("gold", 134)
-	#q.add_resource_reward("wood", 44)
-	#q.add_resource_reward("stone", 23)
-	#q.add_item_reward(ItemGenerator.generate_equipment())
-	#q.add_item_reward(ItemGenerator.generate_equipment())
-	#q.add_item_reward(ItemGenerator.generate_equipment())
-	#q.add_item_reward(ItemGenerator.generate_equipment())
-	#update_panel(q) # TODO: Remove after testing
-	pass
 
 func _on_party_member_button_pressed(i: int) -> void:
 	target_hero_slot = i
 	EventBus.open_select_hero_window.emit()
 	EventBus.hero_selected.connect(_on_hero_selected)
+
+func _on_quest_started(q: Quest) -> void:
+	if data != q:
+		return
+	start_quest_button.hide()
 
 func _on_hero_selected(h: HeroData) -> void:
 	if h and !temp_party.has(h):

@@ -8,12 +8,18 @@ const MAP_CARAVAN : PackedScene = preload("uid://b2fjby8apri63")
 func _ready() -> void:
 	QuestManager.quest_started.connect(_on_quest_started)
 
+func _spawn_caravan(q: Quest) -> void:
+	var caravan : MapCaravan = MAP_CARAVAN.instantiate()
+	caravan.quest = q
+	q.travel_distance = routes[q.location].curve.get_baked_length()
+	routes[q.location].add_child(caravan)
+
 func _on_quest_started(q: Quest) -> void:
 	if !routes.has(q.location):
 		print("Travel route to %s not open." % q.location)
 		return
-	
-	var caravan : MapCaravan = MAP_CARAVAN.instantiate()
-	# TODO: Link to quest data
-	caravan.quest = q
-	routes[q.location].add_child(caravan)
+	_spawn_caravan(q)
+
+func _load_caravans() -> void:
+	for q : Quest in QuestManager.get_active_quests():
+		_spawn_caravan(q)

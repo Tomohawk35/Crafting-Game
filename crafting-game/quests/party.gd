@@ -12,6 +12,19 @@ class_name Party
 		#for stat in h.total_stats.stats.keys():
 			#party_stats.stats[stat] += h.total_stats.stats[stat]
 
+func validate_party() -> bool:
+	if members.size() <= 0:
+		print("Party Fault: No party members.")
+		return false
+	if members.size() > max_party_size:
+		print("Party Fault: Too many party members.")
+		return false
+	for member in members:
+		if members.count(member) > 1:
+			print("Party Fault: Party contains duplicate party members.")
+			return false
+	return true
+
 func add_party_member(h: HeroData) -> bool:
 	if h.on_quest or members.has(h) or members.size() >= max_party_size:
 		return false

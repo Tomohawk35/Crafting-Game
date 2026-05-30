@@ -8,17 +8,25 @@ class_name MapCaravan
 
 var quest : Quest
 
-
-
-func _process(delta: float) -> void:
+func _ready() -> void:
 	if !quest:
-		return
+		print("Caravan does not have a valid quest.")
+		return # TODO: Queue free here
+	_update_position()
+
+func _process(_delta: float) -> void:
+	if !quest:
+		return # TODO: Queue free
+	_update_position()
+
+func _update_position() -> void:
 	match quest.state:
 		Quest.QuestState.TRAVELING:
-			pass
+			progress = quest.route_position
+			pass # TODO: Animate the caravan and update its position
 		Quest.QuestState.IN_PROGRESS:
-			pass
+			progress_ratio = 1.0 # TODO: Idle animation
 		Quest.QuestState.RETURNING:
-			pass
+			progress = quest.route_position
 		_:
 			pass
