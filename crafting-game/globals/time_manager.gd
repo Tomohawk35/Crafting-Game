@@ -13,6 +13,9 @@ var minute : int = 0
 var clock_on : bool = false
 var _frames_processed : int = 0
 
+func _ready() -> void:
+	start()
+
 func _process(_delta: float) -> void:
 	if !clock_on:
 		return

@@ -9,6 +9,7 @@ const QUEST_INFO_PANEL : PackedScene = preload("uid://d3vkayuk7ieia")
 @export var no_quests_available_label: Label
 @export var quest_container: VBoxContainer
 @export var quest_scroll_container: ScrollContainer
+@export var ui_root : CanvasLayer
 
 var location_id : String
 var data : LocationData
@@ -16,6 +17,10 @@ var data : LocationData
 func _ready() -> void:
 	EventBus.location_clicked.connect(_on_location_clicked)
 	hide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("escape") and visible:
+		_close_window()
 
 func _on_location_clicked(l: String) -> void:
 	if GameManager.locations.has(l):
@@ -27,6 +32,9 @@ func _on_location_clicked(l: String) -> void:
 func _clear_quest_list() -> void:
 	for child in quest_container.get_children():
 		child.queue_free()
+
+func _close_window() -> void:
+	hide()
 
 func _load_quests() -> void:
 	var quest_list : Array[Quest] = QuestManager.get_location_quests(location_id)
@@ -40,6 +48,7 @@ func _load_quests() -> void:
 		quest_container.show()
 		for q: Quest in quest_list:
 			var p: QuestInfoPanel = QUEST_INFO_PANEL.instantiate()
+			p.ui_root = ui_root
 			p.update_panel(q)
 			quest_container.add_child(p)
 

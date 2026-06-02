@@ -14,5 +14,5 @@ const RARITY_COLORS : Dictionary = {
 	Rarity.LEGENDARY : Color.FUCHSIA
 } 
 
-const DEFAULT_TRAVEL_SPEED : float = 20.0
+const DEFAULT_TRAVEL_SPEED : float = 2.0
 const DEFAULT_QUEST_SPEED : float = 20.0

@@ -6,10 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_5iihe"]
 [ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="4_gisk1"]
 [ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="4_ib1r3"]
-[ext_resource type="PackedScene" uid="uid://b2fjby8apri63" path="res://map_caravan/map_caravan.tscn" id="5_gtrq5"]
 [ext_resource type="Script" uid="uid://6keuxh5to1nc" path="res://tests/test_world_map/travel_routes.gd" id="5_vegwf"]
 [ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="7_6kp1f"]
-[ext_resource type="PackedScene" uid="uid://cy17x5fgp1kr2" path="res://locations/party_member_select_panel.tscn" id="8_gtrq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl6gu"]
 texture = ExtResource("1_tngxt")
@@ -1745,15 +1743,14 @@ location_name = "outer farmlands"
 position = Vector2(281, 344)
 location_name = "village"
 
-[node name="TravelRoutes" type="Node" parent="Node2D" unique_id=969913252]
+[node name="TravelRoutes" type="Node" parent="Node2D" unique_id=969913252 node_paths=PackedStringArray("routes")]
 script = ExtResource("5_vegwf")
+routes = {
+"outer farmlands": NodePath("Path2D")
+}
 
 [node name="Path2D" type="Path2D" parent="Node2D/TravelRoutes" unique_id=2022203518]
 curve = SubResource("Curve2D_vegwf")
-
-[node name="PathFollow2D" parent="Node2D/TravelRoutes/Path2D" unique_id=1860807116 instance=ExtResource("5_gtrq5")]
-position = Vector2(438.669, 399.0453)
-progress = 165.01079
 
 [node name="UIComponents" type="CanvasLayer" parent="." unique_id=821054220]
 
@@ -1762,8 +1759,5 @@ progress = 165.01079
 [node name="TavernPanel" parent="UIComponents" unique_id=337797092 instance=ExtResource("4_ib1r3")]
 visible = false
 
-[node name="MapLocationPanel" parent="UIComponents" unique_id=1223163384 instance=ExtResource("7_6kp1f")]
-visible = false
-
-[node name="PartyMemberSelectPanel" parent="UIComponents" unique_id=990201223 instance=ExtResource("8_gtrq5")]
-visible = false
+[node name="MapLocationPanel" parent="UIComponents" unique_id=1223163384 node_paths=PackedStringArray("ui_root") instance=ExtResource("7_6kp1f")]
+ui_root = NodePath("..")

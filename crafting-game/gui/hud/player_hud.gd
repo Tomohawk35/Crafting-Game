@@ -35,7 +35,7 @@ func _set_wood_value() -> void:
 func _set_stone_value() -> void:
 	stone_value_label.text = str(GameManager.resources["stone"])
 
-func _update_time() -> void:
+func _update_time(_h: int = 0, _m: int = 0) -> void:
 	time_label.text = TimeManager.get_formatted_time()
 
 # TODO: Change gold text label with gold icon

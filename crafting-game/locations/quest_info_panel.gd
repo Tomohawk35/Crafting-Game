@@ -1,9 +1,11 @@
 extends PanelContainer
 class_name QuestInfoPanel
 
-#const PARTY_MEMBER_SELECT_PANEL : PackedScene = preload("uid://cy17x5fgp1kr2")
+const PARTY_MEMBER_SELECT_PANEL : PackedScene = preload("uid://cy17x5fgp1kr2")
 const QUEST_PARTY_MEMBER_BUTTON : PackedScene = preload("uid://phfrfmduowvq")
 const ITEM_SLOT_UI : PackedScene = preload("uid://cq60rwikmkkud")
+
+@export var ui_root : CanvasLayer
 
 var data : Quest
 
@@ -17,7 +19,6 @@ var data : Quest
 var temp_party : Array[HeroData] = []
 var target_hero_slot : int
 
-# TODO: Add Start Quest button
 # TODO: Change ItemSlotUI to a DisplaySlot instead. Don't need drag/drop functionality
 
 func _ready() -> void:
@@ -26,20 +27,23 @@ func _ready() -> void:
 
 func _on_party_member_button_pressed(i: int) -> void:
 	target_hero_slot = i
-	EventBus.open_select_hero_window.emit()
-	EventBus.hero_selected.connect(_on_hero_selected)
+	var hero_select_panel : PartyMemberSelectPanel = PARTY_MEMBER_SELECT_PANEL.instantiate()
+	hero_select_panel.quest = data
+	hero_select_panel.hero_selected.connect(_on_hero_selected)
+	ui_root.add_child(hero_select_panel)
 
 func _on_quest_started(q: Quest) -> void:
-	if data != q:
-		return
-	start_quest_button.hide()
+	print("quest started signal received")
+	if data == q:
+		start_quest_button.disabled = true
 
 func _on_hero_selected(h: HeroData) -> void:
 	if h and !temp_party.has(h):
 		temp_party[target_hero_slot] = h
 		_update_button_names()
 	target_hero_slot = -1
-	EventBus.hero_selected.disconnect(_on_hero_selected) # TODO: Remove hero from available hero list?
+	#EventBus.hero_selected.disconnect(_on_hero_selected) 
+	# TODO: Remove hero from available hero list?
 
 func _update_button_names() -> void:
 	var button_list : Array = party_member_button_container.get_children()
@@ -52,11 +56,12 @@ func _on_start_quest_button_pressed() -> void:
 		print("Cannot start quest. No party members.")
 		return
 	
-	for slot in temp_party:
-		if slot:
-			slot.on_quest = true
-			data.add_party_member(slot)
-	data.state = Quest.QuestState.TRAVELING
+	#for slot in temp_party:
+		#if slot:
+			#slot.on_quest = true
+			#data.add_party_member(slot)
+	#data.state = Quest.QuestState.TRAVELING
+	QuestManager.start_quest(data)
 	print("Quest Started")
 
 func update_panel(q: Quest) -> void:
@@ -72,12 +77,14 @@ func update_panel(q: Quest) -> void:
 		var b : QuestPartyMemberButton = QUEST_PARTY_MEMBER_BUTTON.instantiate()
 		b.text = "Party Member " + str(i + 1)
 		b.index = i
-		b.mouse_entered.connect(func(): b.grab_focus())
-		b.mouse_exited.connect(func(): b.release_focus())
-		b.pressed.connect(func():
-			print(b.text + " pressed.")
-			target_hero_slot = b.index
-			_on_party_member_button_pressed(b.index))
+		#b.mouse_entered.connect(func(): b.grab_focus())
+		#b.mouse_exited.connect(func(): b.release_focus())
+		b.pressed.connect(
+			func():
+				print(b.text + " pressed.")
+				target_hero_slot = b.index
+				_on_party_member_button_pressed(b.index)
+				)
 		party_member_button_container.add_child(b)
 		temp_party.append(null)
 	

@@ -3,7 +3,7 @@ class_name Party
 
 @export var max_party_size : int = 3
 @export var members : Array[HeroData] = []
-@export var party_stats : StatsTable
+@export var party_stats : StatsTable = StatsTable.new()
 
 #func set_party(heroes: Array[HeroData]) -> void:
 	#party_stats = StatsTable.new()

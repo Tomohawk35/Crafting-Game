@@ -22,11 +22,13 @@ func _process(_delta: float) -> void:
 func _update_position() -> void:
 	match quest.state:
 		Quest.QuestState.TRAVELING:
-			progress = quest.route_position
+			progress = quest.progress
 			pass # TODO: Animate the caravan and update its position
 		Quest.QuestState.IN_PROGRESS:
 			progress_ratio = 1.0 # TODO: Idle animation
 		Quest.QuestState.RETURNING:
-			progress = quest.route_position
+			progress = quest.progress
+		Quest.QuestState.COMPLETE:
+			queue_free()
 		_:
 			pass

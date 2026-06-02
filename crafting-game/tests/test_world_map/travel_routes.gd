@@ -9,9 +9,9 @@ func _ready() -> void:
 	QuestManager.quest_started.connect(_on_quest_started)
 
 func _spawn_caravan(q: Quest) -> void:
+	q.travel_distance = routes[q.location].curve.get_baked_length()
 	var caravan : MapCaravan = MAP_CARAVAN.instantiate()
 	caravan.quest = q
-	q.travel_distance = routes[q.location].curve.get_baked_length()
 	routes[q.location].add_child(caravan)
 
 func _on_quest_started(q: Quest) -> void:

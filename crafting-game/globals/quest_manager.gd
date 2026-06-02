@@ -50,7 +50,9 @@ func generate_quest(location_name : String = "Generic") -> Quest:
 
 func start_quest(q: Quest) -> void: # TODO: Add timer for travel time / duration / etc
 	if q.start():
+		print("Quest has been started.")
 		quest_started.emit(q)
+		print("Signal has been emitted")
 		# TODO: Check for valid party members before starting
 
 func complete_quest(q: Quest) -> void:

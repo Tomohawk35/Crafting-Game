@@ -14,7 +14,7 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 #@export var duration : float = 1.0 # Duration of quest once arrived?
 @export var resource_rewards : Dictionary[String, int] = {}
 @export var item_rewards : Array[SlotData] = []
-@export var party_members : Array[HeroData] = [] # TODO: Change this to a resource "Party" with methods for gathering mod accumulations 
+#@export var party_members : Array[HeroData] = [] # TODO: Change this to a resource "Party" with methods for gathering mod accumulations 
 @export var party : Party = Party.new()
 @export var party_size : int = 3
 
@@ -40,7 +40,7 @@ func start() -> bool:
 	for member in party.members:
 		member.on_quest = true
 	state = QuestState.TRAVELING
-	travel_speed = (Constants.DEFAULT_TRAVEL_SPEED + party.party_stats["travel_speed_flat"]) * (1.0 + party.party_stats["travel_speed_pct"])
+	travel_speed = (Constants.DEFAULT_TRAVEL_SPEED + party.party_stats.stats["travel_speed_flat"]) * (1.0 + party.party_stats.stats["travel_speed_pct"])
 	#quest_speed = (Constants.DEFAULT_QUEST_SPEED + party.party_stats["hunting_flat"]) * (1.0 + party.party_stats["hunting_pct"])
 	# TODO: Need dictionary for matching QuestType to related affixes
 	return true
@@ -86,15 +86,15 @@ func add_item_reward(i: Item, q: int = 1) -> void:
 	s.quantity = q
 	item_rewards.append(s)
 
-func add_party_member(h: HeroData) -> bool:
-	if party_members.size() < (difficulty + 1):
-		party_members.append(h)
-		return true
-	else:
-		return false
-
-func clear_party() -> void:
-	party_members.clear()
+#func add_party_member(h: HeroData) -> bool:
+	#if party_members.size() < (difficulty + 1):
+		#party_members.append(h)
+		#return true
+	#else:
+		#return false
+#
+#func clear_party() -> void:
+	#party_members.clear()
 
 #region SAVE / LOAD
 func to_dict() -> Dictionary:
