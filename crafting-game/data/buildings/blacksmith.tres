@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://cwm8t85ehxu26"]
+
+[ext_resource type="Script" uid="uid://d0bdgew7xp4cx" path="res://data/scripts/building_data.gd" id="1_p38rg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p38rg"]
+load_path = "res://.godot/imported/TinyRanch_Structures.png-8f0bacab1c717b1dafaa4d2a725b59b3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcind"]
+atlas = SubResource("CompressedTexture2D_p38rg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xbyp3"]
+load_path = "res://.godot/imported/TinyRanch_Structures.png-8f0bacab1c717b1dafaa4d2a725b59b3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g68v"]
+atlas = SubResource("CompressedTexture2D_xbyp3")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_p38rg")
+building_id = "blacksmith"
+building_name = "Forge"
+sprite = Array[Texture2D]([SubResource("AtlasTexture_pcind"), SubResource("AtlasTexture_0g68v")])
+metadata/_custom_type_script = "uid://d0bdgew7xp4cx"

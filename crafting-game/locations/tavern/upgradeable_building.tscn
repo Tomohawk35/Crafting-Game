@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bodkb4myveenn"]
+
+[ext_resource type="Script" uid="uid://orkwpt6wgod6" path="res://locations/tavern/upgradeable_building.gd" id="1_grpkn"]
+[ext_resource type="Texture2D" uid="uid://cj8tud8vju23y" path="res://assets/tiny_ranch_asset_pack_by_gustavo_vituri/TinyRanch_Structures.png" id="2_0gjd6"]
+[ext_resource type="PackedScene" uid="uid://4aghuelqq5nw" path="res://components/clickable_area.tscn" id="3_0gjd6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j57f"]
+atlas = ExtResource("2_0gjd6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j57f"]
+size = Vector2(35, 35)
+
+[node name="UpgradeableBuilding" type="Node2D" unique_id=379177377]
+script = ExtResource("1_grpkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=670447983]
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_1j57f")
+
+[node name="ClickableArea" parent="." unique_id=901613118 instance=ExtResource("3_0gjd6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea" unique_id=1744551396]
+position = Vector2(-0.5, -16.5)
+shape = SubResource("RectangleShape2D_1j57f")
+
+[node name="Label" type="Label" parent="." unique_id=1680031448]
+offset_left = -15.0
+offset_top = -45.0
+offset_right = 15.0
+offset_bottom = -33.0
+theme_override_font_sizes/font_size = 8
+text = "Tavern"
+horizontal_alignment = 1

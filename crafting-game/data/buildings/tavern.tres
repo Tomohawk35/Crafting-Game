@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://clf1ogyxyg83o"]
+
+[ext_resource type="Script" uid="uid://d0bdgew7xp4cx" path="res://data/scripts/building_data.gd" id="1_dppmr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dppmr"]
+load_path = "res://.godot/imported/TinyRanch_Structures.png-8f0bacab1c717b1dafaa4d2a725b59b3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk30x"]
+atlas = SubResource("CompressedTexture2D_dppmr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qi2s"]
+atlas = SubResource("CompressedTexture2D_dppmr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmrxr"]
+load_path = "res://.godot/imported/TinyRanch_Structures.png-8f0bacab1c717b1dafaa4d2a725b59b3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qibhg"]
+atlas = SubResource("CompressedTexture2D_cmrxr")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_dppmr")
+building_id = "tavern"
+building_name = "Tavern"
+sprite = Array[Texture2D]([SubResource("AtlasTexture_fk30x"), SubResource("AtlasTexture_1qi2s"), SubResource("AtlasTexture_qibhg")])
+metadata/_custom_type_script = "uid://d0bdgew7xp4cx"

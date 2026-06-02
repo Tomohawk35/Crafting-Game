@@ -8,6 +8,8 @@ class_name MapCaravan
 
 var quest : Quest
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _ready() -> void:
 	if !quest:
 		print("Caravan does not have a valid quest.")
@@ -23,11 +25,14 @@ func _update_position() -> void:
 	match quest.state:
 		Quest.QuestState.TRAVELING:
 			progress = quest.progress
+			animation_player.play("move_side")
 			pass # TODO: Animate the caravan and update its position
 		Quest.QuestState.IN_PROGRESS:
 			progress_ratio = 1.0 # TODO: Idle animation
+			animation_player.play("idle_down")
 		Quest.QuestState.RETURNING:
 			progress = quest.progress
+			animation_player.play("move_side")
 		Quest.QuestState.COMPLETE:
 			queue_free()
 		_:

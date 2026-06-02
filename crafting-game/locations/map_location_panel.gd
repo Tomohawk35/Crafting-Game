@@ -15,25 +15,31 @@ var location_id : String
 var data : LocationData
 
 func _ready() -> void:
-	EventBus.location_clicked.connect(_on_location_clicked)
+	#EventBus.location_clicked.connect(_on_location_clicked)
 	hide()
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape") and visible:
-		_close_window()
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("escape") and visible:
+		#_close_window()
 
-func _on_location_clicked(l: String) -> void:
-	if GameManager.locations.has(l):
-		_clear_quest_list()
-		location_id = l
-		update_panel(GameManager.locations[location_id])
-		show()
+#func _on_location_clicked(l: String) -> void:
+	#if GameManager.locations.has(l):
+		#_clear_quest_list()
+		#location_id = l
+		#update_panel(GameManager.locations[location_id])
+		#show()
 
 func _clear_quest_list() -> void:
 	for child in quest_container.get_children():
 		child.queue_free()
 
-func _close_window() -> void:
+func open() -> void:
+	if location_id:
+		_clear_quest_list()
+		update_panel()
+		show()
+
+func close() -> void:
 	hide()
 
 func _load_quests() -> void:
@@ -52,9 +58,14 @@ func _load_quests() -> void:
 			p.update_panel(q)
 			quest_container.add_child(p)
 
-func update_panel(d: LocationData) -> void:
-	data = d
+func update_panel() -> void:
+	data = GameManager.locations[location_id]
 	name_label.text = data.location_name.capitalize()
 	description_label.text = data.description
 	favor_value_label.text = str(data.favor)
 	_load_quests()
+
+func set_location(l: String) -> void:
+	location_id = l
+	if visible:
+		update_panel()

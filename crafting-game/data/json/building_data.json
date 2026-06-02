@@ -1,0 +1,11 @@
+{
+	"tavern": [
+		{"upgrade_resource_costs": {"gold": 10}},
+		{"upgrade_resource_costs": {"gold": 50, "wood": 5}},
+		{"upgrade_resource_costs": {"gold": 100, "wood": 10, "stone": 10}},
+	],
+	"blacksmith": [
+		{"upgrade_resource_costs": {"gold": 10}},
+		{"upgrade_resource_costs": {"gold": 100, "wood": 10, "stone": 10}},
+	]
+}

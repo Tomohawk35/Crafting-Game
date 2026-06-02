@@ -20,11 +20,12 @@ func _ready() -> void:
 	for child in hero_recruit_card_container.get_children():
 		child.queue_free()
 	upgrade_button.disabled = true
-	data = GameManager.tavern
+	data = GameManager.buildings["tavern"]
 	data.leveled_up.connect(_update_panel)
-	EventBus.tavern_clicked.connect(_on_tavern_clicked)
+	#EventBus.tavern_clicked.connect(_on_tavern_clicked)
 	upgrade_button.pressed.connect(_on_upgrade_button_pressed)
 	hide()
+
 
 func _on_tavern_clicked(d: BuildingData) -> void: # TODO: remove building data being passed in signal
 	#if data:
@@ -82,3 +83,11 @@ func _generate_recruitable_heroes() -> void: # TODO: Incorporate tavern level
 #func _calculate_recruit_cost(h: HeroData) -> int:
 	#return (h.rarity + 1) * h.level * 10
 	# TODO: Maybe add a cost reduction into the tavern level or some town value
+
+
+func open() -> void:
+	_update_panel()
+	show()
+
+func close() -> void:
+	hide()

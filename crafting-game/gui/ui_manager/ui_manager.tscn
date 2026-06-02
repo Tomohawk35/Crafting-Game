@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://koeadxu4n8tr"]
+
+[ext_resource type="Script" uid="uid://dmuwus1mh2md" path="res://gui/ui_manager/ui_manager.gd" id="1_d2uql"]
+[ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="1_dpkie"]
+[ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="2_d2uql"]
+[ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="3_f8mkl"]
+
+[node name="UIManager" type="CanvasLayer" unique_id=1814013612 node_paths=PackedStringArray("player_hud", "tavern_panel", "map_location_panel")]
+script = ExtResource("1_d2uql")
+player_hud = NodePath("PlayerHUD")
+tavern_panel = NodePath("TavernPanel")
+map_location_panel = NodePath("MapLocationPanel")
+
+[node name="PlayerHUD" parent="." unique_id=1175922791 instance=ExtResource("1_dpkie")]
+
+[node name="TavernPanel" parent="." unique_id=337797092 instance=ExtResource("2_d2uql")]
+visible = false
+
+[node name="MapLocationPanel" parent="." unique_id=1223163384 node_paths=PackedStringArray("ui_root") instance=ExtResource("3_f8mkl")]
+visible = false
+ui_root = NodePath("..")

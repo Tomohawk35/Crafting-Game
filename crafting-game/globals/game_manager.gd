@@ -14,7 +14,8 @@ var resources : Dictionary[String, int] = {
 var inventory : Array[SlotData] = []
 
 # BUILDINGS
-var tavern : BuildingData 
+var buildings : Dictionary[String, BuildingData]
+#var tavern : BuildingData 
 
 # LOCATIONS 
 var locations : Dictionary[String, LocationData] = {}
@@ -22,10 +23,16 @@ var locations : Dictionary[String, LocationData] = {}
 
 
 func _ready() -> void: # TODO: Remove and change to new game or load game functions
-	tavern = BuildingData.new()
-	tavern.building_name = "tavern"
-	tavern.get_data()
+	#tavern = BuildingData.new()
+	#tavern.building_name = "tavern"
+	#tavern.get_data()
+	_new_building_data()
 	_new_location_data()
+
+func _new_building_data() -> void:
+	buildings.clear()
+	buildings["tavern"] = Utils.load_asset("res://data/buildings/tavern.tres")
+	buildings["blacksmith"] = Utils.load_asset("res://data/buildings/blacksmith.tres")
 
 func _new_location_data() -> void:
 	locations = {}

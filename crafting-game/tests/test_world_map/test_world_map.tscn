@@ -2,12 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ghgd8ekoi1st" path="res://tests/test_world_map/roguelikeSheet_transparent.png" id="1_tngxt"]
 [ext_resource type="Script" uid="uid://dqw2j110x2b4j" path="res://tests/test_world_map/camera_2d.gd" id="2_sl6gu"]
-[ext_resource type="PackedScene" uid="uid://bodkb4myveenn" path="res://locations/tavern/tavern.tscn" id="3_uhfl8"]
+[ext_resource type="PackedScene" uid="uid://bodkb4myveenn" path="res://locations/tavern/upgradeable_building.tscn" id="3_uhfl8"]
 [ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_5iihe"]
-[ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="4_gisk1"]
-[ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="4_ib1r3"]
 [ext_resource type="Script" uid="uid://6keuxh5to1nc" path="res://tests/test_world_map/travel_routes.gd" id="5_vegwf"]
-[ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="7_6kp1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl6gu"]
 texture = ExtResource("1_tngxt")
@@ -1716,7 +1713,7 @@ sources/0 = SubResource("TileSetAtlasSource_sl6gu")
 
 [sub_resource type="Curve2D" id="Curve2D_vegwf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 283, 345, -60.000008, 6.2500005, 60.000008, -6.2500005, 489, 404, -23.750002, 23.750002, 23.750002, -23.750002, 651, 341, 0, 0, 0, 0, 695, 215, -60.000008, 28.750002, 60.000008, -28.750002, 761, 108, 0, 0, 0, 0, 923, 128)
+"points": PackedVector2Array(0, 0, 0, 0, 283, 345, -20.88197, 0.040788174, 20.88197, -0.040788174, 329, 372, -11.952498, 9.468813, 11.952498, -9.468813, 382, 357, 0, 0, 0, 0, 394, 322, -10.9472275, 5.154995, 10.9472275, -5.154995, 406, 295, 0, 0, 0, 0, 436, 296)
 }
 point_count = 6
 
@@ -1736,7 +1733,7 @@ script = ExtResource("2_sl6gu")
 position = Vector2(331, 255)
 
 [node name="MapLocation" parent="Node2D" unique_id=1260784349 instance=ExtResource("4_5iihe")]
-position = Vector2(924, 129)
+position = Vector2(436, 298)
 location_name = "outer farmlands"
 
 [node name="MapLocation2" parent="Node2D" unique_id=287887166 instance=ExtResource("4_5iihe")]
@@ -1752,12 +1749,6 @@ routes = {
 [node name="Path2D" type="Path2D" parent="Node2D/TravelRoutes" unique_id=2022203518]
 curve = SubResource("Curve2D_vegwf")
 
-[node name="UIComponents" type="CanvasLayer" parent="." unique_id=821054220]
-
-[node name="PlayerHUD" parent="UIComponents" unique_id=1175922791 instance=ExtResource("4_gisk1")]
-
-[node name="TavernPanel" parent="UIComponents" unique_id=337797092 instance=ExtResource("4_ib1r3")]
-visible = false
-
-[node name="MapLocationPanel" parent="UIComponents" unique_id=1223163384 node_paths=PackedStringArray("ui_root") instance=ExtResource("7_6kp1f")]
-ui_root = NodePath("..")
+[node name="Tavern2" parent="Node2D" unique_id=1377228569 instance=ExtResource("3_uhfl8")]
+position = Vector2(409, 220)
+building_name = "blacksmith"
