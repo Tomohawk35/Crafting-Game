@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b2fjby8apri63"]
 
 [ext_resource type="Script" uid="uid://y6syop21la0b" path="res://map_caravan/map_caravan.gd" id="1_o7aqq"]
-[ext_resource type="Texture2D" uid="uid://bgfv5gginq7fp" path="res://assets/hana_caraka_unit_character/Wizard 1 - run.png" id="2_o7aqq"]
-[ext_resource type="Texture2D" uid="uid://cskef2i8mxi0u" path="res://assets/hana_caraka_unit_character/Wizard 1 - idle.png" id="3_18s4f"]
+[ext_resource type="Texture2D" uid="uid://bgfv5gginq7fp" path="res://assets/art/hana_caraka_unit_character/Wizard 1 - run.png" id="2_o7aqq"]
+[ext_resource type="Texture2D" uid="uid://cskef2i8mxi0u" path="res://assets/art/hana_caraka_unit_character/Wizard 1 - idle.png" id="3_18s4f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18s4f"]
 atlas = ExtResource("2_o7aqq")

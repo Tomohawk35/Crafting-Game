@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EquipmentBase" format=3 uid="uid://bsq4tjfdfmb4d"]
 
-[ext_resource type="Texture2D" uid="uid://b15mes08bkyql" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/staff_02c.png" id="1_ut2gu"]
+[ext_resource type="Texture2D" uid="uid://b15mes08bkyql" path="res://assets/art/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/staff_02c.png" id="1_ut2gu"]
 [ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://data/scripts/affix_data.gd" id="2_6oa5b"]
 [ext_resource type="Script" uid="uid://hsv3uv0r1tey" path="res://items/equipment_base.gd" id="3_ut2gu"]
 

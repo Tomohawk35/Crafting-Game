@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bodkb4myveenn"]
 
 [ext_resource type="Script" uid="uid://orkwpt6wgod6" path="res://locations/tavern/upgradeable_building.gd" id="1_grpkn"]
-[ext_resource type="Texture2D" uid="uid://cj8tud8vju23y" path="res://assets/tiny_ranch_asset_pack_by_gustavo_vituri/TinyRanch_Structures.png" id="2_0gjd6"]
+[ext_resource type="Texture2D" uid="uid://cj8tud8vju23y" path="res://assets/art/tiny_ranch_asset_pack_by_gustavo_vituri/TinyRanch_Structures.png" id="2_0gjd6"]
 [ext_resource type="PackedScene" uid="uid://4aghuelqq5nw" path="res://components/clickable_area.tscn" id="3_0gjd6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j57f"]

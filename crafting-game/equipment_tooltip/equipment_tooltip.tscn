@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cg2d6rttt4xkt"]
 
 [ext_resource type="Script" uid="uid://klxaigj7i6do" path="res://equipment_tooltip/equipment_tooltip.gd" id="1_2gfxr"]
-[ext_resource type="Texture2D" uid="uid://dls58swuwkqsb" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/armor_01d.png" id="2_801d7"]
+[ext_resource type="Texture2D" uid="uid://dls58swuwkqsb" path="res://assets/art/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/armor_01d.png" id="2_801d7"]
 
 [sub_resource type="Gradient" id="Gradient_v22fw"]
 colors = PackedColorArray(0, 0, 0, 1, 0.34566566, 0.81938934, 0.76498026, 1)

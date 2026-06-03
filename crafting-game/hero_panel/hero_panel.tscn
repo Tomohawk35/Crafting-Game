@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpk7tu86lf0xi" path="res://hero_panel/hero_panel.gd" id="1_b4sry"]
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="2_677lb"]
-[ext_resource type="Texture2D" uid="uid://cskef2i8mxi0u" path="res://assets/hana_caraka_unit_character/Wizard 1 - idle.png" id="2_xc740"]
+[ext_resource type="Texture2D" uid="uid://cskef2i8mxi0u" path="res://assets/art/hana_caraka_unit_character/Wizard 1 - idle.png" id="2_xc740"]
 [ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="3_j38ip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j38ip"]

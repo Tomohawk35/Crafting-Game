@@ -1,9 +1,12 @@
 [gd_resource type="Theme" format=3 uid="uid://ccu4npsvqwi6r"]
 
-[ext_resource type="Texture2D" uid="uid://cpyyq7g3oofba" path="res://assets/retro_inventory/Inventory_Slot_1.png" id="1_1fvms"]
+[ext_resource type="Texture2D" uid="uid://cpyyq7g3oofba" path="res://assets/art/retro_inventory/Inventory_Slot_1.png" id="1_jvwys"]
+[ext_resource type="FontFile" uid="uid://4h8kht6yi10j" path="res://assets/fonts/ari_w9500/ari-w9500-display.ttf" id="2_mfn8g"]
+[ext_resource type="FontFile" uid="uid://7y2t1spyv3px" path="res://assets/fonts/ari_w9500/ari-w9500-bold.ttf" id="3_4nb47"]
+[ext_resource type="FontFile" uid="uid://dbkkw5q5vy1ch" path="res://assets/fonts/ari_w9500/ari-w9500.ttf" id="4_k2fgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1w3f"]
-atlas = ExtResource("1_1fvms")
+atlas = ExtResource("1_jvwys")
 region = Rect2(5, 5, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pd6sc"]
@@ -14,11 +17,16 @@ texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
 [resource]
+default_font = ExtResource("4_k2fgf")
+default_font_size = 8
 BorderedPanelContainer/base_type = &"PanelContainer"
 BorderedPanelContainer/styles/panel = SubResource("StyleBoxTexture_pd6sc")
-HeaderLarge/font_sizes/font_size = 16
-HeaderMedium/font_sizes/font_size = 12
+HeaderLarge/font_sizes/font_size = 8
+HeaderLarge/fonts/font = ExtResource("2_mfn8g")
+HeaderMedium/font_sizes/font_size = 8
+HeaderMedium/fonts/font = ExtResource("3_4nb47")
 HeaderSmall/font_sizes/font_size = 8
+HeaderSmall/fonts/font = ExtResource("4_k2fgf")
 Label/font_sizes/font_size = 8
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8

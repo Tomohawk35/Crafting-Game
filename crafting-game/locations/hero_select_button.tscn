@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnxvb41xlyhxn"]
 
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_x4wdd"]
-[ext_resource type="Texture2D" uid="uid://cm5viypehbj1s" path="res://assets/hana_caraka_unit_character/Knight 2 - idle.png" id="2_e7ocb"]
+[ext_resource type="Texture2D" uid="uid://cm5viypehbj1s" path="res://assets/art/hana_caraka_unit_character/Knight 2 - idle.png" id="2_e7ocb"]
 [ext_resource type="Script" uid="uid://cthatmv7cxas6" path="res://locations/hero_select_button.gd" id="2_o0qwy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0qwy"]

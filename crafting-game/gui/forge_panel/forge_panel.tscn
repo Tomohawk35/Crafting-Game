@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b2x7sucrfgln1"]
+
+[ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_0t4vg"]
+[ext_resource type="Script" uid="uid://mrpn64cjegkp" path="res://gui/forge_panel/forge_panel.gd" id="1_56k05"]
+[ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="2_wl2ce"]
+
+[node name="ForgePanel" type="Control" unique_id=2088834445]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_56k05")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=873311606]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=47313019]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=343214967]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2034083757]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"HeaderLarge"
+text = "Forge"
+horizontal_alignment = 1
+
+[node name="ItemSlotUi" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1332666258 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1650318605]
+layout_mode = 2
+
+[node name="ImplicitAffixLabelContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2031838776]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ImplicitAffixLabelContainer" unique_id=855234043]
+layout_mode = 2
+text = "Affix 1"
+
+[node name="ExplicitAffixLabelContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1592730619]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ExplicitAffixLabelContainer" unique_id=89740974]
+layout_mode = 2
+text = "Affix 1"
