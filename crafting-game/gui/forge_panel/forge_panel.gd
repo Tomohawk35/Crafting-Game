@@ -1,23 +1,37 @@
 extends Control
 class_name ForgePanel
 
+const BUTTON_INITIAL_X_POSITION : float = -300.0
+const INVENTORY_PANEL_INITIAL_POSITION : Vector2 = Vector2(300.0, 0)
+
+
 var item_data : Equipment
 
 @onready var implicit_affix_label_container: VBoxContainer = %ImplicitAffixLabelContainer
 @onready var explicit_affix_label_container: VBoxContainer = %ExplicitAffixLabelContainer
 @onready var implicit_affix_separator: HSeparator = %ImplicitAffixSeparator
 @onready var explicit_affix_separator: HSeparator = %ExplicitAffixSeparator
-@onready var reforge_button: PanelContainer = $VBoxContainer/ReforgeButton
-@onready var add_button: PanelContainer = $VBoxContainer/AddButton
-@onready var remove_button: PanelContainer = $VBoxContainer/RemoveButton
+@onready var inventory_panel: PanelContainer = %InventoryPanel
+@onready var button_container: VBoxContainer = %ButtonContainer
+@onready var reforge_button: PanelContainer = %ReforgeButton
+@onready var add_button: PanelContainer = %AddButton
+@onready var remove_button: PanelContainer = %RemoveButton
 
 func _ready() -> void:
+	hide()
 	reforge_button.gui_input.connect(_on_reforge_button_pressed) # TODO: Does it cost currency to perform this?
 	add_button.gui_input.connect(_on_add_button_pressed)
 	remove_button.gui_input.connect(_on_remove_button_pressed)
 	
 	item_data = ItemFactory.generate_equipment()
-	_update_affix_labels()
+	#_update_affix_labels()
+	
+	_setup_initial_positions()
+	open()
+
+func _setup_initial_positions() -> void:
+	button_container.position.x = BUTTON_INITIAL_X_POSITION
+	inventory_panel.position = INVENTORY_PANEL_INITIAL_POSITION
 
 func _on_add_button_pressed(event: InputEvent) -> void:
 	if event.is_action_pressed("select") and item_data:
@@ -73,3 +87,17 @@ func _update_affix_labels() -> void:
 	else:
 		explicit_affix_label_container.hide()
 		explicit_affix_separator.hide()
+
+func open() -> void: # TODO: Add cascading movement of buttons when Godot 4.7 is released
+	show()
+	var tween : Tween = create_tween()
+	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(inventory_panel, "position", Vector2.ZERO, 0.7)
+	tween.parallel().tween_property(button_container, "position", Vector2.ZERO, 0.7)
+
+func close() -> void:
+	var tween : Tween = create_tween()
+	tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(inventory_panel, "position", INVENTORY_PANEL_INITIAL_POSITION, 0.7)
+	tween.parallel().tween_property(button_container, "position", Vector2(BUTTON_INITIAL_X_POSITION, 0), 0.7)
+	tween.tween_callback(func(): hide())

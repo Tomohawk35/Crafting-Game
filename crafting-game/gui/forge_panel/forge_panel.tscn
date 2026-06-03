@@ -74,64 +74,152 @@ layout_mode = 2
 layout_mode = 2
 text = "Affix 1"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=289795669]
+[node name="Control2" type="Control" parent="." unique_id=1278622487]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -53.5
-offset_right = -116.0
-offset_bottom = 53.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = 124.0
+offset_top = 126.5
+offset_right = 124.0
+offset_bottom = 126.5
 
-[node name="ReforgeButton" type="PanelContainer" parent="VBoxContainer" unique_id=22112951]
+[node name="ButtonContainer" type="VBoxContainer" parent="Control2" unique_id=289795669]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 107.0
+
+[node name="ReforgeButton" type="PanelContainer" parent="Control2/ButtonContainer" unique_id=22112951]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ReforgeButton" unique_id=382008680]
+[node name="MarginContainer" type="MarginContainer" parent="Control2/ButtonContainer/ReforgeButton" unique_id=382008680]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 
-[node name="Label" type="Label" parent="VBoxContainer/ReforgeButton/MarginContainer" unique_id=1048010805]
+[node name="Label" type="Label" parent="Control2/ButtonContainer/ReforgeButton/MarginContainer" unique_id=1048010805]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"HeaderMedium"
 text = "Reforge"
 horizontal_alignment = 1
 
-[node name="AddButton" type="PanelContainer" parent="VBoxContainer" unique_id=1948451988]
+[node name="AddButton" type="PanelContainer" parent="Control2/ButtonContainer" unique_id=1948451988]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/AddButton" unique_id=1922705384]
+[node name="MarginContainer" type="MarginContainer" parent="Control2/ButtonContainer/AddButton" unique_id=1922705384]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 
-[node name="Label" type="Label" parent="VBoxContainer/AddButton/MarginContainer" unique_id=1649261108]
+[node name="Label" type="Label" parent="Control2/ButtonContainer/AddButton/MarginContainer" unique_id=1649261108]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"HeaderMedium"
 text = "Add Affix"
 horizontal_alignment = 1
 
-[node name="RemoveButton" type="PanelContainer" parent="VBoxContainer" unique_id=1317749900]
+[node name="RemoveButton" type="PanelContainer" parent="Control2/ButtonContainer" unique_id=1317749900]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/RemoveButton" unique_id=1724411999]
+[node name="MarginContainer" type="MarginContainer" parent="Control2/ButtonContainer/RemoveButton" unique_id=1724411999]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 
-[node name="Label" type="Label" parent="VBoxContainer/RemoveButton/MarginContainer" unique_id=228820106]
+[node name="Label" type="Label" parent="Control2/ButtonContainer/RemoveButton/MarginContainer" unique_id=228820106]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"HeaderMedium"
 text = "Remove Affix"
 horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1475803617]
+anchors_preset = 0
+offset_left = 440.0
+offset_top = 76.0
+offset_right = 536.0
+offset_bottom = 284.0
+
+[node name="InventoryPanel" type="PanelContainer" parent="Control" unique_id=1287487178]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 104.0
+offset_bottom = 216.0
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/InventoryPanel" unique_id=861461685]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/InventoryPanel/MarginContainer" unique_id=502816580]
+layout_mode = 2
+columns = 3
+
+[node name="ItemSlotUi" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1978442450 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi2" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=562614751 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi3" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1391157275 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi4" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=307733486 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi5" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1658150854 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi6" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1794851124 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi7" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=612005670 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi8" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1248977443 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi9" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=422429646 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi10" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=801417958 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi11" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1302474826 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi12" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1162131518 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi13" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=567816639 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi14" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=491687697 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi15" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=25580806 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi16" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1247172569 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi17" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1075427971 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi18" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=488551440 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi19" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1054656650 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi20" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=591446342 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
+
+[node name="ItemSlotUi21" parent="Control/InventoryPanel/MarginContainer/GridContainer" unique_id=1780534688 instance=ExtResource("2_wl2ce")]
+layout_mode = 2
