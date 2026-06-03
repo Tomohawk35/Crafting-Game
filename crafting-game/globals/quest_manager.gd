@@ -28,9 +28,9 @@ func _add_initial_quests() -> void:
 	var q: Quest = generate_quest("outer farmlands")
 	q.add_resource_reward("gold", 50)
 	q.add_resource_reward("wood", 10)
-	q.add_item_reward(ItemGenerator.generate_equipment())
-	q.add_item_reward(ItemGenerator.generate_equipment())
-	q.add_item_reward(ItemGenerator.generate_equipment())
+	q.add_item_reward(ItemFactory.generate_equipment())
+	q.add_item_reward(ItemFactory.generate_equipment())
+	q.add_item_reward(ItemFactory.generate_equipment())
 	q.quest_name = "Hunt Foxes"
 	q.quest_description = "Hunt down the foxes attacking the farm's chickens."
 	#q.ty = Quest.QuestType.HUNT

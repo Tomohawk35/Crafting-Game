@@ -51,19 +51,20 @@ func calculate_final_stats() -> void:
 	pass
 
 func add_affix(affix: AffixData = null) -> void:
-	if affixes.size() >= affix_limit:
-		return
-	#var a : AffixData = GameDB.get_affixes_by_item_type(base_item.item_type).pick_random()
-	var a_inst : AffixInstance = AffixInstance.new()
-	if affix:
-		a_inst.affix_data = affix
-	else:
-		var a : AffixData = GameDB.get_affixes_by_item_type(base_item.item_type).pick_random()
-		if a:
-			a_inst.affix_data = a
-		else:
-			return
-	
-	a_inst.roll_value()
-	affixes.append(a_inst)
-	get_rolled_stats() 
+	#if affixes.size() >= affix_limit:
+		#return
+	##var a : AffixData = GameDB.get_affixes_by_item_type(base_item.item_type).pick_random()
+	#var a_inst : AffixInstance = AffixInstance.new()
+	#if affix:
+		#a_inst.affix_data = affix
+	#else:
+		#var a : AffixData = GameDB.get_affixes_by_item_type(base_item.item_type).pick_random()
+		#if a:
+			#a_inst.affix_data = a
+		#else:
+			#return
+	#
+	#a_inst.roll_value()
+	#affixes.append(a_inst)
+	#get_rolled_stats() 
+	pass

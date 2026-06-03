@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_56k05")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=873311606]
@@ -20,10 +21,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -87.0
+offset_top = -51.5
+offset_right = 87.0
+offset_bottom = 51.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_0t4vg")
@@ -45,8 +46,11 @@ horizontal_alignment = 1
 
 [node name="ItemSlotUi" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1332666258 instance=ExtResource("2_wl2ce")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1650318605]
+[node name="ImplicitAffixSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1650318605]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="ImplicitAffixLabelContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2031838776]
@@ -56,6 +60,11 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ImplicitAffixLabelContainer" unique_id=855234043]
 layout_mode = 2
 text = "Affix 1"
+horizontal_alignment = 1
+
+[node name="ExplicitAffixSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=426816359]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="ExplicitAffixLabelContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1592730619]
 unique_name_in_owner = true
@@ -64,3 +73,65 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ExplicitAffixLabelContainer" unique_id=89740974]
 layout_mode = 2
 text = "Affix 1"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=289795669]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -53.5
+offset_right = -116.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReforgeButton" type="PanelContainer" parent="VBoxContainer" unique_id=22112951]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ReforgeButton" unique_id=382008680]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+
+[node name="Label" type="Label" parent="VBoxContainer/ReforgeButton/MarginContainer" unique_id=1048010805]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"HeaderMedium"
+text = "Reforge"
+horizontal_alignment = 1
+
+[node name="AddButton" type="PanelContainer" parent="VBoxContainer" unique_id=1948451988]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/AddButton" unique_id=1922705384]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+
+[node name="Label" type="Label" parent="VBoxContainer/AddButton/MarginContainer" unique_id=1649261108]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"HeaderMedium"
+text = "Add Affix"
+horizontal_alignment = 1
+
+[node name="RemoveButton" type="PanelContainer" parent="VBoxContainer" unique_id=1317749900]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/RemoveButton" unique_id=1724411999]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+
+[node name="Label" type="Label" parent="VBoxContainer/RemoveButton/MarginContainer" unique_id=228820106]
+layout_mode = 2
+theme = ExtResource("1_0t4vg")
+theme_type_variation = &"HeaderMedium"
+text = "Remove Affix"
+horizontal_alignment = 1

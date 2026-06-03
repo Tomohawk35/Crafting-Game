@@ -58,9 +58,9 @@ func _generate_recruitable_heroes() -> void: # TODO: Incorporate tavern level
 		child.queue_free()
 	for i in range(MAX_RECRUITABLE_HEROES):
 		var c : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
-		var h : HeroData = HeroGenerator.generate_hero()
+		var h : HeroData = HeroFactory.generate_hero()
 		c.hero_data = h
-		c.recruit_cost = HeroGenerator.calculate_recruit_cost(h)
+		c.recruit_cost = HeroFactory.calculate_recruit_cost(h)
 		hero_recruit_card_container.add_child(c)
 
 #func _calculate_recruit_cost(h: HeroData) -> int:

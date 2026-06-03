@@ -22,7 +22,10 @@ class_name StatsTable
 	"strength_pct": 0.0,
 	"travel_speed": 0.0,
 	"travel_speed_flat": 0.0,
-	"travel_speed_pct": 0.0
+	"travel_speed_pct": 0.0,
+	"hunting_speed": 0.0,
+	"hunting_speed_flat": 0.0,
+	"hunting_speed_pct": 0.0
 }
 
 func get_calculated_stat(stat: String, base_value : float = 0.0) -> float:

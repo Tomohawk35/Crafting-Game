@@ -26,7 +26,7 @@ func _on_generate_button_pressed() -> void:
 		return
 	if item:
 		item.stats_updated.disconnect(_update_tooltip)
-	item = ItemGenerator.generate_equipment()
+	item = ItemFactory.generate_equipment()
 	item.stats_updated.connect(_update_tooltip)
 	item._update_stats()
 	hero.equip_item(item)
