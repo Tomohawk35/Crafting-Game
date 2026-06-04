@@ -8,8 +8,11 @@ var slots : Array[SlotData] = []
 
 
 
+func _exchange(data : Array[SlotData], m : int, n : int) -> void:
+	var temp : SlotData = data[m]
+	data[m] = data[n]
+	data[n] = temp
 
-# add
 func add(item: SlotData) -> bool:
 	if !item.item.stackable:
 		if slots.size() >= slot_capacity:
