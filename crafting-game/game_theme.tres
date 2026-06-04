@@ -1,12 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://ccu4npsvqwi6r"]
 
-[ext_resource type="Texture2D" uid="uid://cpyyq7g3oofba" path="res://assets/art/retro_inventory/Inventory_Slot_1.png" id="1_jvwys"]
 [ext_resource type="FontFile" uid="uid://4h8kht6yi10j" path="res://assets/fonts/ari_w9500/ari-w9500-display.ttf" id="2_mfn8g"]
 [ext_resource type="FontFile" uid="uid://7y2t1spyv3px" path="res://assets/fonts/ari_w9500/ari-w9500-bold.ttf" id="3_4nb47"]
 [ext_resource type="FontFile" uid="uid://dbkkw5q5vy1ch" path="res://assets/fonts/ari_w9500/ari-w9500.ttf" id="4_k2fgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1w3f"]
-atlas = ExtResource("1_jvwys")
 region = Rect2(5, 5, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pd6sc"]

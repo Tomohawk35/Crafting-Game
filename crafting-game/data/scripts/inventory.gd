@@ -47,8 +47,35 @@ func add(item: SlotData) -> bool:
 			s.quantity += q
 			item.quantity -= q
 			if item.quantity <= 0:
-				return true
-		return false
+				break
+		return true
 
-# remove
-# sort
+func remove(item: SlotData) -> bool:
+	var temp : Array[SlotData] = []
+	var count : int = 0
+	
+	for slot in slots:
+		if slot.item == item.item:
+			temp.append(slot)
+			count += slot.quantity
+			if count >= item.quantity:
+				break # TODO: add items
+	
+	if count < item.quantity:
+		return false
+	
+	var q : int
+	for slot in temp:
+		q = min(item.quantity, slot.quantity)
+		slot.quantity -= q
+		item.quantity -= q
+		if item.quantity <= 0:
+			break
+	
+	for slot in temp:
+		if slot.quantity <= 0:
+			slots.erase(slot)
+	return true
+
+func sort() -> void:
+	pass
