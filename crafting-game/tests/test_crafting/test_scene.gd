@@ -1,6 +1,6 @@
 extends Node
 
-var generator : ItemGenerator
+var generator : ItemFactory
 var item : Equipment
 var hero : HeroData
 

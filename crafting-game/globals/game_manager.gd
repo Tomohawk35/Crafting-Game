@@ -11,7 +11,7 @@ var resources : Dictionary[String, int] = {
 	"stone" : 100,
 } # TODO: update to a resource instead for reusability 
 
-var inventory : Array[SlotData] = []
+var inventory : Inventory = Inventory.new()
 
 # BUILDINGS
 var buildings : Dictionary[String, BuildingData]
@@ -28,6 +28,13 @@ func _ready() -> void: # TODO: Remove and change to new game or load game functi
 	#tavern.get_data()
 	_new_building_data()
 	_new_location_data()
+	_add_starting_inventory()
+
+func _add_starting_inventory() -> void:
+	for i in range(8):
+		var s : SlotData = SlotData.new()
+		s.item = ItemFactory.generate_equipment()
+		inventory.add(s)
 
 func _new_building_data() -> void:
 	buildings.clear()

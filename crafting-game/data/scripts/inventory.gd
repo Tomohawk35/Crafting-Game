@@ -7,13 +7,34 @@ var slots : Array[SlotData] = []
 
 
 
-
+#region SORT-RELATED FUNCTIONS
 func _exchange(data : Array[SlotData], m : int, n : int) -> void:
 	var temp : SlotData = data[m]
 	data[m] = data[n]
 	data[n] = temp
 
-func add(item: SlotData) -> bool:
+#func _generate_intervals(n: int) -> Array[int]:
+	#var arr : Array[int] = []
+	#if n < 2:
+		#return arr
+	#var t : int = max(1, log
+#
+#func _shell_sort_better(data : Array[SlotData]) -> void:
+	#pass
+
+func _sort_by_name(a : SlotData, b : SlotData) -> bool:
+	return a.item.item_name.naturalnocasecmp_to(b.item.item_name) < 0
+
+func _sort_by_name_and_quantity(a : SlotData, b : SlotData) -> bool:
+	if a.item.item_name == b.item.item_name:
+		return a.quantity > b.quantity
+	return a.item.item_name.naturalnocasecmp_to(b.item.item_name) < 0 
+
+#func _sort_by_rarity(a : SlotData, b : SlotData) -> bool:
+	#return a.item.rarity > b.item.rarity
+#endregion
+
+func add(item: SlotData) -> bool: # FIXME: Should we just add as much as we can or check if we can add full stack?
 	if !item.item.stackable:
 		if slots.size() >= slot_capacity:
 			return false
@@ -81,4 +102,4 @@ func remove(item: SlotData) -> bool:
 	return true
 
 func sort() -> void:
-	pass
+	slots.sort_custom(_sort_by_name_and_quantity)

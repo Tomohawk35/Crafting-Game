@@ -24,6 +24,10 @@ const SLOT_TEXTURES : Array[String] = [
 var slot_data : SlotData
 var clickable : bool = false
 
+# TODO: NEED TO ADD DRAG AND DROP FOR ITEM DATA OR CLICK TO MOVE FOR FORGE
+# MAYBE JUST EMIT SIGNAL WITH DATA FOR UI CONTROLLER TO GRAB?
+
+# TODO: NEED TO ADD TOOLTIP FOR HOVER
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)

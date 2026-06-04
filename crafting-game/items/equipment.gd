@@ -60,18 +60,21 @@ func clear_explicit_affixes() -> bool:
 	explicit_affixes.clear()
 	return true
 
-func remove_affix() -> bool:
+func remove_affix() -> int:
 	if explicit_affixes.size() <= 0:
 		print("No affixes to remove.")
-		return false
-	var a : AffixInstance = explicit_affixes.pick_random()
-	explicit_affixes.erase(a)
+		return -1
+	var index : int = randi_range(0, explicit_affixes.size() - 1)
+	explicit_affixes.remove_at(index)
+	#var a : AffixInstance = explicit_affixes.pick_random()
+	#explicit_affixes.erase(a)
 	_update_stats()
 	print("Affix removed!")
-	return true
+	return index
 
 func reroll_affixes() -> bool:
 	clear_explicit_affixes()
 	for i in range(min(affix_limit, 3)):
 		add_affix()
+	_update_stats()
 	return true
