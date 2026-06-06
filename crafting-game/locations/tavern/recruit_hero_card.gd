@@ -34,10 +34,12 @@ func _update_card() -> void:
 
 func _on_recruit_button_pressed() -> void:
 	if GameManager.has_resources("gold", recruit_cost):
-		GameManager.remove_resources("gold", recruit_cost)
-		GameManager.hero_roster.append(hero_data)
-		grey_filter_panel.visible = true
-		recruit_button.disabled = true
-	# TODO: Add red color and shake effect if not enough gold
+		if HeroManager.add_hero(hero_data):
+			GameManager.remove_resources("gold", recruit_cost)
+			grey_filter_panel.visible = true
+			recruit_button.disabled = true
+		else:
+			# TODO: Add red color and shake effect if not enough gold
+			pass
 
 # TODO: Add a way to replace/reroll recruitable heroes

@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bqcql40c6uwhi" path="res://gui/hud/player_hud.tscn" id="1_dpkie"]
 [ext_resource type="PackedScene" uid="uid://b162kfxsrf4o" path="res://locations/tavern/tavern_panel.tscn" id="2_d2uql"]
 [ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="3_f8mkl"]
+[ext_resource type="PackedScene" uid="uid://b2x7sucrfgln1" path="res://gui/forge_panel/forge_panel.tscn" id="5_f8mkl"]
 
-[node name="UIManager" type="CanvasLayer" unique_id=1814013612 node_paths=PackedStringArray("player_hud", "tavern_panel", "map_location_panel")]
+[node name="UIManager" type="CanvasLayer" unique_id=1814013612 node_paths=PackedStringArray("player_hud", "tavern_panel", "forge_panel", "map_location_panel")]
 script = ExtResource("1_d2uql")
 player_hud = NodePath("PlayerHUD")
 tavern_panel = NodePath("TavernPanel")
+forge_panel = NodePath("ForgePanel")
 map_location_panel = NodePath("MapLocationPanel")
 
 [node name="PlayerHUD" parent="." unique_id=1175922791 instance=ExtResource("1_dpkie")]
@@ -19,3 +21,6 @@ visible = false
 [node name="MapLocationPanel" parent="." unique_id=1223163384 node_paths=PackedStringArray("ui_root") instance=ExtResource("3_f8mkl")]
 visible = false
 ui_root = NodePath("..")
+
+[node name="ForgePanel" parent="." unique_id=2088834445 instance=ExtResource("5_f8mkl")]
+visible = false

@@ -50,8 +50,10 @@ text = "Tavern"
 horizontal_alignment = 1
 
 [node name="DescriptionLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1442082156]
-custom_minimum_size = Vector2(128, 32)
+custom_minimum_size = Vector2(112, 32)
 layout_mode = 2
+theme = ExtResource("1_ogvsv")
+theme_type_variation = &"HeaderSmall"
 text = "A comforting establishment where you can meet traveling adventurers and obtain refreshments."
 autowrap_mode = 2
 

@@ -4,6 +4,7 @@ extends CanvasLayer
 
 @export var player_hud : PlayerHUD
 @export var tavern_panel : TavernPanel
+@export var forge_panel : ForgePanel
 @export var map_location_panel : MapLocationPanel
 
 var ui_stack : Array[Control] = []
@@ -31,9 +32,14 @@ func _close_window() -> void:
 
 func _on_building_clicked(b: String) -> void:
 	print("Building clicked: ", b)
-	if b == "tavern":
-		tavern_panel.open()
-		ui_stack.append(tavern_panel)
+	match b:
+		"tavern":
+			tavern_panel.open()
+			ui_stack.append(tavern_panel)
+		"blacksmith":
+			forge_panel.open()
+			ui_stack.append(forge_panel)
+
 
 func _on_location_clicked(l: String) -> void:
 	#print("Location clicked")

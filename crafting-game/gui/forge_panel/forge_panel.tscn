@@ -14,7 +14,8 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_56k05")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=873311606]
+[node name="ItemPanel" type="PanelContainer" parent="." unique_id=873311606]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,48 +31,49 @@ grow_vertical = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=47313019]
+[node name="MarginContainer" type="MarginContainer" parent="ItemPanel" unique_id=47313019]
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=343214967]
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemPanel/MarginContainer" unique_id=343214967]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2034083757]
+[node name="ItemNameLabel" type="Label" parent="ItemPanel/MarginContainer/VBoxContainer" unique_id=2034083757]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_0t4vg")
 theme_type_variation = &"HeaderLarge"
-text = "Forge"
+text = "Item Name"
 horizontal_alignment = 1
 
-[node name="ForgeSlot" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1332666258 instance=ExtResource("2_wl2ce")]
+[node name="ForgeSlot" parent="ItemPanel/MarginContainer/VBoxContainer" unique_id=1332666258 instance=ExtResource("2_wl2ce")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ImplicitAffixSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1650318605]
+[node name="ImplicitAffixSeparator" type="HSeparator" parent="ItemPanel/MarginContainer/VBoxContainer" unique_id=1650318605]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ImplicitAffixLabelContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2031838776]
+[node name="ImplicitAffixLabelContainer" type="VBoxContainer" parent="ItemPanel/MarginContainer/VBoxContainer" unique_id=2031838776]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ImplicitAffixLabelContainer" unique_id=855234043]
+[node name="Label" type="Label" parent="ItemPanel/MarginContainer/VBoxContainer/ImplicitAffixLabelContainer" unique_id=855234043]
 layout_mode = 2
 text = "Affix 1"
 horizontal_alignment = 1
 
-[node name="ExplicitAffixSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=426816359]
+[node name="ExplicitAffixSeparator" type="HSeparator" parent="ItemPanel/MarginContainer/VBoxContainer" unique_id=426816359]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ExplicitAffixLabelContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1592730619]
+[node name="ExplicitAffixLabelContainer" type="VBoxContainer" parent="ItemPanel/MarginContainer/VBoxContainer" unique_id=1592730619]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ExplicitAffixLabelContainer" unique_id=89740974]
+[node name="Label" type="Label" parent="ItemPanel/MarginContainer/VBoxContainer/ExplicitAffixLabelContainer" unique_id=89740974]
 layout_mode = 2
 text = "Affix 1"
 

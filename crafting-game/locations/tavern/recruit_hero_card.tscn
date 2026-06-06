@@ -9,7 +9,6 @@ atlas = ExtResource("3_e2ffu")
 region = Rect2(24, 104, 32, 32)
 
 [node name="RecruitHeroCard" type="PanelContainer" unique_id=1108157855]
-custom_minimum_size = Vector2(128, 224)
 theme = ExtResource("2_j0bve")
 theme_type_variation = &"BorderedPanelContainer"
 script = ExtResource("1_hi4fq")
@@ -26,7 +25,7 @@ layout_mode = 2
 
 [node name="AdventurerNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2115513191]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(94, 37)
+custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_j0bve")
@@ -48,7 +47,7 @@ layout_mode = 2
 
 [node name="AdventurerSprite" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=169398488]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -64,24 +63,28 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "STR: "
 
 [node name="StrValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=235278872]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "10"
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1968452589]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "DEX: "
 
 [node name="DexValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1195434468]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "10"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=770996612]
@@ -91,31 +94,34 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "INT: "
 
 [node name="IntValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1512782941]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "10"
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1927954866]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "CHA: "
 
 [node name="ChaValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=644833699]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
 text = "10"
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=77959988]
 layout_mode = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1087971986]
-custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=663630142]
