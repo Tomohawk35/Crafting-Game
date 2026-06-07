@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_0t4vg"]
 [ext_resource type="Script" uid="uid://mrpn64cjegkp" path="res://gui/forge_panel/forge_panel.gd" id="1_56k05"]
-[ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="2_wl2ce"]
+[ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://gui/item_slot_ui/item_slot_ui.tscn" id="2_wl2ce"]
 
 [node name="ForgePanel" type="Control" unique_id=2088834445]
 layout_mode = 3

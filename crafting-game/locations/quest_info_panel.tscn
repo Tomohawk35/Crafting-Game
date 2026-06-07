@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_x08an"]
 [ext_resource type="Script" uid="uid://buokn3xu263a8" path="res://locations/quest_info_panel.gd" id="2_qyicp"]
-[ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://inventory/item_slot_ui.tscn" id="2_rt1w3"]
+[ext_resource type="PackedScene" uid="uid://cq60rwikmkkud" path="res://gui/item_slot_ui/item_slot_ui.tscn" id="2_rt1w3"]
 [ext_resource type="PackedScene" uid="uid://phfrfmduowvq" path="res://locations/quest_party_member_button.tscn" id="3_qyicp"]
 
 [node name="QuestInfoPanel" type="PanelContainer" unique_id=1442437755 node_paths=PackedStringArray("quest_name_label", "quest_description_label", "party_member_button_container", "resource_reward_container", "reward_container", "start_quest_button")]

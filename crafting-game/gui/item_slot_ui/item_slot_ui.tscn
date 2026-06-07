@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq60rwikmkkud"]
 
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_3ntnb"]
-[ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://inventory/item_slot_ui.gd" id="1_dndjr"]
+[ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://gui/item_slot_ui/item_slot_ui.gd" id="1_dndjr"]
 [ext_resource type="Texture2D" uid="uid://ddl4rxa7pbj08" path="res://assets/art/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/arrow_01a.png" id="2_2xl3h"]
 
 [node name="ItemSlotUi" type="PanelContainer" unique_id=1332666258 node_paths=PackedStringArray("item_sprite", "label")]
