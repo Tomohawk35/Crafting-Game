@@ -29,3 +29,12 @@ NEED TO FIND WAY TO HAVE FLOAT AND INT AFFIXES
 Add animations for buildings and locations
 add movement to trees, smoke from mountains/ fires
 add birds flying overhead
+
+
+
+STORY: Village was destroyed by goblin warband > rebuild and recruit heroes to get rid of the goblins
+
+Make village go to a different screen with all the buildings and villagers and stuff
+have roster heroes moving about village
+have other cities send out fake caravans for quests
+can talk to villagers to get more random quests about the world

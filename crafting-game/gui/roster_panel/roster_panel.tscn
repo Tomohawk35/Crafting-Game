@@ -85,42 +85,177 @@ theme = ExtResource("2_u0e68")
 theme_type_variation = &"HeaderMedium"
 text = "Hero1"
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1152850824]
-layout_mode = 0
-offset_left = 254.0
-offset_top = 133.0
-offset_right = 317.0
-offset_bottom = 194.0
+[node name="Inventory" type="Control" parent="." unique_id=28828017]
+anchors_preset = 0
+offset_left = 440.0
+offset_top = 76.0
+offset_right = 536.0
+offset_bottom = 284.0
+
+[node name="InventoryPanel" type="PanelContainer" parent="Inventory" unique_id=1439108046]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 104.0
+offset_bottom = 216.0
 theme = ExtResource("2_u0e68")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=758862157]
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/InventoryPanel" unique_id=841845989]
+layout_mode = 2
+
+[node name="InventoryContainer" type="GridContainer" parent="Inventory/InventoryPanel/MarginContainer" unique_id=957166620]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+
+[node name="ItemSlotUi" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1332666258 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi2" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=495327414 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi3" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=858966033 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi4" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1835931528 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi5" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=372690555 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi6" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=591636961 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi7" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=738239418 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi8" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1638630621 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi9" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=2079816380 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi10" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1163477115 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi11" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=423160377 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi12" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1148778558 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi13" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=677969090 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi14" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1243818982 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi15" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1366141797 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi16" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=1724869795 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi17" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=2009875334 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi18" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=933961635 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi19" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=953893252 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi20" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=742551512 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi21" parent="Inventory/InventoryPanel/MarginContainer/InventoryContainer" unique_id=346765631 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=184291914]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 91.0
+offset_right = 360.0
+offset_bottom = 268.0
+
+[node name="HeroBox" type="PanelContainer" parent="VBoxContainer" unique_id=1152850824]
+layout_mode = 2
+theme = ExtResource("2_u0e68")
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HeroBox" unique_id=758862157]
 layout_mode = 2
 theme = ExtResource("2_u0e68")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1508933868]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HeroBox/MarginContainer" unique_id=1508933868]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=757586529]
+[node name="Label" type="Label" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer" unique_id=757586529]
 layout_mode = 2
 text = "Hero Name"
+horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1171454935]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer" unique_id=1171454935]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1177268499]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1177268499]
 layout_mode = 2
 
-[node name="ItemSlotUi2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1332666258 instance=ExtResource("3_kvsaa")]
+[node name="ItemSlotUi2" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=461142183 instance=ExtResource("3_kvsaa")]
 layout_mode = 2
 
-[node name="ItemSlotUi3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=308363392 instance=ExtResource("3_kvsaa")]
+[node name="ItemSlotUi3" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=308363392 instance=ExtResource("3_kvsaa")]
 layout_mode = 2
 
-[node name="ItemSlotUi4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1980404705 instance=ExtResource("3_kvsaa")]
+[node name="ItemSlotUi4" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1980404705 instance=ExtResource("3_kvsaa")]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=742141293]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer" unique_id=742141293]
 layout_mode = 2
 texture = SubResource("AtlasTexture_585km")
 stretch_mode = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1881037418]
+layout_mode = 2
+
+[node name="ItemSlotUi2" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=854969343 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi3" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1617222225 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="ItemSlotUi4" parent="VBoxContainer/HeroBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1134531761 instance=ExtResource("3_kvsaa")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=753997970]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=2036766520]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=387156448]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1087837361]
+layout_mode = 2
+theme = ExtResource("2_u0e68")
+theme_type_variation = &"HeaderSmall"
+text = "STR:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2108604878]
+layout_mode = 2
+theme = ExtResource("2_u0e68")
+theme_type_variation = &"HeaderSmall"
+text = "DEX:"
+
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2041647978]
+layout_mode = 2
+theme = ExtResource("2_u0e68")
+theme_type_variation = &"HeaderSmall"
+text = "INT:"
+
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=702728681]
+layout_mode = 2
+theme = ExtResource("2_u0e68")
+theme_type_variation = &"HeaderSmall"
+text = "CHA:"

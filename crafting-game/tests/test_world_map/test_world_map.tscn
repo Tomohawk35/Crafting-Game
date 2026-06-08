@@ -1713,7 +1713,7 @@ sources/0 = SubResource("TileSetAtlasSource_sl6gu")
 
 [sub_resource type="Curve2D" id="Curve2D_vegwf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 283, 345, -20.88197, 0.040788174, 20.88197, -0.040788174, 329, 372, -11.952498, 9.468813, 11.952498, -9.468813, 382, 357, 0, 0, 0, 0, 394, 322, -10.9472275, 5.154995, 10.9472275, -5.154995, 406, 295, 0, 0, 0, 0, 436, 296)
+"points": PackedVector2Array(0, 0, 0, 0, 283, 345, -20.88197, 0.040788174, 20.88197, -0.040788174, 329, 372, -11.952498, 9.468813, 11.952498, -9.468813, 382, 356, 0, 0, 0, 0, 394, 322, -10.9472275, 5.154995, 10.9472275, -5.154995, 406, 295, 0, 0, 0, 0, 436, 296)
 }
 point_count = 6
 
@@ -1730,7 +1730,7 @@ position = Vector2(575, 325)
 script = ExtResource("2_sl6gu")
 
 [node name="Tavern" parent="Node2D" unique_id=379177377 instance=ExtResource("3_uhfl8")]
-position = Vector2(331, 255)
+position = Vector2(217, 321)
 
 [node name="MapLocation" parent="Node2D" unique_id=1260784349 instance=ExtResource("4_5iihe")]
 position = Vector2(436, 298)
@@ -1750,5 +1750,5 @@ routes = {
 curve = SubResource("Curve2D_vegwf")
 
 [node name="Tavern2" parent="Node2D" unique_id=1377228569 instance=ExtResource("3_uhfl8")]
-position = Vector2(409, 220)
+position = Vector2(278, 292)
 building_name = "blacksmith"
