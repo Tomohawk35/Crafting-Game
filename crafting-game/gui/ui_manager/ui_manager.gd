@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var player_hud : PlayerHUD
 @export var tavern_panel : TavernPanel
 @export var forge_panel : ForgePanel
+@export var roster_panel: RosterPanel
 @export var map_location_panel : MapLocationPanel
 
 var ui_stack : Array[Control] = []
@@ -21,6 +22,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
 		_close_window()
+	if event.is_action_pressed("roster"):
+		roster_panel.open()
+		ui_stack.append(roster_panel)
 
 func _close_all_windows() -> void:
 	for c in range(ui_stack.size()):

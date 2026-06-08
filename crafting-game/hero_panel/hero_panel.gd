@@ -1,4 +1,4 @@
-extends Control
+extends PanelContainer
 class_name HeroPanel
 
 var hero : HeroData
@@ -10,21 +10,11 @@ var hero : HeroData
 @onready var dexterity_label: Label = %DexterityLabel
 @onready var intelligence_label: Label = %IntelligenceLabel
 @onready var charisma_label: Label = %CharismaLabel
-
-#@onready var helmet_slot: ItemSlotUI = %HelmetSlot
-#@onready var weapon_slot: ItemSlotUI = %WeaponSlot
-#@onready var ring_slot: ItemSlotUI = %RingSlot
-#@onready var character_sprite: TextureRect = %CharacterSprite
-#@onready var amulet_slot: ItemSlotUI = %AmuletSlot
-#@onready var shield_slot: ItemSlotUI = %ShieldSlot
-#@onready var body_armor_slot: ItemSlotUI = %BodyArmorSlot
-#@onready var gloves_slot: ItemSlotUI = %GlovesSlot
 @onready var equipment_container_1: VBoxContainer = %EquipmentContainer1
 @onready var equipment_container_2: VBoxContainer = %EquipmentContainer2
 @onready var all_stat_container: VBoxContainer = %AllStatContainer
 
 func _ready() -> void:
-	#helmet_slot.pressed.connect(_on_slot_pressed)
 	for c: ItemSlotUI in equipment_container_1.get_children():
 		c.pressed.connect(_show_equipment_data)
 	for c: ItemSlotUI in equipment_container_2.get_children():
@@ -48,31 +38,42 @@ func update_panel(h: HeroData) -> void:
 	
 	for c in all_stat_container.get_children():
 		c.queue_free()
+	
+	var l : Label
 	for stat in hero.total_stats.stats.keys():
-		var l : Label = Label.new()
-		l.text = stat + ": " + str(hero.total_stats.stats[stat])
-		#l.text = _format_stat(affix.affix_data.stat_name, affix.value)
-		#l.set_label_text(stat, str(hero.total_stats.stats[stat]))
-		all_stat_container.add_child(l)
+		if hero.total_stats.stats[stat] > 0.0: # TODO: Only show quest related stats?
+			l = Label.new()
+			l.text = stat + ": " + str(hero.total_stats.stats[stat])
+			#l.text = _format_stat(affix.affix_data.stat_name, affix.value)
+			#l.set_label_text(stat, str(hero.total_stats.stats[stat]))
+			all_stat_container.add_child(l)
 	
 	
-	var s : SlotData
+	#var s : SlotData
 	
 	for c: ItemSlotUI in equipment_container_1.get_children():
 		if c is not ItemSlotUI or c.is_equipment_slot == false:
 			continue
-		s = SlotData.new()
+		#s = SlotData.new()
 		if hero.equipment[c.equipment_type]:
-			s.item = hero.equipment[c.equipment_type]
-		c.set_slot_data(s)
+			c.set_slot_data(hero.equipment[c.equipment_type])
+		else:
+			c.set_slot_data(SlotData.new())
+			#s.item = hero.equipment[c.equipment_type]
+			#c.set = hero.equipment[c.equipment_type]
+		#c.set_slot_data(s)
 	
 	for c: ItemSlotUI in equipment_container_2.get_children():
 		if c is not ItemSlotUI or c.is_equipment_slot == false:
 			continue
-		s = SlotData.new()
+		#s = SlotData.new()
+		#if hero.equipment[c.equipment_type]:
+			#s.item = hero.equipment[c.equipment_type]
+		#c.set_slot_data(s)
 		if hero.equipment[c.equipment_type]:
-			s.item = hero.equipment[c.equipment_type]
-		c.set_slot_data(s)
+			c.set_slot_data(hero.equipment[c.equipment_type])
+		else:
+			c.set_slot_data(SlotData.new())
 	
 	#if hero.helmet:
 		#s = SlotData.new()
