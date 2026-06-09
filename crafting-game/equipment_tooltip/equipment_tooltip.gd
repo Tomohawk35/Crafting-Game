@@ -1,17 +1,62 @@
-extends Control
+extends PanelContainer
 class_name EquipmentTooltip
+
+const OFFSET : Vector2 = Vector2.ONE * 0.0 # TODO: Dial in to match custom cursor
+const TWEEN_DURATION : float = 0.2
+const MAX_ALPHA : float = 0.3
+
+var opacity_tween : Tween = null
 
 @onready var name_label: Label = %NameLabel
 @onready var rarity_label: Label = %RarityLabel
 @onready var stats_box: VBoxContainer = %StatsBox
 @onready var affix_box: VBoxContainer = %AffixBox
-@onready var item_icon: TextureRect = %ItemIcon
+#@onready var item_icon: TextureRect = %ItemIcon
+
+func _ready() -> void:
+	EventBus.hide_tooltip.connect(_on_hide_tooltip)
+	EventBus.show_tooltip.connect(_on_show_tooltip)
+
+func _input(event: InputEvent) -> void:
+	if visible and event is InputEventMouseMotion:
+		global_position = get_global_mouse_position() + OFFSET
+
+func _on_show_tooltip(c: Control) -> void:
+	if c is ItemSlotUI and c.slot_data.item:
+		_set_item_display(c.slot_data.item)
+		toggle(true)
+
+func _on_hide_tooltip() -> void:
+	toggle(false)
+
+func _set_item_display(i: Item) -> void:
+	name_label.text = i.item_name
+
+func toggle(on : bool) -> void:
+	if on:
+		show()
+		modulate.a = 0.0
+		tween_opacity(MAX_ALPHA)
+	else:
+		modulate.a = MAX_ALPHA
+		await tween_opacity(0.0).finished
+		hide()
+
+func tween_opacity(to : float) -> Tween:
+	if opacity_tween :
+		opacity_tween.kill()
+	opacity_tween = create_tween()
+	opacity_tween.tween_property(self, "modulate:a", to, TWEEN_DURATION)
+	return opacity_tween
+
+
+
 
 func set_item(item: Equipment) -> void:
 	name_label.text = item.item_name
 	name_label.modulate = item.get_color()
 	rarity_label.text = Constants.Rarity.keys()[item.rarity].capitalize()
-	item_icon.texture = item.icon
+	#item_icon.texture = item.icon
 	
 	_clear_stats()
 	

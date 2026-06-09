@@ -24,10 +24,15 @@ const SLOT_TEXTURES : Array[String] = [
 var slot_data : SlotData = SlotData.new()
 var clickable : bool = false # TODO: DO we still need this?
 
+@onready var equipment_tooltip: EquipmentTooltip = %EquipmentTooltip
+
 # TODO: NEED TO ADD DRAG AND DROP FOR ITEM DATA OR CLICK TO MOVE FOR FORGE
 # MAYBE JUST EMIT SIGNAL WITH DATA FOR UI CONTROLLER TO GRAB?
 
 # TODO: NEED TO ADD TOOLTIP FOR HOVER
+func _ready() -> void:
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
 func _gui_input(event: InputEvent) -> void:
 	if !slot_data:
@@ -35,6 +40,15 @@ func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("select"):
 		pressed.emit(slot_data)
 		print("slot clicked")
+
+func _on_mouse_entered() -> void:
+	#equipment_tooltip.toggle(true)
+	EventBus.show_tooltip.emit(self)
+
+func _on_mouse_exited() -> void:
+	#equipment_tooltip.toggle(false)
+	EventBus.hide_tooltip.emit()
+
 
 #func set_slot_background() -> void:
 	#if is_equipment_slot == false or slot_data != null:

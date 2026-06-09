@@ -32,10 +32,11 @@ func _load_roster() -> void:
 func _on_hero_selected(h: HeroData) -> void:
 	selected_hero = h
 	hero_panel.update_panel(selected_hero)
-	# TODO: Update hero and stat panels
 
 func _on_hero_panel_slot_pressed(slot_type: Constants.EquipmentType) -> void:
 	if !selected_hero:
+		return
+	if selected_hero.on_quest:
 		return
 	var temp: SlotData = selected_hero.unequip_item(slot_type)
 	if temp.item:
@@ -47,6 +48,8 @@ func _on_inventory_slot_pressed(data: SlotData) -> void:
 	# TODO: Equip to hero and replace equipped item in inventory
 	if !selected_hero: 
 		return
+	if selected_hero.on_quest:
+		return
 	if data.item is Equipment:
 		var index : int = GameManager.inventory.slots.find(data)
 		var temp : SlotData = selected_hero.equip_item(data)
@@ -56,22 +59,6 @@ func _on_inventory_slot_pressed(data: SlotData) -> void:
 			GameManager.inventory.slots.pop_at(index)
 		_update_hero_panel()
 		inventory_panel.update_inventory_display()
-		
-		
-		#var t: Constants.EquipmentType = data.item.equipment_type
-		#var temp : SlotData = selected_hero.equipment[t]
-		#selected_hero.equip_item(data)
-		#if index < 0:
-			#push_error("Slot Data not found in inventory")
-			#return
-		#if temp.item:
-			#GameManager.inventory.slots[index] = temp
-		#else:
-			#GameManager.inventory.slots.pop_at(index)
-	#func _exchange(data : Array[SlotData], m : int, n : int) -> void:
-	#var temp : SlotData = data[m]
-	#data[m] = data[n]
-	#data[n] = temp
 
 func _update_hero_panel() -> void:
 	if !selected_hero: 

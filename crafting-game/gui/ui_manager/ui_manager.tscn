@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyv1phnyhnrkm" path="res://locations/map_location_panel.tscn" id="3_f8mkl"]
 [ext_resource type="PackedScene" uid="uid://b2x7sucrfgln1" path="res://gui/forge_panel/forge_panel.tscn" id="5_f8mkl"]
 [ext_resource type="PackedScene" uid="uid://dvibe2fuh87qm" path="res://gui/roster_panel/roster_panel.tscn" id="6_ove2g"]
+[ext_resource type="PackedScene" uid="uid://cg2d6rttt4xkt" path="res://equipment_tooltip/equipment_tooltip.tscn" id="7_n2pto"]
 
 [node name="UIManager" type="CanvasLayer" unique_id=1814013612 node_paths=PackedStringArray("player_hud", "tavern_panel", "forge_panel", "roster_panel", "map_location_panel")]
 script = ExtResource("1_d2uql")
@@ -28,4 +29,7 @@ ui_root = NodePath("..")
 visible = false
 
 [node name="RosterPanel" parent="." unique_id=1728513671 instance=ExtResource("6_ove2g")]
+visible = false
+
+[node name="EquipmentTooltip" parent="." unique_id=858396614 instance=ExtResource("7_n2pto")]
 visible = false
