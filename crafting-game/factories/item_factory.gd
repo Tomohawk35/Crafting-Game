@@ -35,5 +35,6 @@ func generate_equipment() -> Equipment:
 			item.explicit_affixes.append(a_inst)
 	
 	item.rarity = item.get_rarity()
+	item._update_stats()
 	#item.get_rolled_stats()
 	return item

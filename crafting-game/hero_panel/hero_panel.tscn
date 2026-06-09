@@ -24,11 +24,13 @@ theme = ExtResource("2_677lb")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+alignment = 1
 
 [node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1952388045]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 12)
+custom_maximum_size = Vector2(96, -1)
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_677lb")
 theme_type_variation = &"HeaderMedium"
 text = "FName LName"

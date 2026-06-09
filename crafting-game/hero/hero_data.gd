@@ -33,7 +33,7 @@ const STAT_RARITY_SCALE : float = 0.25
 
 func _init() -> void:
 	for i in Constants.EquipmentType.size():
-		equipment.append(null)
+		equipment.append(SlotData.new())
 
 func _get_stat_growth(growth_rate: float, level_change: int = 1) -> float:
 	return growth_rate * level_change + rarity * STAT_RARITY_SCALE * level_change
@@ -48,7 +48,7 @@ func get_total_stats() -> void:
 	total_equipment_stats = StatsTable.new()
 	total_stats = StatsTable.new()
 	for e in equipment:
-		if e:
+		if e and e.item and e.item is Equipment:
 			_get_stats_from_equipment(e.item)
 	total_stats.stats["strength"] = (current_level_stats.stats["strength"] + total_equipment_stats.stats["strength"]) * (1 + total_equipment_stats.stats["strength_pct"] / 100)
 	total_stats.stats["dexterity"] = (current_level_stats.stats["dexterity"] + total_equipment_stats.stats["dexterity"]) * (1 + total_equipment_stats.stats["dexterity_pct"] / 100)
@@ -80,15 +80,30 @@ func level_up() -> void:
 	current_level_stats.stats["charisma"] += _get_stat_growth(hero_job.charisma_growth_rate)
 	get_total_stats()
 
-func equip_item(e: SlotData) -> void: # TODO: add remaining equipment slots # HACK: Clean up some way?
+func equip_item(e: SlotData) -> SlotData: # TODO: add remaining equipment slots # HACK: Clean up some way?
+	var temp : SlotData
 	if equipment[e.item.equipment_type]:
-		unequip_item(equipment[e.item.equipment_type])
-	equipment[e.equipment_type] = e
+		#unequip_item(equipment[e.item.equipment_type])
+		temp = unequip_item(e.item.equipment_type) # THIS SHOULD BE DONE SEPARATELY
+	else:
+		temp = SlotData.new()
+	equipment[e.item.equipment_type] = e
 	get_total_stats()
-	equipment[e.equipment_type].stats_updated.connect(get_total_stats)
+	equipment[e.item.equipment_type].item.stats_updated.connect(get_total_stats)
+	return temp
 
-func unequip_item(e: SlotData) -> void:
-	e.stats_updated.disconnect(get_total_stats)
+func unequip_item(slot: Constants.EquipmentType) -> SlotData:
+	var temp : SlotData = equipment[slot]
+	if temp.item:
+		temp.item.stats_updated.disconnect(get_total_stats)
+	equipment[slot] = SlotData.new()
+	print("Item unequipped.")
+	return temp
+	
+	#if equipment.has(e):
+		#e.item.stats_updated.disconnect(get_total_stats)
+		#equipment.erase(e)
+	#if e.item:
 	# TODO: Move item to inventory
 
 func get_formatted_name() -> String:

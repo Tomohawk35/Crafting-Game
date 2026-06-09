@@ -21,32 +21,13 @@ const SLOT_TEXTURES : Array[String] = [
 @export var item_sprite: TextureRect
 @export var label: Label
 
-var slot_data : SlotData
-var clickable : bool = false
+var slot_data : SlotData = SlotData.new()
+var clickable : bool = false # TODO: DO we still need this?
 
 # TODO: NEED TO ADD DRAG AND DROP FOR ITEM DATA OR CLICK TO MOVE FOR FORGE
 # MAYBE JUST EMIT SIGNAL WITH DATA FOR UI CONTROLLER TO GRAB?
 
 # TODO: NEED TO ADD TOOLTIP FOR HOVER
-
-func _ready() -> void:
-	#mouse_entered.connect(_on_mouse_entered)
-	#mouse_exited.connect(_on_mouse_exited)
-	pass
-
-#func _on_mouse_entered() -> void:
-	#clickable = true
-#
-#func _on_mouse_exited() -> void:
-	#clickable = false
-
-#func _input(event: InputEvent) -> void:
-	#if not clickable or slot_data == null:
-		#return
-	#
-	#if event.is_action_pressed("select"):
-		#pressed.emit(slot_data)
-		#print("slot clicked")
 
 func _gui_input(event: InputEvent) -> void:
 	if !slot_data:

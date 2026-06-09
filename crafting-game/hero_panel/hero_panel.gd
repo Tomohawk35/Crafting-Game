@@ -1,6 +1,8 @@
 extends PanelContainer
 class_name HeroPanel
 
+signal slot_pressed(slot_type : Constants.EquipmentType)
+
 var hero : HeroData
 
 @onready var name_label: Label = %NameLabel
@@ -16,16 +18,14 @@ var hero : HeroData
 
 func _ready() -> void:
 	for c: ItemSlotUI in equipment_container_1.get_children():
-		c.pressed.connect(_show_equipment_data)
+		c.pressed.connect(_on_slot_pressed.bind(c))
 	for c: ItemSlotUI in equipment_container_2.get_children():
-		c.pressed.connect(_show_equipment_data)
+		c.pressed.connect(_on_slot_pressed.bind(c))
 
-func _show_equipment_data(s: SlotData) -> void:
-	if s.item == null:
-		return
-	EventBus.display_equipment.emit(s, hero)
+func _on_slot_pressed(_data: SlotData, s: ItemSlotUI) -> void:
+	slot_pressed.emit(s.equipment_type)
 
-func update_panel(h: HeroData) -> void:
+func update_panel(h: HeroData) -> void: # TODO: NEED TO MAKE AN EMPTY STATE FOR WHEN NO HERO IS SELECTED
 	hero = h
 	name_label.text = hero.hero_name + ", " + hero.hero_title
 	name_label.modulate = Constants.RARITY_COLORS[hero.rarity]
@@ -74,53 +74,3 @@ func update_panel(h: HeroData) -> void:
 			c.set_slot_data(hero.equipment[c.equipment_type])
 		else:
 			c.set_slot_data(SlotData.new())
-	
-	#if hero.helmet:
-		#s = SlotData.new()
-		#s.item = hero.helmet
-	#else:
-		#s = null
-	#helmet_slot.set_slot_data(s)
-	#
-	#if hero.weapon:
-		#s = SlotData.new()
-		#s.item = hero.weapon
-	#else:
-		#s = null
-	#weapon_slot.set_slot_data(s)
-	#
-	#if hero.ring:
-		#s = SlotData.new()
-		#s.item = hero.ring
-	#else:
-		#s = null
-	#ring_slot.set_slot_data(s)
-	#
-	#if hero.gloves:
-		#s = SlotData.new()
-		#s.item = hero.gloves
-	#else:
-		#s = null
-	#gloves_slot.set_slot_data(s)
-	#
-	#if hero.amulet:
-		#s = SlotData.new()
-		#s.item = hero.amulet
-	#else:
-		#s = null
-	#amulet_slot.set_slot_data(s)
-	#
-	#if hero.shield:
-		#s = SlotData.new()
-		#s.item = hero.shield
-	#else:
-		#s = null
-	#shield_slot.set_slot_data(s)
-	#
-	#if hero.body_armor:
-		#s = SlotData.new()
-		#s.item = hero.body_armor
-	#else:
-		#s = null
-	#body_armor_slot.set_slot_data(s)
-	
