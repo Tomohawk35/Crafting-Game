@@ -35,7 +35,23 @@ func _on_hero_selected(h: HeroData) -> void:
 
 func _on_slot_pressed(data: SlotData) -> void:
 	# TODO: Equip to hero and replace equipped item in inventory
-	pass
+	if !selected_hero: 
+		return
+	if data.item is Equipment:
+		var t: Constants.EquipmentType = data.item.equipment_type
+		var temp : SlotData = selected_hero.equipment[t]
+		selected_hero.equip_item(data)
+		var index : int = GameManager.inventory.slots.find(data)
+		if index < 0:
+			push_error("Slot Data not found in inventory")
+			return
+		GameManager.inventory.slots[index] = temp
+		_update_hero_panel()
+		inventory_panel.update_inventory_display()
+	#func _exchange(data : Array[SlotData], m : int, n : int) -> void:
+	#var temp : SlotData = data[m]
+	#data[m] = data[n]
+	#data[n] = temp
 
 func _update_hero_panel() -> void:
 	if !selected_hero: 
