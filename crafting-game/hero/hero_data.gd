@@ -83,8 +83,7 @@ func level_up() -> void:
 func equip_item(e: SlotData) -> SlotData: # TODO: add remaining equipment slots # HACK: Clean up some way?
 	var temp : SlotData
 	if equipment[e.item.equipment_type]:
-		#unequip_item(equipment[e.item.equipment_type])
-		temp = unequip_item(e.item.equipment_type) # THIS SHOULD BE DONE SEPARATELY
+		temp = unequip_item(e.item.equipment_type)
 	else:
 		temp = SlotData.new()
 	equipment[e.item.equipment_type] = e
@@ -97,14 +96,8 @@ func unequip_item(slot: Constants.EquipmentType) -> SlotData:
 	if temp.item:
 		temp.item.stats_updated.disconnect(get_total_stats)
 	equipment[slot] = SlotData.new()
-	print("Item unequipped.")
+	get_total_stats()
 	return temp
-	
-	#if equipment.has(e):
-		#e.item.stats_updated.disconnect(get_total_stats)
-		#equipment.erase(e)
-	#if e.item:
-	# TODO: Move item to inventory
 
 func get_formatted_name() -> String:
 	return hero_name + ", " + hero_title

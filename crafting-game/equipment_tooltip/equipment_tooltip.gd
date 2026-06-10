@@ -29,8 +29,24 @@ func _on_show_tooltip(c: Control) -> void:
 func _on_hide_tooltip() -> void:
 	toggle(false)
 
-func _set_item_display(i: Item) -> void:
-	name_label.text = i.item_name
+func _set_item_display(i: Item) -> void: # TODO : Change to using a single rich text label
+	if i is Equipment:
+		name_label.text = i.item_name
+		name_label.modulate = i.get_color()
+		rarity_label.text = Constants.Rarity.keys()[i.rarity].capitalize()
+		_clear_stats()
+	
+		for affix in i.implicit_affixes:
+			#var value = item.rolled_stats[stat_name]
+			var l : Label = Label.new()
+			l.text = _format_stat(affix.affix_data.stat_name, affix.value)
+			stats_box.add_child(l)
+		
+		for affix in i.explicit_affixes:
+			var l : Label = Label.new()
+			#l.text = affix.affix_data.description % round(affix.value)
+			l.text = _format_stat(affix.affix_data.stat_name, affix.value)
+			affix_box.add_child(l)
 
 func toggle(on : bool) -> void:
 	if on:
