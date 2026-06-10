@@ -16,6 +16,21 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2l2ys"]
+load_path = "res://.godot/imported/Inventory_Slot_1.png-f6e35a9752939411621f7e53b7cfb6d0.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvwys"]
+atlas = SubResource("CompressedTexture2D_2l2ys")
+region = Rect2(5, 5, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfn8g"]
+texture = SubResource("AtlasTexture_jvwys")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(0.7202103, 0.7202103, 0.7202103, 0.80784315)
+
 [resource]
 default_font = ExtResource("4_k2fgf")
 default_font_size = 8
@@ -28,9 +43,11 @@ HeaderMedium/fonts/font = ExtResource("3_4nb47")
 HeaderSmall/font_sizes/font_size = 6
 HeaderSmall/fonts/font = ExtResource("4_k2fgf")
 Label/font_sizes/font_size = 8
-MarginContainer/constants/margin_bottom = 8
-MarginContainer/constants/margin_left = 8
-MarginContainer/constants/margin_right = 8
-MarginContainer/constants/margin_top = 8
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 4
+MarginContainer/constants/margin_top = 4
 SimpleButton/base_type = &"Button"
 SimpleButton/font_sizes/font_size = 12
+TooltipPanel/base_type = &"PanelContainer"
+TooltipPanel/styles/panel = SubResource("StyleBoxTexture_mfn8g")

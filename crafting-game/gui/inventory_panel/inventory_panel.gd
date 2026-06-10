@@ -6,11 +6,19 @@ signal slot_pressed(data : SlotData)
 const ITEM_SLOT_UI : PackedScene = preload("uid://cq60rwikmkkud")
 
 @onready var inventory_container: GridContainer = %InventoryContainer
+@onready var sort_button: Button = %SortButton
+
+func _ready() -> void:
+	sort_button.pressed.connect(_on_sort_button_pressed)
 
 func _on_slot_pressed(data : SlotData) -> void:
 	if !data or data.item is not Equipment:
 		return
 	slot_pressed.emit(data)
+
+func _on_sort_button_pressed() -> void:
+	GameManager.inventory.sort()
+	update_inventory_display()
 
 func update_inventory_display() -> void: # TODO: Disable or hide non-equipment items in inventory
 	for child in inventory_container.get_children():

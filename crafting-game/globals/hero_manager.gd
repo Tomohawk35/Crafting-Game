@@ -1,7 +1,7 @@
 ## Global - HeroManager
 extends Node
 
-
+signal roster_changed
 
 var hero_roster : Array[HeroData] = []
 
