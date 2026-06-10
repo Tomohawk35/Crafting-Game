@@ -24,8 +24,6 @@ const SLOT_TEXTURES : Array[String] = [
 var slot_data : SlotData = SlotData.new()
 var clickable : bool = false # TODO: DO we still need this?
 
-@onready var equipment_tooltip: EquipmentTooltip = %EquipmentTooltip
-
 # TODO: NEED TO ADD DRAG AND DROP FOR ITEM DATA OR CLICK TO MOVE FOR FORGE
 # MAYBE JUST EMIT SIGNAL WITH DATA FOR UI CONTROLLER TO GRAB?
 

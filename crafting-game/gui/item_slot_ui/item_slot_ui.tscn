@@ -3,7 +3,6 @@
 [ext_resource type="Theme" uid="uid://ccu4npsvqwi6r" path="res://game_theme.tres" id="1_3ntnb"]
 [ext_resource type="Script" uid="uid://dq8wt4pabylvb" path="res://gui/item_slot_ui/item_slot_ui.gd" id="1_dndjr"]
 [ext_resource type="Texture2D" uid="uid://ddl4rxa7pbj08" path="res://assets/art/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/arrow_01a.png" id="2_2xl3h"]
-[ext_resource type="PackedScene" uid="uid://cg2d6rttt4xkt" path="res://equipment_tooltip/equipment_tooltip.tscn" id="4_ug6mj"]
 
 [node name="ItemSlotUi" type="PanelContainer" unique_id=1332666258 node_paths=PackedStringArray("item_sprite", "label")]
 custom_minimum_size = Vector2(24, 24)
@@ -31,8 +30,3 @@ theme_override_constants/outline_size = 2
 text = "99"
 horizontal_alignment = 2
 vertical_alignment = 2
-
-[node name="EquipmentTooltip" parent="." unique_id=858396614 instance=ExtResource("4_ug6mj")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2

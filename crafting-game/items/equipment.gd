@@ -11,18 +11,40 @@ signal stats_updated
 @export var affix_limit : int
 @export var rarity : Constants.Rarity
 @export var total_stats : StatsTable
+@export var description_string : String = ""
 
 func _update_stats() -> void:
 	rarity = get_rarity()
-	
 	total_stats = StatsTable.new()
+	#description_string = "[center][b][color=red]%s[/color][/b][/center]" % item_name
+	description_string = ""
 	
-	for a in implicit_affixes:
-		total_stats.stats[a.affix_data.stat_name] += a.value
+	#for a in implicit_affixes:
+		#total_stats.stats[a.affix_data.stat_name] += a.value
+		#description_string += "%s\n" % _format_stat(a.affix_data.stat_name, a.value)
 	for a in explicit_affixes:
 		total_stats.stats[a.affix_data.stat_name] += a.value
+		#description_string = "%s\n%s" % [description_string, _format_stat(a.affix_data.stat_name, a.value)]
+		description_string += _format_stat(a.affix_data.stat_name, a.value)
+		#append_string(description_string) += _format_stat(a.affix_data.stat_name, a.value)
+		#description_string.
 	
 	stats_updated.emit()
+
+
+func _format_stat(stat_name: String, value: float) -> String:
+	var display : String = stat_name.replace("_", " ").capitalize()
+	
+	if stat_name.ends_with("_pct"):
+		if value > 0:
+			return "%.2f%% Increased %s" % [value, display.replace(" Pct", "")]
+		else:
+			return "%d%% Decreased %s" % [value, display.replace(" Pct", "")]
+	
+	if value > 0:
+		return "+%d %s" % [round(value), display]
+	else:
+		return "-%d %s" % [round(value), display]
 
 func get_rarity() -> Constants.Rarity:
 	match explicit_affixes.size():
