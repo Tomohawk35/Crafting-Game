@@ -13,97 +13,118 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_0cno1")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=452735628]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1563563977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScreenTransitionButton" type="Button" parent="MarginContainer" unique_id=2052672743]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Village / World"
+
+[node name="CurrencyPanel" type="PanelContainer" parent="MarginContainer" unique_id=452735628]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 mouse_filter = 2
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1449624984]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CurrencyPanel" unique_id=1449624984]
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("2_cw65i")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=494324544]
-custom_minimum_size = Vector2(288, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CurrencyPanel/MarginContainer" unique_id=494324544]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="GoldTextLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=517729956]
+[node name="GoldTextLabel" type="Label" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=517729956]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "Gold: "
+vertical_alignment = 1
 
-[node name="GoldValueLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=163859275]
+[node name="GoldValueLabel" type="Label" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=163859275]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "999"
 horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=27280521]
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=27280521]
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 
-[node name="WoodTextLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=664641297]
+[node name="WoodTextLabel" type="Label" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=664641297]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "Wood: "
+vertical_alignment = 1
 
-[node name="WoodValueLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=376849625]
+[node name="WoodValueLabel" type="Label" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=376849625]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "999"
 horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="VSeparator2" type="VSeparator" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1772634269]
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=1772634269]
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 
-[node name="StoneTextLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1557706775]
+[node name="StoneTextLabel" type="Label" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=1557706775]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "Stone: "
+vertical_alignment = 1
 
-[node name="StoneValueLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1523935461]
+[node name="StoneValueLabel" type="Label" parent="MarginContainer/CurrencyPanel/MarginContainer/HBoxContainer" unique_id=1523935461]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "999"
 horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1186931714]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
+[node name="TimePanel" type="PanelContainer" parent="MarginContainer" unique_id=1186931714]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"BorderedPanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=577514826]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TimePanel" unique_id=577514826]
 layout_mode = 2
 theme = ExtResource("2_cw65i")
 
-[node name="TimeLabel" type="Label" parent="PanelContainer2/MarginContainer" unique_id=26662369]
+[node name="TimeLabel" type="Label" parent="MarginContainer/TimePanel/MarginContainer" unique_id=26662369]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 theme = ExtResource("2_cw65i")
 theme_type_variation = &"HeaderLarge"
 text = "01:30 AM"
 horizontal_alignment = 1
+vertical_alignment = 1

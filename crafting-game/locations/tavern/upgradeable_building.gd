@@ -2,7 +2,7 @@ extends Node2D
 class_name UpgradeableBuilding
 
 
-@export var building_name : String = "tavern"
+@export var building_name : Constants.Buildings
 
 var data : BuildingData
 var is_clickable : bool = false
@@ -12,6 +12,8 @@ var is_clickable : bool = false
 @onready var clickable_area: ClickableAreaComponent = $ClickableArea
 
 func _ready() -> void:
+	if !building_name:
+		queue_free()
 	data = GameManager.buildings[building_name]
 	data.leveled_up.connect(_on_building_level_up)
 	clickable_area.clicked.connect(_on_clicked)

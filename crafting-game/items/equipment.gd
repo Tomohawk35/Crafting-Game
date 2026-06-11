@@ -19,15 +19,26 @@ func _update_stats() -> void:
 	#description_string = "[center][b][color=red]%s[/color][/b][/center]" % item_name
 	description_string = ""
 	
-	#for a in implicit_affixes:
-		#total_stats.stats[a.affix_data.stat_name] += a.value
-		#description_string += "%s\n" % _format_stat(a.affix_data.stat_name, a.value)
-	for a in explicit_affixes:
+	var a : AffixInstance
+	for a_index in range(implicit_affixes.size()):
+		a = implicit_affixes[a_index]
 		total_stats.stats[a.affix_data.stat_name] += a.value
+		#if a_index != 0 or implicit_affixes.size() - 1:
+		description_string += _format_stat(a.affix_data.stat_name, a.value)
+		description_string += "\n"
+		#if a_index == implicit_affixes.size() - 1
+	for a_index in range(explicit_affixes.size()):
+		a = explicit_affixes[a_index]
+		total_stats.stats[a.affix_data.stat_name] += a.value
+		#if a_index != explicit_affixes.size() - 1:
+			#description_string += "\n"
 		#description_string = "%s\n%s" % [description_string, _format_stat(a.affix_data.stat_name, a.value)]
 		description_string += _format_stat(a.affix_data.stat_name, a.value)
+		description_string += "\n"
 		#append_string(description_string) += _format_stat(a.affix_data.stat_name, a.value)
 		#description_string.
+	if description_string.ends_with("\n"):
+		description_string = description_string.trim_suffix("\n")
 	
 	stats_updated.emit()
 

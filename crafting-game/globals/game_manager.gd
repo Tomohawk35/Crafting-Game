@@ -14,7 +14,7 @@ var resources : Dictionary[String, int] = {
 var inventory : Inventory = Inventory.new()
 
 # BUILDINGS
-var buildings : Dictionary[String, BuildingData]
+var buildings : Dictionary[Constants.Buildings, BuildingData]
 #var tavern : BuildingData 
 
 # LOCATIONS 
@@ -38,8 +38,8 @@ func _add_starting_inventory() -> void:
 
 func _new_building_data() -> void:
 	buildings.clear()
-	buildings["tavern"] = Utils.load_asset("res://data/buildings/tavern.tres")
-	buildings["blacksmith"] = Utils.load_asset("res://data/buildings/blacksmith.tres")
+	buildings[Constants.Buildings.TAVERN] = Utils.load_asset("res://data/buildings/tavern.tres")
+	buildings[Constants.Buildings.FORGE] = Utils.load_asset("res://data/buildings/blacksmith.tres")
 
 func _new_location_data() -> void:
 	locations = {}

@@ -3,6 +3,8 @@ extends Node
 
 @warning_ignore_start("unused_signal")
 
+signal view_world_map
+signal view_village
 
 signal display_equipment(s: SlotData, h: HeroData)
 #signal tavern_clicked

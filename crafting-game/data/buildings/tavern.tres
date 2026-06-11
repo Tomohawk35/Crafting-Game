@@ -1,23 +1,18 @@
 [gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://clf1ogyxyg83o"]
 
 [ext_resource type="Script" uid="uid://d0bdgew7xp4cx" path="res://data/scripts/building_data.gd" id="1_dppmr"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dppmr"]
-load_path = "res://.godot/imported/TinyRanch_Structures.png-8f0bacab1c717b1dafaa4d2a725b59b3.ctex"
+[ext_resource type="Texture2D" uid="uid://cj8tud8vju23y" path="res://assets/art/tiny_ranch_asset_pack_by_gustavo_vituri/TinyRanch_Structures.png" id="2_fk30x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fk30x"]
-atlas = SubResource("CompressedTexture2D_dppmr")
+atlas = ExtResource("2_fk30x")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qi2s"]
-atlas = SubResource("CompressedTexture2D_dppmr")
+atlas = ExtResource("2_fk30x")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmrxr"]
-load_path = "res://.godot/imported/TinyRanch_Structures.png-8f0bacab1c717b1dafaa4d2a725b59b3.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qibhg"]
-atlas = SubResource("CompressedTexture2D_cmrxr")
+atlas = ExtResource("2_fk30x")
 region = Rect2(16, 0, 16, 16)
 
 [resource]

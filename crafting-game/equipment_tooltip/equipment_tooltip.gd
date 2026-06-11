@@ -11,8 +11,9 @@ var opacity_tween : Tween = null
 @onready var description_label: RichTextLabel = %DescriptionLabel
 
 func _ready() -> void:
-	EventBus.hide_tooltip.connect(_on_hide_tooltip)
-	EventBus.show_tooltip.connect(_on_show_tooltip)
+	EventBus.hide_tooltip.connect(_on_hide_tooltip, CONNECT_DEFERRED)
+	EventBus.show_tooltip.connect(_on_show_tooltip, CONNECT_DEFERRED)
+	reset_size()
 
 func _input(event: InputEvent) -> void:
 	if visible and event is InputEventMouseMotion:

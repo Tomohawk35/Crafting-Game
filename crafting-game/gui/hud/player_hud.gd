@@ -5,6 +5,7 @@ class_name PlayerHUD
 @onready var wood_value_label: Label = %WoodValueLabel
 @onready var stone_value_label: Label = %StoneValueLabel
 @onready var time_label: Label = %TimeLabel
+@onready var screen_transition_button: Button = %ScreenTransitionButton
 
 func _ready() -> void:
 	_set_gold_value()
@@ -13,6 +14,7 @@ func _ready() -> void:
 	_update_time()
 	#GameManager.gold_changed.connect(_set_gold_value)
 	GameManager.resource_changed.connect(_on_resource_changed)
+	screen_transition_button.pressed.connect(_on_screen_transition_button_pressed)
 	TimeManager.tick.connect(_update_time)
 
 func _on_resource_changed(r: String) -> void:
@@ -25,6 +27,9 @@ func _on_resource_changed(r: String) -> void:
 			_set_stone_value()
 		_:
 			pass
+
+func _on_screen_transition_button_pressed() -> void:
+	
 
 func _set_gold_value() -> void:
 	gold_value_label.text = str(GameManager.resources["gold"])

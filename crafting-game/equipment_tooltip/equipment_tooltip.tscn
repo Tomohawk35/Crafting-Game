@@ -46,6 +46,7 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "Description label"
 fit_content = true
+scroll_active = false
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1342162797]
 layout_mode = 2

@@ -4,8 +4,17 @@
 		{"upgrade_resource_costs": {"gold": 50, "wood": 5}},
 		{"upgrade_resource_costs": {"gold": 100, "wood": 10, "stone": 10}},
 	],
-	"blacksmith": [
+	"forge": [
 		{"upgrade_resource_costs": {"gold": 10}},
 		{"upgrade_resource_costs": {"gold": 100, "wood": 10, "stone": 10}},
+	],
+	"alchemist": [
+		{"upgrade_resource_costs": {"gold": 10}},
+	],
+	"hunters": [
+		{"upgrade_resource_costs": {"gold": 10}},
+	],
+	"hall": [
+		{"upgrade_resource_costs": {"gold": 10}},
 	]
 }
