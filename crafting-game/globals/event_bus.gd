@@ -5,6 +5,7 @@ extends Node
 
 signal view_world_map
 signal view_village
+signal switch_view
 
 signal display_equipment(s: SlotData, h: HeroData)
 #signal tavern_clicked

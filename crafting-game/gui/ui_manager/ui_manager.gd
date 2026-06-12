@@ -34,7 +34,7 @@ func _close_window() -> void:
 	if ui_stack[-1].has_method("close"):
 		ui_stack[-1].close()
 
-func _on_building_clicked(b: String) -> void:
+func _on_building_clicked(b: String) -> void: # TODO: Update to use constants instead
 	print("Building clicked: ", b)
 	match b:
 		"tavern":

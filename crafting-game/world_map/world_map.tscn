@@ -24,13 +24,13 @@ script = ExtResource("2_nirhn")
 
 [node name="MapLocations" type="Node2D" parent="." unique_id=1903791836]
 
-[node name="Farmlands" parent="MapLocations" unique_id=1260784349 instance=ExtResource("4_jlife")]
-position = Vector2(477, 269)
-location_name = "outer farmlands"
-
 [node name="Village" parent="MapLocations" unique_id=1305576743 instance=ExtResource("4_jlife")]
 position = Vector2(208, 249)
 location_name = "village"
+
+[node name="Farmlands" parent="MapLocations" unique_id=1260784349 instance=ExtResource("4_jlife")]
+position = Vector2(477, 269)
+location_name = "outer farmlands"
 
 [node name="GoblinVillage" parent="MapLocations" unique_id=1593546854 instance=ExtResource("4_jlife")]
 position = Vector2(663, 284)

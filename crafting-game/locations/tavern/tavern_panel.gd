@@ -20,7 +20,7 @@ func _ready() -> void:
 	for child in hero_recruit_card_container.get_children():
 		child.queue_free()
 	upgrade_button.disabled = true
-	data = GameManager.buildings["tavern"]
+	data = GameManager.buildings[Constants.Buildings.TAVERN]
 	data.leveled_up.connect(_update_panel)
 	upgrade_button.pressed.connect(_on_upgrade_button_pressed)
 	hide()

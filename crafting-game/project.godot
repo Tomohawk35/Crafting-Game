@@ -22,7 +22,6 @@ TimeManager="*uid://dc1hekp3dsu5x"
 GameManager="*uid://cv02up0nv8ynf"
 HeroManager="*uid://07b6pr1q0muh"
 QuestManager="*uid://dwbaabpybahgn"
-UIManager="*uid://koeadxu4n8tr"
 ItemFactory="*uid://dqttsnvhk65lu"
 
 [display]

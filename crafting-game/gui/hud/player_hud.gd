@@ -29,7 +29,7 @@ func _on_resource_changed(r: String) -> void:
 			pass
 
 func _on_screen_transition_button_pressed() -> void:
-	
+	EventBus.switch_view.emit()
 
 func _set_gold_value() -> void:
 	gold_value_label.text = str(GameManager.resources["gold"])
