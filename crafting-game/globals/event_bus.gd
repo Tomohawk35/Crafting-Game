@@ -11,7 +11,7 @@ signal display_equipment(s: SlotData, h: HeroData)
 #signal tavern_clicked
 
 signal location_clicked(location_name: String)
-signal building_clicked(building_name: String)
+signal building_clicked(building_name: Constants.Buildings)
 
 signal show_tooltip(node: Control)
 signal hide_tooltip

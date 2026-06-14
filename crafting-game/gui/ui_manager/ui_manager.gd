@@ -34,15 +34,17 @@ func _close_window() -> void:
 	if ui_stack[-1].has_method("close"):
 		ui_stack[-1].close()
 
-func _on_building_clicked(b: String) -> void: # TODO: Update to use constants instead
+func _on_building_clicked(b: Constants.Buildings) -> void: # TODO: 
 	print("Building clicked: ", b)
 	match b:
-		"tavern":
+		Constants.Buildings.TAVERN:
 			tavern_panel.open()
 			ui_stack.append(tavern_panel)
-		"blacksmith":
+		Constants.Buildings.FORGE:
 			forge_panel.open()
 			ui_stack.append(forge_panel)
+		_:
+			pass
 
 
 func _on_location_clicked(l: String) -> void:

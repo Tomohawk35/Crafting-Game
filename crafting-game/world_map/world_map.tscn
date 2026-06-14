@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://w7yq4ms3djg4"]
 
+[ext_resource type="Script" uid="uid://b8wfwbyemhiuc" path="res://world_map/world_map.gd" id="1_fsjge"]
 [ext_resource type="TileSet" uid="uid://dvhgrwrtb3pkj" path="res://isometric_prototype_tile_set.tres" id="1_g238a"]
 [ext_resource type="Script" uid="uid://dqw2j110x2b4j" path="res://tests/test_world_map/camera_2d.gd" id="2_nirhn"]
 [ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_jlife"]
@@ -12,6 +13,7 @@ _data = {
 point_count = 6
 
 [node name="WorldMap" type="Node2D" unique_id=272529868]
+script = ExtResource("1_fsjge")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1663453018]
 y_sort_enabled = true
@@ -19,6 +21,7 @@ tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAA
 tile_set = ExtResource("1_g238a")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1660991097]
+visible = false
 position = Vector2(575, 325)
 script = ExtResource("2_nirhn")
 

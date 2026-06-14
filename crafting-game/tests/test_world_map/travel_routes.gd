@@ -7,6 +7,7 @@ const MAP_CARAVAN : PackedScene = preload("uid://b2fjby8apri63")
 
 func _ready() -> void:
 	QuestManager.quest_started.connect(_on_quest_started)
+	_load_caravans()
 
 func _spawn_caravan(q: Quest) -> void:
 	q.travel_distance = routes[q.location].curve.get_baked_length()
