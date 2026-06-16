@@ -63,6 +63,12 @@ func _generate_recruitable_heroes() -> void: # TODO: Incorporate tavern level
 		c.recruit_cost = HeroFactory.calculate_recruit_cost(h)
 		hero_recruit_card_container.add_child(c)
 
+func _create_hero_card(h: HeroData) -> RecruitHeroCard:
+	var card : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
+	card.set_data(h)
+	#card.recruit_cost = HeroFactory.calculate_recruit_cost(h)
+	return card
+
 #func _calculate_recruit_cost(h: HeroData) -> int:
 	#return (h.rarity + 1) * h.level * 10
 	# TODO: Maybe add a cost reduction into the tavern level or some town value

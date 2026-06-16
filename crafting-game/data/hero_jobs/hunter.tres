@@ -1,10 +1,16 @@
 [gd_resource type="Resource" script_class="HeroJob" format=3 uid="uid://bv5mxdds10sm4"]
 
 [ext_resource type="Script" uid="uid://ci7ivl0dblkn2" path="res://data/scripts/hero_job.gd" id="1_g113b"]
+[ext_resource type="Texture2D" uid="uid://cbjqyoxrhgwfa" path="res://assets/art/hana_caraka_unit_character/archer 1 - idle.png" id="2_vfbv0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3182"]
+atlas = ExtResource("2_vfbv0")
+region = Rect2(22, 102, 32, 32)
 
 [resource]
 script = ExtResource("1_g113b")
 job_name = "Hunter"
 strength_growth_rate = 0.9
 dexterity_growth_rate = 1.2
+sprite = SubResource("AtlasTexture_e3182")
 metadata/_custom_type_script = "uid://ci7ivl0dblkn2"

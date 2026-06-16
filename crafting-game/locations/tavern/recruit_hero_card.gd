@@ -25,7 +25,7 @@ func _update_card() -> void:
 	adventurer_name_label.text = hero_data.hero_name + ", " + hero_data.hero_title 
 	# TODO: format based on rarity
 	level_label.text = str(hero_data.level)
-	# TODO: Update texture, add hero icon to data
+	adventurer_sprite.texture = hero_data.hero_job.sprite
 	str_value_label.text = str(int(round(hero_data.total_stats.stats["strength"])))
 	dex_value_label.text = str(int(round(hero_data.total_stats.stats["dexterity"])))
 	int_value_label.text = str(int(round(hero_data.total_stats.stats["intelligence"])))
@@ -43,3 +43,5 @@ func _on_recruit_button_pressed() -> void:
 			pass
 
 # TODO: Add a way to replace/reroll recruitable heroes
+func set_data(h: HeroData) -> void:
+	hero_data = h
