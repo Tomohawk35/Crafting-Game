@@ -13,6 +13,8 @@ var data: BuildingData
 @onready var upgrade_cost_container: VBoxContainer = %UpgradeCostContainer
 @onready var upgrade_button: Button = %UpgradeButton
 @onready var hero_recruit_card_container: HBoxContainer = %HeroRecruitCardContainer
+@onready var reroll_button: Button = %RerollButton
+@onready var reroll_cost_label: Label = %RerollCostLabel
 
 func _ready() -> void:
 	for child in upgrade_cost_container.get_children():
@@ -23,7 +25,13 @@ func _ready() -> void:
 	data = GameManager.buildings[Constants.Buildings.TAVERN]
 	data.leveled_up.connect(_update_panel)
 	upgrade_button.pressed.connect(_on_upgrade_button_pressed)
+	reroll_button.pressed.connect(_on_reroll_button_pressed)
 	hide()
+
+func _on_reroll_button_pressed() -> void:
+	if GameManager.has_resources("gold", 200):
+		GameManager.remove_resources("gold", 200)
+		_generate_recruitable_heroes()
 
 func _on_upgrade_button_pressed() -> void:
 	for r in data.level_up_resource_cost.keys():
@@ -56,17 +64,14 @@ func _update_panel() -> void:
 func _generate_recruitable_heroes() -> void: # TODO: Incorporate tavern level
 	for child in hero_recruit_card_container.get_children():
 		child.queue_free()
-	for i in range(MAX_RECRUITABLE_HEROES):
-		var c : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
-		var h : HeroData = HeroFactory.generate_hero()
-		c.hero_data = h
-		c.recruit_cost = HeroFactory.calculate_recruit_cost(h)
-		hero_recruit_card_container.add_child(c)
+	var card : RecruitHeroCard
+	for i in range(clampi(data.level, 1, MAX_RECRUITABLE_HEROES)):
+		card = _create_hero_card(HeroFactory.generate_hero())
+		hero_recruit_card_container.add_child(card)
 
 func _create_hero_card(h: HeroData) -> RecruitHeroCard:
 	var card : RecruitHeroCard = RECRUIT_HERO_CARD.instantiate() as RecruitHeroCard
 	card.set_data(h)
-	#card.recruit_cost = HeroFactory.calculate_recruit_cost(h)
 	return card
 
 #func _calculate_recruit_cost(h: HeroData) -> int:

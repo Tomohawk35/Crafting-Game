@@ -28,3 +28,6 @@ static func load_asset(path: String) -> Resource:
 		return load(__remapped_file_path)
 	else:
 		return load(path)
+
+static func get_color(r: Constants.Rarity) -> Color:
+	return Constants.RARITY_COLORS[r]

@@ -5,6 +5,7 @@ var hero_data : HeroData
 var recruit_cost : int = 745
 
 @onready var adventurer_name_label: Label = %AdventurerNameLabel
+@onready var job_label: Label = %JobLabel
 @onready var level_label: Label = %LevelLabel
 @onready var adventurer_sprite: TextureRect = %AdventurerSprite
 @onready var str_value_label: Label = %StrValueLabel
@@ -23,7 +24,8 @@ func _ready() -> void:
 
 func _update_card() -> void:
 	adventurer_name_label.text = hero_data.hero_name + ", " + hero_data.hero_title 
-	# TODO: format based on rarity
+	adventurer_name_label.modulate = Utils.get_color(hero_data.rarity)
+	job_label.text = hero_data.hero_job.job_name
 	level_label.text = str(hero_data.level)
 	adventurer_sprite.texture = hero_data.hero_job.sprite
 	str_value_label.text = str(int(round(hero_data.total_stats.stats["strength"])))
@@ -45,3 +47,4 @@ func _on_recruit_button_pressed() -> void:
 # TODO: Add a way to replace/reroll recruitable heroes
 func set_data(h: HeroData) -> void:
 	hero_data = h
+	recruit_cost = HeroFactory.calculate_recruit_cost(h)

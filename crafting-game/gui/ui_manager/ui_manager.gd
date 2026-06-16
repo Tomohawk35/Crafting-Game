@@ -14,10 +14,8 @@ var ui_stack : Array[Control] = []
 
 func _ready() -> void:
 	EventBus.location_clicked.connect(_on_location_clicked)
-	#EventBus.tavern_clicked.connect(_on_tavern_clicked)
 	EventBus.building_clicked.connect(_on_building_clicked)
 	tavern_panel.close()
-
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):

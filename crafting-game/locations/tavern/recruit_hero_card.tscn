@@ -23,7 +23,10 @@ layout_mode = 2
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=894266869]
 layout_mode = 2
 
-[node name="AdventurerNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2115513191]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=305901151]
+layout_mode = 2
+
+[node name="AdventurerNameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=2115513191]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
@@ -32,6 +35,13 @@ theme = ExtResource("2_j0bve")
 theme_type_variation = &"HeaderMedium"
 text = "Ivan, the Cursed Knight"
 autowrap_mode = 2
+
+[node name="JobLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1142929780]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_j0bve")
+theme_type_variation = &"HeaderSmall"
+text = "Job"
 
 [node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=33550760]
 unique_name_in_owner = true

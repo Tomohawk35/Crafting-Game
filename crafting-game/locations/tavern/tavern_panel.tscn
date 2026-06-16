@@ -106,6 +106,21 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Upgrade"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2081078850]
+layout_mode = 2
+
+[node name="RerollButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=180665591]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reroll"
+
+[node name="RerollCostLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1943208744]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cost: 200g"
+horizontal_alignment = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1886267715]
 layout_mode = 2
 

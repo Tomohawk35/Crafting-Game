@@ -6,7 +6,7 @@ enum ItemType { WEAPON, BODY_ARMOR, SHIELD, HELMET, RING, AMULET, CURRENCY }
 enum Rarity { COMMON, UNCOMMON, RARE, LEGENDARY }
 enum EquipmentType { WEAPON, BODY_ARMOR, SHIELD, HELMET, RING, AMULET, GLOVES } # TODO: Add Boots, Potions
 enum Buildings { TAVERN, FORGE, ALCHEMIST, HUNTERS, HALL }
-
+enum Locations { VILLAGE, FARMLANDS, GOBLIN }
 
 # TODO: ADD A UNIQUE CATEGORY THAT CAN'T BE MODIFIED?
 const RARITY_COLORS : Dictionary = {
@@ -26,4 +26,10 @@ const BUILDING_ENUM_STRING : Dictionary[Buildings, String] = {
 	Buildings.ALCHEMIST : "alchemist",
 	Buildings.HUNTERS : "hunters",
 	Buildings.HALL : "hall",
+}
+
+const LOCATION_ENUM_STRING : Dictionary[Locations, String] = {
+	Locations.VILLAGE : "village",
+	Locations.FARMLANDS : "Outer Farmlands",
+	Locations.GOBLIN : "Goblin Settlement"
 }
