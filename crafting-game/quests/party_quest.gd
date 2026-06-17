@@ -15,6 +15,8 @@ var quest_speed : float = 0.0
 
 @abstract
 func _set_travel_speed() -> void
+	#travel_speed = (Constants.DEFAULT_TRAVEL_SPEED + party.party_stats.stats["travel_speed_flat"]) * (1.0 + party.party_stats.stats["travel_speed_pct"])
+
 @abstract
 func _set_quest_duration() -> void
 

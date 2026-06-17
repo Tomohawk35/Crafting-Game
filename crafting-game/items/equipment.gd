@@ -42,7 +42,6 @@ func _update_stats() -> void:
 	
 	stats_updated.emit()
 
-
 func _format_stat(stat_name: String, value: float) -> String:
 	var display : String = stat_name.replace("_", " ").capitalize()
 	
@@ -111,3 +110,45 @@ func reroll_affixes() -> bool:
 		add_affix()
 	_update_stats()
 	return true
+
+
+
+#@export var item_name : String
+#@export var icon : Texture2D
+#@export var stackable : bool = false
+
+func to_dict() -> Dictionary:
+	var d : Dictionary = {}
+	d["item_name"] = item_name
+	d["icon"] = icon.resource_path
+	d["stackable"] = stackable
+	d["equipment_type"] = equipment_type
+	d["implicit_affixes"] = []
+	for inst in implicit_affixes:
+		d["implicit_affixes"].append(inst.to_dict())
+	d["explicit_affixes"] = []
+	for inst in explicit_affixes:
+		d["explicit_affixes"].append(inst.to_dict())
+	d["affix_limit"] = affix_limit
+	d["rarity"] = rarity
+	d["description_string"] = description_string
+	return d
+
+func from_dict(d: Dictionary) -> void:
+	item_name = d["item_name"]
+	icon = load(d["icon"])
+	stackable = d["stackable"]
+	equipment_type = d["equipment_type"]
+	implicit_affixes = []
+	var aff : AffixInstance 
+	for inst in d["implicit_affixes"]:
+		aff = AffixInstance.new()
+		aff.from_dict(inst)
+		implicit_affixes.append(aff)
+	for inst in d["explicit_affixes"]:
+		aff = AffixInstance.new()
+		aff.from_dict(inst)
+		explicit_affixes.append(aff)
+	affix_limit = d["affix_limit"]
+	rarity = d["rarity"]
+	description_string = d["description_string"]

@@ -7,7 +7,7 @@ enum QuestType { BUILD, HUNT, INVESTIGATE, GATHER, BOSS, DUNGEON }
 enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 
 
-@export var quest_name : String = "A Simple Quest" # TODO: Add functions for getting name and description
+@export var quest_title : String = "A Simple Quest" # TODO: Add functions for getting name and description
 @export var quest_description : String = "A new quest for hunting rabbits."
 @export var state : QuestState = QuestState.NOT_STARTED
 @export var difficulty : int = QuestDifficulty.EASY
@@ -33,12 +33,15 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 
 @abstract
 func start() -> bool
+
 @abstract
 func advance() -> void
-@abstract
-func to_dict() -> Dictionary
-@abstract
-func from_dict(d: Dictionary) -> void
+
+#@abstract
+#func to_dict() -> Dictionary
+#
+#@abstract
+#func from_dict(d: Dictionary) -> void
 
 
 #func start() -> bool:
@@ -105,15 +108,19 @@ func add_item_reward(i: Item, q: int = 1) -> void:
 	#party_members.clear()
 
 ##region SAVE / LOAD
-#func to_dict() -> Dictionary:
-	#var d : Dictionary = {}
+func to_dict() -> Dictionary:
+	var d : Dictionary = {}
+	d["quest_title"] = quest_title
+	d["quest_description"] = quest_description
+	d["state"] = state
 	#d["difficulty"] = difficulty
-	#d["location"] = location
-	##d["duration"] = duration
-	## TODO: finish
-	#return d
-#
-#func from_dict(d: Dictionary) -> void:
-	#difficulty = d["difficulty"]
-	## TODO: Finish
+	d["res_rewards"] = resource_rewards
+	d["item_rewards"] = []
+	for slot : SlotData in item_rewards:
+		d["item_rewards"].append(slot.to_dict)
+	return d
+
+func from_dict(d: Dictionary) -> void:
+	difficulty = d["difficulty"]
+	# TODO: Finish
 ##endregion
