@@ -3,7 +3,7 @@ class_name TravelRoutes
 
 const MAP_CARAVAN : PackedScene = preload("uid://b2fjby8apri63")
 
-@export var routes : Dictionary[String, Path2D] = {}
+@export var routes : Dictionary[Constants.Locations, Path2D] = {}
 
 func _ready() -> void:
 	QuestManager.quest_started.connect(_on_quest_started)
@@ -16,6 +16,8 @@ func _spawn_caravan(q: Quest) -> void:
 	routes[q.location].add_child(caravan)
 
 func _on_quest_started(q: Quest) -> void:
+	if q is not PartyQuest:
+		return
 	if !routes.has(q.location):
 		print("Travel route to %s not open." % q.location)
 		return
@@ -23,4 +25,5 @@ func _on_quest_started(q: Quest) -> void:
 
 func _load_caravans() -> void:
 	for q : Quest in QuestManager.get_active_quests():
-		_spawn_caravan(q)
+		if q is PartyQuest:
+			_spawn_caravan(q)

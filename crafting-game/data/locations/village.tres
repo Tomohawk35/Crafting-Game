@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://cspr334imcj4k"]
+
+[ext_resource type="Script" uid="uid://d1ch074d3x866" path="res://data/scripts/location_data.gd" id="1_gbno1"]
+
+[resource]
+script = ExtResource("1_gbno1")
+location_name = "Ravenwood Village"
+description = "A humble village stuck at the crossroads of corrupt kingdoms, goblin camps, and other terrifying beasts."
+metadata/_custom_type_script = "uid://d1ch074d3x866"

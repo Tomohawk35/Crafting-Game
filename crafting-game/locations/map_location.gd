@@ -1,7 +1,7 @@
 extends Node2D
 class_name MapLocation
 
-@export var location_name : String = "None" # TODO: CHange to a constant enum?
+@export var location_name : Constants.Locations
 
 #var data : LocationData
 var is_clickable : bool = false

@@ -6,11 +6,8 @@ signal quest_completed(q: Quest)
 
 const QUEST_LIMIT : int = 4
 
+var available_quest_types : Array[Quest.QuestType] = [Quest.QuestType.BUILD]
 var quests : Array[Quest] = []
-#var available_quests : Array[Quest] = []
-
-# NOTE: Quest workflow:
-# Select available location > Some quests appear > Select a quest > Assign Party > Start Quest
 
 func _ready() -> void:
 	_add_initial_quests()
@@ -21,39 +18,38 @@ func _on_time_tick(_h: int, _m: int) -> void:
 
 func _advance_quests() -> void:
 	for q: Quest in quests:
-		#if q.state in [Quest.QuestState.TRAVELING, Quest.QuestState.IN_PROGRESS, Quest.QuestState.RETURNING]:
 		q.advance()
 
 func _add_initial_quests() -> void:
-	var q: Quest = generate_quest("outer farmlands")
+	var q: QuestHunt = generate_hunt_quest(Constants.Locations.FARMLANDS)
 	q.add_resource_reward("gold", 50)
 	q.add_resource_reward("wood", 10)
 	q.add_item_reward(ItemFactory.generate_equipment())
 	q.add_item_reward(ItemFactory.generate_equipment())
 	q.add_item_reward(ItemFactory.generate_equipment())
-	q.quest_name = "Hunt Foxes"
-	q.quest_description = "Hunt down the foxes attacking the farm's chickens."
-	#q.ty = Quest.QuestType.HUNT
+	q.quest_title = "Hunt Foxes"
 	quests.append(q)
+	
+	var qb : QuestBuild = generate_build_quest(Constants.Buildings.TAVERN, 1)
+	qb.add_resource_reward("gold", 50)
+	qb.add_resource_reward("wood", 20)
+	qb.quest_title = "Restore the Tavern"
+	quests.append(qb)
+	start_quest(qb)
 
-func generate_quest(location_name : String = "Generic") -> Quest:
-	var q : Quest = Quest.new()
-	# TODO: Setup quest data
-	q.set_location(location_name)
+func generate_build_quest(b: Constants.Buildings, l: int = 1) -> QuestBuild:
+	var q : QuestBuild = QuestBuild.new()
+	q.set_building(b, l)
 	return q
 
-#func generate_new_quests() -> void:
-	#available_quests.clear()
-	#for i in range(QUEST_LIMIT):
-		#var q : Quest = generate_quest()
-		#available_quests.append(q)
+func generate_hunt_quest(l: Constants.Locations) -> QuestHunt:
+	var q : QuestHunt = QuestHunt.new()
+	q.set_location(l) # TODO: Need to generate quest rewards
+	return q
 
 func start_quest(q: Quest) -> void: # TODO: Add timer for travel time / duration / etc
 	if q.start():
-		print("Quest has been started.")
 		quest_started.emit(q)
-		print("Signal has been emitted")
-		# TODO: Check for valid party members before starting
 
 func complete_quest(q: Quest) -> void:
 	for member in q.party_members:
@@ -67,8 +63,8 @@ func complete_quest(q: Quest) -> void:
 	quests.erase(q)
 	quest_completed.emit(q)
 
-func get_location_quests(loc: String) -> Array[Quest]:
-	return quests.filter(func(q: Quest): return q.location == loc)
+func get_location_quests(loc: Constants.Locations) -> Array[Quest]:
+	return quests.filter(func(q: Quest): return q is PartyQuest and q.location == loc)
 
 func get_active_quests() -> Array[Quest]:
 	return quests.filter(

@@ -10,6 +10,7 @@ var stat_definitions : Array[String] = [
 	"intelligence",
 	"charisma",
 	"travel_speed",
+	"hunting_speed",
 	"quest_speed",
 	"luck"
 ]

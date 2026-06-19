@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://c15qlhb5fp74v"]
+
+[ext_resource type="Script" uid="uid://d1ch074d3x866" path="res://data/scripts/location_data.gd" id="1_a8nl4"]
+
+[resource]
+script = ExtResource("1_a8nl4")
+location_name = "Outer Farmlands"
+description = "Home to honest working farmers constantly fending off wolves and other sinister beasts trying to take their livestock."
+metadata/_custom_type_script = "uid://d1ch074d3x866"

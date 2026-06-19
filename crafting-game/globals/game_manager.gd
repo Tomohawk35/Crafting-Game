@@ -13,7 +13,7 @@ var resources : Dictionary[String, int] = {
 
 var inventory : Inventory = Inventory.new()
 var buildings : Dictionary[Constants.Buildings, BuildingData]
-var locations : Dictionary[String, LocationData] = {}
+var locations : Dictionary[Constants.Locations, LocationData]
 
 
 
@@ -37,12 +37,17 @@ func _new_building_data() -> void:
 	buildings[Constants.Buildings.FORGE] = Utils.load_asset("res://data/buildings/blacksmith.tres")
 
 func _new_location_data() -> void:
-	locations = {}
-	for loc in GameDB.LOCATIONS.keys():
-		var l : LocationData = LocationData.new()
-		l.location_name = loc
-		l.description = GameDB.LOCATIONS[loc]
-		locations[loc] = l
+	#locations = {}
+	#for loc in GameDB.LOCATIONS.keys():
+		#var l : LocationData = LocationData.new()
+		#l.location_name = loc
+		#l.description = GameDB.LOCATIONS[loc]
+		#locations[loc] = l
+	locations.clear()
+	locations[Constants.Locations.VILLAGE] = Utils.load_asset("uid://cspr334imcj4k")
+	locations[Constants.Locations.FARMLANDS] = Utils.load_asset("uid://c15qlhb5fp74v")
+	locations[Constants.Locations.GOBLIN] = Utils.load_asset("uid://jp4h2qe5723y")
+
 
 func add_resources(r: String, v: int) -> void:
 	resources[r] += v

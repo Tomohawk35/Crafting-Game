@@ -71,7 +71,7 @@ func update_panel(q: Quest) -> void:
 	for c in reward_container.get_children():
 		c.queue_free()
 	temp_party.clear()
-	quest_name_label.text = data.quest_name
+	quest_name_label.text = data.quest_title
 	quest_description_label.text = data.quest_description
 	for i in range(data.party_size):
 		var b : QuestPartyMemberButton = QUEST_PARTY_MEMBER_BUTTON.instantiate()

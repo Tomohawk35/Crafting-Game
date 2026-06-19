@@ -5,6 +5,7 @@ const PANEL_LABEL : PackedScene = preload("uid://ej4wowvxpjnd")
 const RECRUIT_HERO_CARD : PackedScene = preload("uid://ga03mwgqir1n")
 
 const MAX_RECRUITABLE_HEROES : int = 3
+const REROLL_COST : int = 200
 
 var data: BuildingData
 
@@ -29,8 +30,8 @@ func _ready() -> void:
 	hide()
 
 func _on_reroll_button_pressed() -> void:
-	if GameManager.has_resources("gold", 200):
-		GameManager.remove_resources("gold", 200)
+	if GameManager.has_resources("gold", REROLL_COST):
+		GameManager.remove_resources("gold", REROLL_COST)
 		_generate_recruitable_heroes()
 
 func _on_upgrade_button_pressed() -> void:
@@ -44,6 +45,12 @@ func _on_upgrade_button_pressed() -> void:
 
 func _update_panel() -> void:
 	level_value_label.text = str(data.level)
+	
+	if data.level == 0:
+		reroll_button.hide()
+	else:
+		reroll_button.show()
+	
 	if data.is_max_level:
 		cost_to_upgrade_header.hide()
 		upgrade_cost_container.hide()

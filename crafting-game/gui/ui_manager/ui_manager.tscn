@@ -7,14 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://b2x7sucrfgln1" path="res://gui/forge_panel/forge_panel.tscn" id="5_f8mkl"]
 [ext_resource type="PackedScene" uid="uid://dvibe2fuh87qm" path="res://gui/roster_panel/roster_panel.tscn" id="6_ove2g"]
 [ext_resource type="PackedScene" uid="uid://cg2d6rttt4xkt" path="res://equipment_tooltip/equipment_tooltip.tscn" id="7_n2pto"]
+[ext_resource type="PackedScene" uid="uid://b0duygpfaqu4y" path="res://gui/quest_panel/quest_panel.tscn" id="8_idkvt"]
 
-[node name="UIManager" type="CanvasLayer" unique_id=1814013612 node_paths=PackedStringArray("player_hud", "tavern_panel", "forge_panel", "roster_panel", "map_location_panel")]
+[node name="UIManager" type="CanvasLayer" unique_id=1814013612 node_paths=PackedStringArray("player_hud", "tavern_panel", "forge_panel", "roster_panel", "map_location_panel", "quest_panel")]
 script = ExtResource("1_d2uql")
 player_hud = NodePath("PlayerHUD")
 tavern_panel = NodePath("TavernPanel")
 forge_panel = NodePath("ForgePanel")
 roster_panel = NodePath("RosterPanel")
 map_location_panel = NodePath("MapLocationPanel")
+quest_panel = NodePath("QuestPanel")
 
 [node name="PlayerHUD" parent="." unique_id=1175922791 instance=ExtResource("1_dpkie")]
 
@@ -32,4 +34,7 @@ visible = false
 visible = false
 
 [node name="EquipmentTooltip" parent="." unique_id=858396614 instance=ExtResource("7_n2pto")]
+visible = false
+
+[node name="QuestPanel" parent="." unique_id=560696220 instance=ExtResource("8_idkvt")]
 visible = false

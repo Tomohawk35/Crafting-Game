@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LocationData" format=3 uid="uid://jp4h2qe5723y"]
+
+[ext_resource type="Script" uid="uid://d1ch074d3x866" path="res://data/scripts/location_data.gd" id="1_oqe0i"]
+
+[resource]
+script = ExtResource("1_oqe0i")
+location_name = "Goblin Village"
+description = "A small settlement of goblins who think they are too big for their briches."
+metadata/_custom_type_script = "uid://d1ch074d3x866"

@@ -11,23 +11,11 @@ const QUEST_INFO_PANEL : PackedScene = preload("uid://d3vkayuk7ieia")
 @export var quest_scroll_container: ScrollContainer
 @export var ui_root : CanvasLayer
 
-var location_id : String
+var location_id : Constants.Locations
 var data : LocationData
 
 func _ready() -> void:
-	#EventBus.location_clicked.connect(_on_location_clicked)
 	hide()
-
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("escape") and visible:
-		#_close_window()
-
-#func _on_location_clicked(l: String) -> void:
-	#if GameManager.locations.has(l):
-		#_clear_quest_list()
-		#location_id = l
-		#update_panel(GameManager.locations[location_id])
-		#show()
 
 func _clear_quest_list() -> void:
 	for child in quest_container.get_children():
@@ -65,7 +53,7 @@ func update_panel() -> void:
 	favor_value_label.text = str(data.favor)
 	_load_quests()
 
-func set_location(l: String) -> void:
+func set_location(l: Constants.Locations) -> void:
 	location_id = l
 	if visible:
 		update_panel()

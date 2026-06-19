@@ -40,3 +40,7 @@ have other cities send out fake caravans for quests
 can talk to villagers to get more random quests about the world
 
 HERODATA - Could add a potion slot > potions get used once per quest
+
+
+TODO: 
+	Make currencies an item subtype so they can be stored in a itemslotui

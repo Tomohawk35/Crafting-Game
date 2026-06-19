@@ -8,9 +8,8 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 
 
 @export var quest_title : String = "A Simple Quest" # TODO: Add functions for getting name and description
-@export var quest_description : String = "A new quest for hunting rabbits."
 @export var state : QuestState = QuestState.NOT_STARTED
-@export var difficulty : int = QuestDifficulty.EASY
+#@export var difficulty : int = QuestDifficulty.EASY
 #@export var location : String = "General"# Determines travel time
 @export var resource_rewards : Dictionary[String, int] = {}
 @export var item_rewards : Array[SlotData] = []
@@ -30,6 +29,8 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 # TODO: Figure out what should contribute to rewards
 
 
+@abstract
+func get_description() -> String
 
 @abstract
 func start() -> bool
@@ -111,7 +112,7 @@ func add_item_reward(i: Item, q: int = 1) -> void:
 func to_dict() -> Dictionary:
 	var d : Dictionary = {}
 	d["quest_title"] = quest_title
-	d["quest_description"] = quest_description
+	#d["quest_description"] = quest_description
 	d["state"] = state
 	#d["difficulty"] = difficulty
 	d["res_rewards"] = resource_rewards
@@ -121,6 +122,7 @@ func to_dict() -> Dictionary:
 	return d
 
 func from_dict(d: Dictionary) -> void:
-	difficulty = d["difficulty"]
+	#difficulty = d["difficulty"]
 	# TODO: Finish
+	pass
 ##endregion
