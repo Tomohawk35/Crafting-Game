@@ -23,6 +23,7 @@ GameManager="*uid://cv02up0nv8ynf"
 HeroManager="*uid://07b6pr1q0muh"
 QuestManager="*uid://dwbaabpybahgn"
 ItemFactory="*uid://dqttsnvhk65lu"
+SaveManager="*uid://cw5hfr8u66bfo"
 
 [display]
 
