@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" format=3 uid="uid://bt5iq524e5e51"]
+
+[ext_resource type="Script" uid="uid://dwf7vn3b5ve1x" path="res://data/scripts/currency.gd" id="1_b0mb2"]
+[ext_resource type="Texture2D" uid="uid://bvbbntpcv8f2y" path="res://assets/art/1-bit_pixel_icons/food.png" id="1_gh55m"]
+
+[resource]
+script = ExtResource("1_b0mb2")
+item_name = "Food"
+icon = ExtResource("1_gh55m")
+stackable = true
+metadata/_custom_type_script = "uid://dwf7vn3b5ve1x"

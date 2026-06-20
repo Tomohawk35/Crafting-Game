@@ -10,8 +10,7 @@ var displayed_quest : Quest
 @onready var quest_title_label: Label = %QuestTitleLabel
 @onready var quest_description_label: Label = %QuestDescriptionLabel
 @onready var quest_state_label: Label = %QuestStateLabel
-@onready var resource_reward_container: HBoxContainer = %ResourceRewardContainer
-@onready var item_reward_container: HBoxContainer = %ItemRewardContainer
+@onready var item_reward_container: GridContainer = %ItemRewardContainer
 @onready var collect_rewards_button: Button = %CollectRewardsButton
 
 # TODO: Add a Go To button to center camera on target location or village
@@ -32,17 +31,18 @@ func _load_quests() -> void:
 		b.pressed.connect(_on_quest_button_pressed.bind(q))
 
 func _on_quest_button_pressed(q: Quest) -> void:
-	# TODO: Load quest data onto info panel
 	quest_title_label.text = q.quest_title
 	quest_description_label.text = q.get_description()
 	quest_state_label.text = Quest.QuestState.keys()[q.state].capitalize()
-	var l : Label
-	for r in q.resource_rewards.keys():
-		l = Label.new()
-		l.text = "%s: %s" % [r.capitalize(), str(q.resource_rewards[r])]
-		resource_reward_container.add_child(l)
+	#var l : Label
+	#for r in q.resource_rewards.keys():
+		#l = Label.new()
+		#l.text = "%s: %s" % [r.capitalize(), str(q.resource_rewards[r])]
+		#resource_reward_container.add_child(l)
+	for child in item_reward_container.get_children():
+		child.queue_free()
 	var slot_ui : ItemSlotUI
-	for s in q.item_rewards:
+	for s in q.rewards.slots:
 		slot_ui = ITEM_SLOT_UI.instantiate()
 		slot_ui.set_slot_data(s)
 		item_reward_container.add_child(slot_ui)

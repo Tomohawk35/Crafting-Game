@@ -33,8 +33,9 @@ visible = false
 [node name="RosterPanel" parent="." unique_id=1728513671 instance=ExtResource("6_ove2g")]
 visible = false
 
-[node name="EquipmentTooltip" parent="." unique_id=858396614 instance=ExtResource("7_n2pto")]
-visible = false
-
 [node name="QuestPanel" parent="." unique_id=560696220 instance=ExtResource("8_idkvt")]
 visible = false
+
+[node name="EquipmentTooltip" parent="." unique_id=858396614 instance=ExtResource("7_n2pto")]
+visible = false
+offset_bottom = 189.0

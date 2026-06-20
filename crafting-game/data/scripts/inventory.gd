@@ -65,6 +65,7 @@ func add(item: SlotData) -> bool: # FIXME: Should we just add as much as we can 
 		
 		for i in range(slot_capacity - slots.size()):
 			var s : SlotData = SlotData.new()
+			s.quantity = 0
 			s.item = item.item
 			slots.append(s)
 			q = min(s.SLOT_CAPACITY - s.quantity, item.quantity)

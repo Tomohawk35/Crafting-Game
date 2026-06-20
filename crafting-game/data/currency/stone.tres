@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" format=3 uid="uid://cy5828svs2e7v"]
+
+[ext_resource type="Texture2D" uid="uid://bqnid3g85uiwj" path="res://assets/art/1-bit_pixel_icons/pickaxe_ore.png" id="1_4kbqp"]
+[ext_resource type="Script" uid="uid://dwf7vn3b5ve1x" path="res://data/scripts/currency.gd" id="1_jty6y"]
+
+[resource]
+script = ExtResource("1_jty6y")
+item_name = "Stone"
+icon = ExtResource("1_4kbqp")
+stackable = true
+metadata/_custom_type_script = "uid://dwf7vn3b5ve1x"

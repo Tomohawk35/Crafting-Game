@@ -88,12 +88,12 @@ func update_panel(q: Quest) -> void:
 		party_member_button_container.add_child(b)
 		temp_party.append(null)
 	
-	for reward : String in data.resource_rewards.keys(): # TODO: Change this to use slots
-		var l : Label = Label.new()
-		l.text = reward.capitalize() + ": " + str(data.resource_rewards[reward])
-		resource_reward_container.add_child(l)
+	#for reward : String in data.resource_rewards.keys(): # TODO: Change this to use slots
+		#var l : Label = Label.new()
+		#l.text = reward.capitalize() + ": " + str(data.resource_rewards[reward])
+		#resource_reward_container.add_child(l)
 	
-	for reward : SlotData in data.item_rewards:
+	for reward : SlotData in data.rewards.slots:
 		var slot_ui : ItemSlotUI = ITEM_SLOT_UI.instantiate()
 		slot_ui.slot_data = reward
 		slot_ui.update()

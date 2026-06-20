@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" format=3 uid="uid://cwuys2b7k1ibs"]
+
+[ext_resource type="Script" uid="uid://dwf7vn3b5ve1x" path="res://data/scripts/currency.gd" id="1_qx3eg"]
+[ext_resource type="Texture2D" uid="uid://b0oi7iegdk8pb" path="res://assets/art/1-bit_pixel_icons/wood_log.png" id="1_rpblq"]
+
+[resource]
+script = ExtResource("1_qx3eg")
+item_name = "Wood"
+icon = ExtResource("1_rpblq")
+stackable = true
+metadata/_custom_type_script = "uid://dwf7vn3b5ve1x"

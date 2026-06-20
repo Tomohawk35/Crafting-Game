@@ -2,6 +2,7 @@ extends Control
 class_name PlayerHUD
 
 @onready var gold_value_label: Label = %GoldValueLabel
+@onready var food_value_label: Label = %FoodValueLabel
 @onready var wood_value_label: Label = %WoodValueLabel
 @onready var stone_value_label: Label = %StoneValueLabel
 @onready var time_label: Label = %TimeLabel
@@ -9,6 +10,7 @@ class_name PlayerHUD
 
 func _ready() -> void:
 	_set_gold_value()
+	_set_food_value()
 	_set_wood_value()
 	_set_stone_value()
 	_update_time()
@@ -21,6 +23,8 @@ func _on_resource_changed(r: String) -> void:
 	match r:
 		"gold":
 			_set_gold_value()
+		"food":
+			_set_food_value()
 		"wood":
 			_set_wood_value()
 		"stone":
@@ -33,6 +37,9 @@ func _on_screen_transition_button_pressed() -> void:
 
 func _set_gold_value() -> void:
 	gold_value_label.text = str(GameManager.resources["gold"])
+
+func _set_food_value() -> void:
+	food_value_label.text = str(GameManager.resources["food"])
 
 func _set_wood_value() -> void:
 	wood_value_label.text = str(GameManager.resources["wood"])

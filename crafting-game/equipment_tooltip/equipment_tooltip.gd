@@ -21,19 +21,24 @@ func _input(event: InputEvent) -> void:
 
 func _on_show_tooltip(c: Control) -> void:
 	if c is ItemSlotUI and c.slot_data.item:
-		_set_item_display(c.slot_data.item)
-		toggle(true)
+		if c.slot_data.item is  Equipment or Currency:
+			_set_item_display(c.slot_data.item)
+			toggle(true)
 
 func _on_hide_tooltip() -> void:
 	toggle(false)
 
 func _set_item_display(i: Item) -> void: # BUG : Tooltip window doesn't display with correct sizing
+	item_name_label.text = i.item_name
 	if i is Equipment:
-		item_name_label.text = i.item_name
 		item_name_label.modulate = i.get_color()
 		description_label.parse_bbcode(i.description_string)
 		#queue_sort()
-		reset_size()
+		#reset_size()
+	elif i is Currency:
+		item_name_label.modulate = Color(1, 1, 1, 1)
+		description_label.parse_bbcode(i.item_name)
+	reset_size()
 
 func toggle(on : bool) -> void:
 	if on:

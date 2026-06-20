@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dnxpvkn0102oh" path="res://assets/art/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/staff_02b.png" id="1_ollsf"]
 [ext_resource type="Script" uid="uid://ftxod0jqfkn4" path="res://data/scripts/affix_data.gd" id="2_w1yo0"]
-[ext_resource type="Script" uid="uid://hsv3uv0r1tey" path="res://items/equipment_base.gd" id="3_ollsf"]
+[ext_resource type="Script" uid="uid://hsv3uv0r1tey" path="res://data/scripts/equipment_base.gd" id="3_ollsf"]
 
 [resource]
 script = ExtResource("3_ollsf")

@@ -43,4 +43,44 @@ HERODATA - Could add a potion slot > potions get used once per quest
 
 
 TODO: 
-	Make currencies an item subtype so they can be stored in a itemslotui
+	Location Panel should show drop pool or something
+	Change party workflow>
+		Select location > Create party > Select Task > Stock party with food > Send
+		Need to separate caravan from quests
+		Store a reference to active parties probably and where they are
+		Party should have its own inventory for storage of items obtained on quest
+		Maybe show diamond icon over locations for each party their (Sims?)
+
+
+quests cost gold and food to send party on 
+	Constant food cost 
+Maybe rework how quest system works
+	Quests are just tasks
+	You decide where to send a party and what they do there
+
+Need to add a salvage mechanic to break down gear or a way to sell gear
+Maybe have skill trees for buildings that unlock certain buffs?
+
+
+
+
+Hunting Lodge
+	Unlocks hunting quests
+	Trophy Hall > Unlocks rare beast hunts
+	Falconry Tower > Scouts nearby areas, makes hunting and travel speed faster
+	Butcher Shop > Increases resource yield (food, fur, etc)
+
+Tannery / Leather Shop
+	Turns furs into leather gear
+	Upgrades:
+		increases quality
+		faster craft time
+
+Smelter
+	Refines ore into bar
+
+Forge
+	Craft gear
+
+Runeforge / Enchanter
+	Special enchants for gear

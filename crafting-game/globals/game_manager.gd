@@ -3,12 +3,13 @@ extends Node
 
 signal resource_changed(resource: String)
 
-const INVENTORY_CAPACITY : int = 99
+const INVENTORY_CAPACITY : int = 999
 
 var resources : Dictionary[String, int] = {
-	"gold" : 400,
-	"wood" : 100,
-	"stone" : 100,
+	"gold" : 30,
+	"food": 50,
+	"wood" : 29,
+	"stone" : 5,
 } # TODO: update to a resource instead for reusability 
 
 var inventory : Inventory = Inventory.new()

@@ -11,23 +11,14 @@ enum QuestDifficulty { EASY, MEDIUM, HARD, IMPOSSIBLE }
 @export var state : QuestState = QuestState.NOT_STARTED
 #@export var difficulty : int = QuestDifficulty.EASY
 #@export var location : String = "General"# Determines travel time
-@export var resource_rewards : Dictionary[String, int] = {}
-@export var item_rewards : Array[SlotData] = []
-#@export var party : Party = Party.new()
-#@export var party_size : int = 3
 
-#@export var travel_distance : float
-#@export var progress : float = 0.0
-#@export var quest_duration : float = 10.0
-
-#var travel_speed : float = 0.0
-#var quest_speed : float = 0.0
-
-
+## REWARDS
+#@export var resource_rewards : Dictionary[String, int] = {}
+#@export var item_rewards : Array[SlotData] = []
+@export var rewards : Inventory = Inventory.new()
 
 # TODO: Duration should be affected by cumulative speed mods on members
 # TODO: Figure out what should contribute to rewards
-
 
 @abstract
 func get_description() -> String
@@ -38,65 +29,24 @@ func start() -> bool
 @abstract
 func advance() -> void
 
-#@abstract
-#func to_dict() -> Dictionary
-#
-#@abstract
-#func from_dict(d: Dictionary) -> void
-
-
-#func start() -> bool:
-	#if state != QuestState.NOT_STARTED:
-		#print("Unable to start quest - Quest already started.")
-		#return false
-	#if !party.validate_party():
-		#return false
-	#for member in party.members:
-		#member.on_quest = true
-	#state = QuestState.TRAVELING
-	#travel_speed = (Constants.DEFAULT_TRAVEL_SPEED + party.party_stats.stats["travel_speed_flat"]) * (1.0 + party.party_stats.stats["travel_speed_pct"])
-	## TODO: Need dictionary for matching QuestType to related affixes
-	#return true
-
-
-#func advance() -> void:
-	#match state:
-		#QuestState.TRAVELING:
-			#progress += travel_speed
-			#if progress >= travel_distance:
-				#progress = 0.0
-				#state = QuestState.IN_PROGRESS
-		#QuestState.IN_PROGRESS:
-			#progress += 1.0 # TODO: Incorporate questing speed
-			#if progress >= quest_duration:
-				#state = QuestState.RETURNING
-				#progress = travel_distance
-		#QuestState.RETURNING:
-			#progress -= travel_speed
-			#if progress <= 0.0:
-				#progress = 0.0
-				#state = QuestState.COMPLETE # TODO: Emit completed signal?
-		#_:
-			#return
-
-#func set_location(l: String) -> void:
-	#location = l
-	## TODO: Update function. Maybe add enum for locations or something
-#
-#func set_travel_distance(d: float) -> void:
-	#travel_distance = d
-
 func add_resource_reward(r: String, v: int) -> void:
-	if resource_rewards.has(r):
-		resource_rewards[r] += v
-	else:
-		resource_rewards[r] = v
+	#if resource_rewards.has(r):
+		#resource_rewards[r] += v
+	#else:
+		#resource_rewards[r] = v
+	if GameDB.CURRENCY.has(r):
+		var s : SlotData = SlotData.new()
+		s.item = GameDB.CURRENCY[r]
+		s.quantity = v
+		rewards.add(s)
+	
 
 func add_item_reward(i: Item, q: int = 1) -> void:
 	var s : SlotData = SlotData.new()
 	s.item = i
 	s.quantity = q
-	item_rewards.append(s)
+	#item_rewards.append(s)
+	rewards.add(s)
 
 #func add_party_member(h: HeroData) -> bool:
 	#if party_members.size() < (difficulty + 1):
@@ -115,10 +65,9 @@ func to_dict() -> Dictionary:
 	#d["quest_description"] = quest_description
 	d["state"] = state
 	#d["difficulty"] = difficulty
-	d["res_rewards"] = resource_rewards
-	d["item_rewards"] = []
-	for slot : SlotData in item_rewards:
-		d["item_rewards"].append(slot.to_dict)
+	d["rewards"] = []
+	for slot : SlotData in rewards:
+		d["rewards"].append(slot.to_dict)
 	return d
 
 func from_dict(d: Dictionary) -> void:

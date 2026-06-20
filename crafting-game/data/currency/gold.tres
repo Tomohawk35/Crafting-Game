@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Currency" format=3 uid="uid://cgt8wq8ie2pog"]
+
+[ext_resource type="Texture2D" uid="uid://c6tbl6dnqbmct" path="res://assets/art/1-bit_pixel_icons/coin.png" id="1_41q5h"]
+[ext_resource type="Script" uid="uid://dwf7vn3b5ve1x" path="res://data/scripts/currency.gd" id="1_fsx21"]
+
+[resource]
+script = ExtResource("1_fsx21")
+item_name = "Gold"
+icon = ExtResource("1_41q5h")
+stackable = true
+metadata/_custom_type_script = "uid://dwf7vn3b5ve1x"

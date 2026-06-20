@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://bw20eu5yj4lgs"]
+
+[ext_resource type="Script" uid="uid://d0bdgew7xp4cx" path="res://data/scripts/building_data.gd" id="1_6rgsy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rgsy"]
+load_path = "res://.godot/imported/TinyRanch_Structures.png-8237d149cb084e3e2096f22f3fa8b9bb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfnyw"]
+atlas = SubResource("CompressedTexture2D_6rgsy")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_6rgsy")
+building_name = "Hunting Lodge"
+sprite = Array[Texture2D]([SubResource("AtlasTexture_sfnyw")])
+metadata/_custom_type_script = "uid://d0bdgew7xp4cx"

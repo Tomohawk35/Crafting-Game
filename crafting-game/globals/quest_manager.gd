@@ -22,7 +22,7 @@ func _advance_quests() -> void:
 
 func _add_initial_quests() -> void:
 	var q: QuestHunt = generate_hunt_quest(Constants.Locations.FARMLANDS)
-	q.add_resource_reward("gold", 50)
+	q.add_resource_reward("gold", 137)
 	q.add_resource_reward("wood", 10)
 	q.add_item_reward(ItemFactory.generate_equipment())
 	q.add_item_reward(ItemFactory.generate_equipment())

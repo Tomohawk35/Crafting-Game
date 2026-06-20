@@ -8,6 +8,7 @@ var HERO_JOBS : Array[HeroJob] = []
 
 var BUILDINGS : Dictionary = {}
 var LOCATIONS : Dictionary = {}
+var CURRENCY : Dictionary = {}
 
 
 func _ready() -> void:
@@ -16,6 +17,11 @@ func _ready() -> void:
 	_load_resources_from_folder("res://data/hero_jobs/", HERO_JOBS)
 	BUILDINGS = _import_data("res://data/json/building_data.json")
 	LOCATIONS = _import_data("res://data/json/location_data.json")
+	#CURRENCY["gold"] = Utils.load_asset("res://data/currency/gold.tres")
+	CURRENCY["gold"] = ResourceLoader.load("res://data/currency/gold.tres", "Currency")
+	CURRENCY["food"] = ResourceLoader.load("res://data/currency/food.tres", "Currency")
+	CURRENCY["wood"] = ResourceLoader.load("res://data/currency/wood.tres", "Currency")
+	CURRENCY["stone"] = ResourceLoader.load("res://data/currency/stone.tres", "Currency")
 
 func _import_data(path: String) -> Dictionary:
 	var file_string : String = FileAccess.get_file_as_string(path)
