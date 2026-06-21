@@ -11,14 +11,14 @@ var quests : Array[Quest] = []
 
 func _ready() -> void:
 	_add_initial_quests()
-	TimeManager.tick.connect(_on_time_tick)
+	#TimeManager.tick.connect(_on_time_tick)
 
-func _on_time_tick(_h: int, _m: int) -> void:
-	_advance_quests()
+#func _on_time_tick(_h: int, _m: int) -> void:
+	#_advance_quests()
 
-func _advance_quests() -> void:
-	for q: Quest in quests:
-		q.advance()
+#func _advance_quests() -> void:
+	#for q: Quest in quests:
+		#q.advance()
 
 func _add_initial_quests() -> void:
 	var q: QuestHunt = generate_hunt_quest(Constants.Locations.FARMLANDS)
@@ -47,6 +47,7 @@ func generate_hunt_quest(l: Constants.Locations) -> QuestHunt:
 	q.set_location(l) # TODO: Need to generate quest rewards
 	return q
 
+# TODO: Is this necessary anymore?
 func start_quest(q: Quest) -> void: # TODO: Add timer for travel time / duration / etc
 	if q.start():
 		quest_started.emit(q)

@@ -4,6 +4,7 @@ extends Node
 signal roster_changed
 
 var hero_roster : Array[HeroData] = []
+var expeditions : Array[Party] = []
 
 func _ready() -> void: # TODO: Remove after testing
 	add_random_hero()

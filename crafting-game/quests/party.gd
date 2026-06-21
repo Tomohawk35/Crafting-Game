@@ -26,9 +26,10 @@ func validate_party() -> bool:
 	return true
 
 func add_party_member(h: HeroData) -> bool:
-	if h.on_quest or members.has(h) or members.size() >= max_party_size:
+	if h.in_party or members.has(h) or members.size() >= max_party_size:
 		return false
 	members.append(h)
+	h.in_party = true
 	for stat in h.total_stats.stats.keys():
 		party_stats.stats[stat] += h.total_stats.stats[stat]
 	return true
@@ -36,6 +37,7 @@ func add_party_member(h: HeroData) -> bool:
 func remove_party_member(h: HeroData) -> bool:
 	if members.has(h):
 		members.erase(h)
+		h.in_party = false
 		for stat in h.total_stats.stats.keys():
 			party_stats.stats[stat] -= h.total_stats.stats[stat]
 		return true

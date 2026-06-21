@@ -50,6 +50,7 @@ TODO:
 		Store a reference to active parties probably and where they are
 		Party should have its own inventory for storage of items obtained on quest
 		Maybe show diamond icon over locations for each party their (Sims?)
+		Link Caravan to expedition and make it clickable so you can view the expedition status
 
 
 quests cost gold and food to send party on 

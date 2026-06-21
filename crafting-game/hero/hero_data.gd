@@ -25,6 +25,7 @@ const STAT_RARITY_SCALE : float = 0.25
 @export var total_stats : StatsTable
 
 @export var on_quest : bool = false
+@export var in_party : bool = false
 
 # TODO: Add the following
 #Rarity / Quantity Multiplier - affects quest rewards
