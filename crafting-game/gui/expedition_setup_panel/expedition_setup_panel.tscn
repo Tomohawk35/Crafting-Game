@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://v6mq3cfs6dsm"]
+
+[ext_resource type="Script" uid="uid://rolswiqjp234" path="res://gui/expedition_setup_panel/expedition_setup_panel.gd" id="1_u1tog"]
+
+[node name="ExpeditionSetupPanel" type="Control" unique_id=767748300]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1tog")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2000168731]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1484677531]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1335130949]
+layout_mode = 2
+text = "Expedition Setup"
+
+[node name="LocationButton" type="OptionButton" parent="MarginContainer/VBoxContainer" unique_id=916671297]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TaskButton" type="OptionButton" parent="MarginContainer/VBoxContainer" unique_id=757228285]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HeroGridContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1120339366]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1261021516]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=149303276]
+layout_mode = 2
+text = "Food: "
+
+[node name="FoodCounter" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1808571166]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0000"
+
+[node name="FoodSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1009066807]
+unique_name_in_owner = true
+layout_mode = 2

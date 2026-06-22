@@ -81,3 +81,4 @@ columns = 5
 [node name="CollectRewardsButton" type="Button" parent="PanelContainer2/MarginContainer/VBoxContainer" unique_id=1259940163]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Collect Rewards"
