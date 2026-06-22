@@ -7,7 +7,7 @@ const HERO_SELECT_BUTTON : PackedScene = preload("uid://cnxvb41xlyhxn")
 
 @export var hero_button_container: VBoxContainer
 
-var quest : Quest
+#var quest : Quest
 
 func _ready() -> void:
 	_populate_heroes()
@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape") and visible:
+		hero_selected.emit(null)
 		_close_window()
 
 func _clear_list() -> void:
@@ -25,11 +26,11 @@ func _close_window() -> void:
 	queue_free()
 
 func _on_hero_button_pressed(h: HeroData) -> void:
-	if quest.party.add_party_member(h):
-		hero_selected.emit(h)
-		_close_window()
-	else:
-		pass # TODO: Add button shake and red hue to show it was an invalid choice
+	#if quest.party.add_party_member(h):
+	hero_selected.emit(h)
+	_close_window()
+	#else:
+		#pass # TODO: Add button shake and red hue to show it was an invalid choice
 
 func _populate_heroes() -> void:
 	_clear_list()

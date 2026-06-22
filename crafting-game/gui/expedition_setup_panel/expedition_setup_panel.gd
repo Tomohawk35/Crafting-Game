@@ -4,6 +4,7 @@ class_name ExpeditionSetupPanel
 
 @onready var location_button: OptionButton = %LocationButton
 @onready var task_button: OptionButton = %TaskButton
+@onready var party_select_button: OptionButton = %PartySelectButton
 @onready var hero_grid_container: VBoxContainer = %HeroGridContainer
 @onready var food_counter: Label = %FoodCounter
 @onready var food_slider: HSlider = %FoodSlider
@@ -12,6 +13,8 @@ class_name ExpeditionSetupPanel
 func _ready() -> void:
 	GameManager.resource_changed.connect(_on_resource_changed)
 	_update_slider_max()
+	_setup_location_button()
+	_setup_task_button()
 
 func _process(_delta: float) -> void:
 	food_counter.text = str(int(food_slider.value))
@@ -26,5 +29,14 @@ func _update_food_counter() -> void:
 func _update_slider_max() -> void:
 	food_slider.max_value = GameManager.resources["food"]
 
-# TODO: setup dropdown buttons
-# TODO: Setup party select
+func _setup_location_button() -> void:
+	for loc in Constants.Locations.values(): # TODO: Need to do this based on unlocked locations
+		location_button.add_item(Constants.LOCATION_ENUM_STRING[loc], loc)
+
+func _setup_task_button() -> void:
+	var task_keys : Array = Expedition.Tasks.keys()
+	for t in Expedition.Tasks.values():
+		task_button.add_item(task_keys[t].capitalize(), t)
+
+
+# TODO: Setup party select button

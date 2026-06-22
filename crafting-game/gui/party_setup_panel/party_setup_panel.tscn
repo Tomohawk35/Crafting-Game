@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://peyoxlkcjocl"]
+
+[ext_resource type="Script" uid="uid://dautbyepholwe" path="res://gui/party_setup_panel/party_setup_panel.gd" id="1_c2kxt"]
+
+[node name="PartySetupPanel" type="Control" unique_id=1188870012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2kxt")
+
+[node name="PartySelectPanel" type="PanelContainer" parent="." unique_id=2046855506]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 100.0
+offset_bottom = 118.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PartySelectPanel" unique_id=1778612839]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PartySelectPanel/MarginContainer" unique_id=285932706]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PartySelectPanel/MarginContainer/VBoxContainer" unique_id=1657198566]
+layout_mode = 2
+text = "Parties"
+
+[node name="HSeparator" type="HSeparator" parent="PartySelectPanel/MarginContainer/VBoxContainer" unique_id=705261284]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PartySelectPanel/MarginContainer/VBoxContainer" unique_id=2095918638]
+custom_minimum_size = Vector2(0, 128)
+custom_maximum_size = Vector2(-1, 128)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="PartyButtonContainer" type="VBoxContainer" parent="PartySelectPanel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1025098423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="PartySelectPanel/MarginContainer/VBoxContainer" unique_id=1146672016]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PartySelectPanel/MarginContainer/VBoxContainer" unique_id=588176345]
+layout_mode = 2
+alignment = 2
+
+[node name="AddPartyButton" type="Button" parent="PartySelectPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=137518277]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+"
+
+[node name="PartyConfigurePanel" type="PanelContainer" parent="." unique_id=534800646]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 55.0
+offset_right = 234.0
+offset_bottom = 95.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PartyConfigurePanel" unique_id=1642117796]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PartyConfigurePanel/MarginContainer" unique_id=1949174226]
+layout_mode = 2
+
+[node name="PartyNameTextEdit" type="TextEdit" parent="PartyConfigurePanel/MarginContainer/VBoxContainer" unique_id=1019155172]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 24)
+layout_mode = 2
+text = "Party #"
+placeholder_text = "Party Name"
+
+[node name="PartyMemberButtonContainer" type="VBoxContainer" parent="PartyConfigurePanel/MarginContainer/VBoxContainer" unique_id=119852101]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PartyConfigurePanel/MarginContainer/VBoxContainer" unique_id=713996349]
+layout_mode = 2
+
+[node name="RemoveAllMembersButton" type="Button" parent="PartyConfigurePanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2124444326]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Remove All Members"
+
+[node name="DeletePartyButton" type="Button" parent="PartyConfigurePanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1109410011]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Delete Party"

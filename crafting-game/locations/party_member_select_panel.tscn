@@ -15,17 +15,16 @@ script = ExtResource("2_uieah")
 hero_button_container = NodePath("PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1131379880]
-custom_minimum_size = Vector2(232, 384)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = -192.0
-offset_right = 116.0
-offset_bottom = 192.0
+offset_left = -56.0
+offset_top = -78.5
+offset_right = 56.0
+offset_bottom = 78.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_4xe3j")
@@ -37,6 +36,7 @@ theme = ExtResource("1_4xe3j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1271884541]
 layout_mode = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=5460011]
 layout_mode = 2
@@ -46,22 +46,18 @@ text = "Select Hero"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=97040137]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(96, 164)
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
 
 [node name="HeroButtonContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=225111201]
 unique_name_in_owner = true
 layout_mode = 2
+alignment = 1
 
 [node name="HeroSelectButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=1661555877 instance=ExtResource("2_ankyo")]
 layout_mode = 2
 
 [node name="HeroSelectButton2" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=1019941251 instance=ExtResource("2_ankyo")]
-layout_mode = 2
-
-[node name="HeroSelectButton3" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=881916170 instance=ExtResource("2_ankyo")]
-layout_mode = 2
-
-[node name="HeroSelectButton4" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/HeroButtonContainer" unique_id=220117014 instance=ExtResource("2_ankyo")]
 layout_mode = 2
