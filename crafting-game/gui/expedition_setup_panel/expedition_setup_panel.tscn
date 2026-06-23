@@ -54,3 +54,8 @@ text = "0000"
 [node name="FoodSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1009066807]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=962852010]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Expedition"

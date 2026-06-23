@@ -14,8 +14,11 @@ const QUEST_INFO_PANEL : PackedScene = preload("uid://d3vkayuk7ieia")
 var location_id : Constants.Locations
 var data : LocationData
 
+@onready var send_expedition_button: Button = %SendExpeditionButton
+
 func _ready() -> void:
 	hide()
+	send_expedition_button.pressed.connect(_on_send_expedition_button_pressed)
 
 func _clear_quest_list() -> void:
 	for child in quest_container.get_children():
@@ -45,6 +48,9 @@ func _load_quests() -> void:
 			p.ui_root = ui_root
 			p.update_panel(q)
 			quest_container.add_child(p)
+
+func _on_send_expedition_button_pressed() -> void:
+	pass
 
 func update_panel() -> void:
 	data = GameManager.locations[location_id]

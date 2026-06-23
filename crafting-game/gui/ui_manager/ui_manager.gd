@@ -7,12 +7,16 @@ extends CanvasLayer
 @export var roster_panel: RosterPanel
 @export var map_location_panel : MapLocationPanel
 @export var quest_panel : QuestPanel
+@export var party_setup_panel: PartySetupPanel
+@export var expedition_setup_panel: ExpeditionSetupPanel
+
 
 var ui_stack : Array[Control] = []
 
 func _ready() -> void:
 	EventBus.location_clicked.connect(_on_location_clicked)
 	EventBus.building_clicked.connect(_on_building_clicked)
+	EventBus.setup_expedition.connect(_on_setup_expedition_signal_received)
 	tavern_panel.close()
 
 func _input(event: InputEvent) -> void:
@@ -34,6 +38,14 @@ func _input(event: InputEvent) -> void:
 		else:
 			quest_panel.open()
 			ui_stack.append(quest_panel)
+	
+	if event.is_action_pressed("party_menu"):
+		if party_setup_panel.visible:
+			party_setup_panel.close()
+			ui_stack.erase(party_setup_panel)
+		else:
+			party_setup_panel.open()
+			ui_stack.append(party_setup_panel)
 
 func _close_all_windows() -> void:
 	for c in range(ui_stack.size()):
@@ -59,3 +71,6 @@ func _on_location_clicked(l: Constants.Locations) -> void:
 		map_location_panel.set_location(l)
 		map_location_panel.open()
 		ui_stack.append(map_location_panel)
+
+func _on_setup_expedition_signal_received(loc: Constants.Locations) -> void:
+	expedition_setup_panel.open(loc)

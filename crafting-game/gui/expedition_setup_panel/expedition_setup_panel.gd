@@ -8,6 +8,7 @@ class_name ExpeditionSetupPanel
 @onready var hero_grid_container: VBoxContainer = %HeroGridContainer
 @onready var food_counter: Label = %FoodCounter
 @onready var food_slider: HSlider = %FoodSlider
+@onready var start_button: Button = %StartButton
 
 
 func _ready() -> void:
@@ -40,8 +41,13 @@ func _setup_task_button() -> void:
 	for t in Expedition.Tasks.values():
 		task_button.add_item(task_keys[t].capitalize(), t)
 
-
-# TODO: Setup party select button
 func _setup_party_button() -> void:
 	for p : Party in HeroManager.parties:
 		party_select_button.add_item(p.party_name)
+
+func open(loc: Constants.Locations) -> void:
+	_update_slider_max()
+	_setup_location_button()
+	_setup_task_button()
+	# TODO: Select passed location as target location
+	show()

@@ -9,7 +9,7 @@ var selected_party : Party
 @onready var party_button_container: VBoxContainer = %PartyButtonContainer
 @onready var add_party_button: Button = %AddPartyButton
 # Party Info Panel
-@onready var party_name_text_edit: TextEdit = %PartyNameTextEdit
+@onready var party_name_line_edit: LineEdit = %PartyNameLineEdit
 @onready var party_member_button_container: VBoxContainer = %PartyMemberButtonContainer
 @onready var remove_all_members_button: Button = %RemoveAllMembersButton
 @onready var delete_party_button: Button = %DeletePartyButton
@@ -18,14 +18,15 @@ func _ready() -> void:
 	add_party_button.pressed.connect(_on_add_party_button_pressed)
 	delete_party_button.pressed.connect(_on_delete_party_button_pressed)
 	remove_all_members_button.pressed.connect(_on_remove_all_members_button_pressed)
+	party_name_line_edit.text_changed.connect(_on_party_name_line_edit_changed)
 
 func _clear_party_info_panel() -> void:
-	party_name_text_edit.text = "Select Party"
+	party_name_line_edit.text = "Select Party"
 	for child in party_member_button_container.get_children():
 		child.queue_free()
 
 func _load_party_data() -> void:
-	party_name_text_edit.text = selected_party.party_name
+	party_name_line_edit.text = selected_party.party_name
 	for child in party_member_button_container.get_children():
 		child.queue_free()
 	var b : Button
@@ -65,6 +66,7 @@ func _on_delete_party_button_pressed() -> void:
 	if !selected_party:
 		return
 	HeroManager.delete_party(selected_party)
+	selected_party = null
 	_update_party_buttons()
 	_clear_party_info_panel()
 
@@ -80,3 +82,15 @@ func _on_hero_selected(h: HeroData, index: int) -> void:
 		return
 	selected_party.add_member_at_index(h, index)
 	party_member_button_container.get_children()[index].text = h.hero_name
+
+func _on_party_name_line_edit_changed(text: String) -> void:
+	if !selected_party:
+		return
+	selected_party.party_name = text
+	_update_party_buttons()
+
+func open() -> void:
+	show()
+
+func close() -> void:
+	hide()

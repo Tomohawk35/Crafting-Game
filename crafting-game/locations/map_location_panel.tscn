@@ -92,10 +92,15 @@ text = "0"
 [node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1731147382]
 layout_mode = 2
 
+[node name="SendExpeditionButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1345235123]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=329468975]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1571118774]
+visible = false
 custom_minimum_size = Vector2(272, 0)
 layout_mode = 2
 

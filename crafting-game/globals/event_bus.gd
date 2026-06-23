@@ -13,6 +13,8 @@ signal display_equipment(s: SlotData, h: HeroData)
 signal location_clicked(location_name: String)
 signal building_clicked(building_name: Constants.Buildings)
 
+signal setup_expedition(location: Constants.Locations)
+
 signal show_tooltip(node: Control)
 signal hide_tooltip
 
