@@ -11,6 +11,8 @@ class_name ExpeditionSetupPanel
 
 
 func _ready() -> void:
+	HeroManager.create_party()
+	HeroManager.create_party()
 	GameManager.resource_changed.connect(_on_resource_changed)
 	_update_slider_max()
 	_setup_location_button()
@@ -40,3 +42,6 @@ func _setup_task_button() -> void:
 
 
 # TODO: Setup party select button
+func _setup_party_button() -> void:
+	for p : Party in HeroManager.parties:
+		party_select_button.add_item(p.party_name)
