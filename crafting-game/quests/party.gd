@@ -5,6 +5,7 @@ class_name Party
 @export var max_party_size : int = 3
 @export var members : Array[HeroData]
 @export var party_stats : StatsTable = StatsTable.new()
+@export var on_expedition : bool = false
 
 func _init() -> void:
 	members = []
@@ -26,6 +27,8 @@ func validate_party() -> bool:
 		print("Party Fault: Too many party members.")
 		return false
 	for member in members:
+		if !member:
+			continue
 		if members.count(member) > 1:
 			print("Party Fault: Party contains duplicate party members.")
 			return false

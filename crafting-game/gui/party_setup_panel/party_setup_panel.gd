@@ -90,6 +90,8 @@ func _on_party_name_line_edit_changed(text: String) -> void:
 	_update_party_buttons()
 
 func open() -> void:
+	_update_party_buttons()
+	_clear_party_info_panel()
 	show()
 
 func close() -> void:

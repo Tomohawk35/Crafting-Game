@@ -10,6 +10,7 @@ var expedition : Expedition
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var clickable_area: ClickableAreaComponent = %ClickableArea
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	if !expedition:
@@ -19,6 +20,7 @@ func _ready() -> void:
 	clickable_area.clicked.connect(_on_clicked)
 	clickable_area.hovered.connect(_on_hover)
 	clickable_area.unhovered.connect(_on_unhover)
+	_on_unhover()
 
 func _process(_delta: float) -> void:
 	if !expedition:
@@ -26,16 +28,16 @@ func _process(_delta: float) -> void:
 	_update_position()
 
 func _on_clicked() -> void:
-	pass
+	pass # TODO: Need to show expedition stats
 
 func _on_hover() -> void:
-	pass
+	sprite_2d.material.set_shader_parameter("line_thickness", 0.5)
 
 func _on_unhover() -> void:
-	pass
+	sprite_2d.material.set_shader_parameter("line_thickness", 0.0)
 
 func _update_position() -> void:
-	match expedition.state:
+	match expedition.status:
 		Expedition.States.TRAVELING:
 			progress = expedition.progress
 			animation_player.play("move_side")

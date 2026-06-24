@@ -69,6 +69,15 @@ func _set_quest_duration() -> void:
 func set_location(l: Constants.Locations) -> void:
 	location = l
 
+func set_party(p: Party) -> void:
+	party = p
+
+func set_task(t: Tasks) -> void:
+	task = t
+
+func set_food_reserves(f: int) -> void:
+	food_reserves = f
+
 func start() -> bool:
 	if status != States.NOT_STARTED:
 		print("Unable to start quest - Quest already started.")

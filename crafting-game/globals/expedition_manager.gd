@@ -16,4 +16,6 @@ func _advance_expeditions() -> void:
 		e.advance()
 
 func start_expedition(e: Expedition) -> void:
+	expeditions.append(e)
+	e.start()
 	expedition_started.emit(e)

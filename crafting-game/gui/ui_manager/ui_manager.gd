@@ -74,3 +74,4 @@ func _on_location_clicked(l: Constants.Locations) -> void:
 
 func _on_setup_expedition_signal_received(loc: Constants.Locations) -> void:
 	expedition_setup_panel.open(loc)
+	ui_stack.append(expedition_setup_panel)

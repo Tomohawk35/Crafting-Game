@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bx4f2mivvgd1o" path="res://locations/map_location.tscn" id="4_jlife"]
 [ext_resource type="Script" uid="uid://6keuxh5to1nc" path="res://tests/test_world_map/travel_routes.gd" id="5_drcok"]
 
+[sub_resource type="Curve2D" id="Curve2D_fsjge"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 208, 249, -3.9069023, -0.39446974, 3.9069023, 0.39446974, 313, 302, -7.382288, 2.287054, 7.382288, -2.287054, 332, 289, 0, 0, 0, 0, 386, 313, 0, 0, 0, 0, 476, 269)
+}
+point_count = 5
+
 [sub_resource type="Curve2D" id="Curve2D_vegwf"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 208, 249, -3.9069023, -0.39446974, 3.9069023, 0.39446974, 313, 302, -7.382288, 2.287054, 7.382288, -2.287054, 332, 289, 0, 0, 0, 0, 386, 313, 0, 0, 0, 0, 554, 229, 0, 0, 0, 0, 662, 284)
@@ -46,7 +52,7 @@ routes = {
 }
 
 [node name="PathToFarmlands" type="Path2D" parent="TravelRoutes" unique_id=153662546]
-curve = SubResource("Curve2D_vegwf")
+curve = SubResource("Curve2D_fsjge")
 
 [node name="PathToGoblins" type="Path2D" parent="TravelRoutes" unique_id=1377018959]
 curve = SubResource("Curve2D_vegwf")

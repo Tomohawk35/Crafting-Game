@@ -50,7 +50,7 @@ func _load_quests() -> void:
 			quest_container.add_child(p)
 
 func _on_send_expedition_button_pressed() -> void:
-	pass
+	EventBus.setup_expedition.emit(location_id)
 
 func update_panel() -> void:
 	data = GameManager.locations[location_id]
